@@ -40,4 +40,4 @@ Version numbering of this FOM Module and associated documentation is based on th
 
 ## Documentation
 
-[Full Documentation](NETN-Physical.md)
+[Full Documentation](https://nso.nato.int/nso/nsdd/APdetails.html?APNo=2268&LA=EN)

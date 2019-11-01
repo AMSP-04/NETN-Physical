@@ -1,8 +1,10 @@
 # NETN-Physical
 
 ## Introduction
-### Purpose
-### Scope
+
+The NETN FAFD representation of physical entities such as platforms is based on the [SISO-STD-001-2015 standard RPR-FOM v2.0](https://www.sisostds.org/). The NETN FOM Module extends the RPR-FOM object classes representing physical entities with subclasses which include additional attributes for e.g unique identification of simulated entities.
+
+It is recommended that NETN federates support NETN extensions of Physical Entities. For compatibility reasons NETN federates, that implement NETN extensions of RPR-FOM Physical Entities, are also required to support RPR-FOM v2.0.
 
 ## License
 
@@ -30,7 +32,8 @@ Version numbering of this FOM Module and associated documentation is based on th
 
 |Version|Description|
 |---|---|
-|v1.1.2 | NETN Physical FOM Module included in NETN FOM v2.0 part of AMSP-04 Ed A|
+|[v1.1.2](https://github.com/AMSP-04/NETN-Physical/tree/v1.1.2) | NETN Physical FOM Module included in NETN FOM v2.0 part of AMSP-04 Ed A|
+|v1.2|Version 1.2 of the NETN-Aggregate updated by MSG-163 and included in NETN-FOM v3.0 as part of AMSP-04 Ed B.|
 
 [Changelog](changelog.md)
 

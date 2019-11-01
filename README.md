@@ -32,9 +32,7 @@ Version numbering of this FOM Module and associated documentation is based on th
 
 |Version|Description|
 |---|---|
-|v1.1.2 | NETN Physical FOM Module included in NETN FOM v2.0 part of AMSP-04 Ed A|
-
-[Changelog](changelog.md)
+|v1.1.2 | NETN Physical FOM Module included in NETN FOM v2.0 as part of AMSP-04 Ed A|
 
 ## Documentation
 

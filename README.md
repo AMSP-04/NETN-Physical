@@ -2,11 +2,9 @@
 
 ## Introduction
 
-The NETN FAFD representation of aggregate entities such as military units and physical entities such as platforms is based on the RPR-FOM v2.0 standard. The NETN FOM Module extends the RPR-FOM with NETN-Aggregate and NETN-Physical which include additional attributes for unique identification of simulated entities. The unique identification has been included to provide better support for initialization, TMR and other advanced design patterns requiring unique pre-defined identifiers for simulated entities. NETN federations still allow pure RPR-FOM based federates in the federation but with limited ability to interoperate in some NETN design aspects. 
+The NETN FAFD representation of physical entities such as platforms is based on the [SISO-STD-001-2015 standard RPR-FOM v2.0](https://www.sisostds.org/). The NETN FOM Module extends the RPR-FOM object classes representing physical entities with subclasses which include additional attributes for e.g unique identification of simulated entities. The unique identification has been included to provide better support for initialization, NETN-TMR and other advanced design patterns requiring unique pre-defined identifiers for simulated entities. NETN federations still allow pure RPR-FOM based federates in the federation but with limited ability to interoperate in some NETN design aspects. 
 
-It is recommended that NETN federates support NETN extensions of Aggregate and Physical Entities. For compatibility reasons NETN federates that implement NETN extensions of Aggregate and/or Physical Entities are also required to support RPRFOM v2.0.
-
-The NETN object classes for entities are specializations of the leaf classes of the RPR object class BaseEntity. The NETN object classes have additional attributes to address the issue with instance identification in RPR; the issue with entity name and the lack of ability to set entities as inactive. One new attribute specifies the on-board entities and one attribute specifies the entity's activity. The NETN Aggregate object class has a number of attributes beyond these.
+It is recommended that NETN federates support NETN extensions of Physical Entities. For compatibility reasons NETN federates, that implement NETN extensions of RPR-FOM Physical Entities, are also required to support RPR-FOM v2.0.
 
 ## License
 

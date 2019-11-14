@@ -4,7 +4,7 @@
         <name>NETN-Physical</name>
         <type>FOM</type>
         <version>v2.0.0 (RC 1)</version>
-        <modificationDate>2019-07-31</modificationDate>
+        <modificationDate>2019-11-14</modificationDate>
         <securityClassification>unclassified</securityClassification>
         <purpose></purpose>
         <applicationDomain>Training</applicationDomain>
@@ -722,6 +722,70 @@ If not assigned by the ORBAT specification or similar, shall a value be assigned
                                 <transportation>HLAreliable</transportation>
                                 <order>Receive</order>
                                 <semantics>If an instance shall be taken into account by federates</semantics>
+                            </attribute>
+                        </objectClass>
+                    </objectClass>
+                </objectClass>
+            </objectClass>
+            <objectClass>
+                <name>EnvironmentObject</name>
+                <objectClass>
+                    <name>LinearObject</name>
+                    <objectClass>
+                        <name>OtherLinearObject</name>
+                    </objectClass>
+                </objectClass>
+                <objectClass>
+                    <name>PointObject</name>
+                    <objectClass>
+                        <name>OtherPointObject</name>
+                        <objectClass>
+                            <name>CheckPoint</name>
+                            <sharing>PublishSubscribe</sharing>
+                            <semantics>A point where aggregate and physical entities shall wait. 
+The CheckPoint can associate to a NETN_CulturalFeature, see the interaction class EstablishCheckPoint. 
+ 
+The modelling federate may register a NETN_CulturalFeature instance to model the CheckPoint. 
+Set the attribute CheckPoint.ReferencedObjectIdentifier to the NETN_CulturalFeature. 
+The attribute NETN_CulturalFeature.Status shall be ActiveStatusEnum8.Active when the CheckPoint is operated. 
+ 
+If an NETN_CulturalFeature is regstred, it can be seen in viewers (speclization of RPRv2 PhysicalEntity).</semantics>
+                            <attribute>
+                                <name>Name</name>
+                                <dataType>HLAunicodeString</dataType>
+                                <updateType>Static</updateType>
+                                <updateCondition>NA</updateCondition>
+                                <ownership>NoTransfer</ownership>
+                                <sharing>PublishSubscribe</sharing>
+                                <transportation>HLAreliable</transportation>
+                                <order>Receive</order>
+                                <semantics>Name of the Check Point.</semantics>
+                            </attribute>
+                            <attribute>
+                                <name>DelayTime</name>
+                                <dataType>TimeSecondInteger32</dataType>
+                                <updateType>Conditional</updateType>
+                                <updateCondition>WhenChanged</updateCondition>
+                                <ownership>DivestAcquire</ownership>
+                                <sharing>PublishSubscribe</sharing>
+                                <transportation>HLAreliable</transportation>
+                                <order>Receive</order>
+                                <semantics>The time that an entity shall wait, the total wait time can be greater when it is a queue. 
+ 
+This is a nominal value, federates can use this for modifing delay time for different types if entities, e.g add or subtract a value or multiply with a type depending factor.</semantics>
+                            </attribute>
+                            <attribute>
+                                <name>UniqueID</name>
+                                <dataType>UuidArrayOfHLAbyte16</dataType>
+                                <updateType>Static</updateType>
+                                <updateCondition>NA</updateCondition>
+                                <ownership>NoTransfer</ownership>
+                                <sharing>PublishSubscribe</sharing>
+                                <transportation>HLAreliable</transportation>
+                                <order>Receive</order>
+                                <semantics>The unique identifier of the object. 
+Required value. 
+If not assigned by the ORBAT specification or similar, shall a value be assigned, either randomized or generated from the Marking or EntityIdentifier attribute value.</semantics>
                             </attribute>
                         </objectClass>
                     </objectClass>

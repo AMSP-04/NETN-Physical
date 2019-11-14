@@ -10,3 +10,4 @@ NETN-MRM FOM Module v1.2.0 was developed by MSG-106 and MSG-134 and released as 
 * v1.1.1 - Updated References, Dependency
 * v1.1.2 - Update of semantics, spell corrections
 * v1.2.0 - Added NETN_Munition object class
+* 2019-11-14 - LO - Added object class EnvironmentObject.PointObject.OtherPointObject.CheckPoint

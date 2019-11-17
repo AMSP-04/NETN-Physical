@@ -1,6 +1,10 @@
 ## Changelog NETN-Physical
 
-### Changes for 
+### Changes for v X
+
+#### NETN-FOM#15 add NETN FOM Module to extend RPR SE
+* Added representation of CheckPoint to NETN-Physical FOM Module.
+
 
 ### Changes for v1.2.0
 NETN-MRM FOM Module v1.2.0 was developed by MSG-106 and MSG-134 and released as part of NETN-FOM v2.0 in AMSP-04 Ed A.

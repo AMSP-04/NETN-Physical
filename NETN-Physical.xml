@@ -4,7 +4,7 @@
         <name>NETN-Physical</name>
         <type>FOM</type>
         <version>v2.0.0 (RC 1)</version>
-        <modificationDate>2019-11-14</modificationDate>
+        <modificationDate>2019-12-10</modificationDate>
         <securityClassification>unclassified</securityClassification>
         <purpose></purpose>
         <applicationDomain>Training</applicationDomain>
@@ -749,7 +749,11 @@ The modelling federate may register a NETN_CulturalFeature instance to model the
 Set the attribute CheckPoint.ReferencedObjectIdentifier to the NETN_CulturalFeature. 
 The attribute NETN_CulturalFeature.Status shall be ActiveStatusEnum8.Active when the CheckPoint is operated. 
  
-If an NETN_CulturalFeature is regstred, it can be seen in viewers (speclization of RPRv2 PhysicalEntity).</semantics>
+If an NETN_CulturalFeature is regstred, it can be seen in viewers (speclization of RPRv2 PhysicalEntity).
+
+The modelling federate of an active CheckPoint shall send a NETN-ETR Wait interaction wiith the time to wait and with a reference to the entity that will pass the CheckPoint. 
+
+The modelling federate of the CheckPoint decides if the entity will pass the CheckPoint or not, e.g. can the distance between the CheckPoint and the entity be the triggering cause.</semantics>
                             <attribute>
                                 <name>Name</name>
                                 <dataType>HLAunicodeString</dataType>

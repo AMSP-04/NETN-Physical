@@ -18,3 +18,13 @@ A unique identification attribute has been included to provide better support fo
 
 ### Scope
 
+## Attribute Table for NETN-Aircraft, NETN_AmphibiousVehicle, NETN_GroundVehicle, NETN_MultiDomainPlatform, NETN_Spacecraft, NETN_SubmersibleVehicle, NETN_SurfaceVessel
+|Attribute|Description|
+|---|---|
+|Callsign|The name of the object.|
+|Status|If an instance shall be taken into account by federates.|
+|Activity|The activity of the object.|
+|EmbeddedUnitList|List of unique IDs of on-board elements.|
+|UniqueID|The unique identifier of the object. 
+Required value. 
+If not assigned by the ORBAT specification or similar, shall a value be assigned, either randomized or generated from the Marking or EntityIdentifier attribute value.|

@@ -18,13 +18,34 @@ A unique identification attribute has been included to provide better support fo
 
 ### Scope
 
-## Attribute Table for NETN-Aircraft, NETN_AmphibiousVehicle, NETN_GroundVehicle, NETN_MultiDomainPlatform, NETN_Spacecraft, NETN_SubmersibleVehicle, NETN_SurfaceVessel
+#### Attribute Table for NETN_Aircraft, NETN_AmphibiousVehicle, NETN_GroundVehicle, NETN_MultiDomainPlatform, NETN_Spacecraft, NETN_SubmersibleVehicle, NETN_SurfaceVessel, and NETN_CulturalFeature
 |Attribute|Description|
 |---|---|
 |Callsign|The name of the object.|
 |Status|If an instance shall be taken into account by federates.|
 |Activity|The activity of the object.|
 |EmbeddedUnitList|List of unique IDs of on-board elements.|
-|UniqueID|The unique identifier of the object. 
-Required value. 
-If not assigned by the ORBAT specification or similar, shall a value be assigned, either randomized or generated from the Marking or EntityIdentifier attribute value.|
+|UniqueID|The unique identifier of the object. Required value. If not assigned by the ORBAT specification or similar, shall a value be assigned, either randomized or generated from the Marking or EntityIdentifier attribute value.|
+
+#### Attribute Table for NETN_Human and NETN_NonHuman
+|Attribute|Description|
+|---|---|
+|Callsign|The name of the object.|
+|Status|If an instance shall be taken into account by federates.|
+|Activity|The activity of the object.|
+|EmbeddedUnitList|List of unique IDs of on-board elements.|
+|UniqueID|The unique identifier of the object. Required value. If not assigned by the ORBAT specification or similar, shall a value be assigned, either randomized or generated from the Marking or EntityIdentifier attribute value.|
+
+#### Attribute Table for NETN_Munition
+|Attribute|Description|
+|---|---|
+|Status|If an instance shall be taken into account by federates.|
+|UniqueID|The unique identifier of the object. Required value. If not assigned by the ORBAT specification or similar, shall a value be assigned, either randomized or generated from the Marking or EntityIdentifier attribute value.|
+
+#### Attribute Table for CheckPoint
+|Attribute|Description|
+|---|---|
+|Name|Name of the Check Point.|
+|DelayTime|The time that an entity shall wait, the total wait time can be greater when it is a queue. This is a nominal value, federates can use this for modifing delay time for different types if entities, e.g add or subtract a value or multiply with a type depending factor.|
+|UniqueID|The unique identifier of the object. Required value. If not assigned by the ORBAT specification or similar, shall a value be assigned, either randomized or generated from the Marking or EntityIdentifier attribute value.|
+

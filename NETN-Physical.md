@@ -32,6 +32,7 @@ A unique identification attribute has been included to provide better support fo
 |EmbeddedUnitList|List of unique IDs of on-board elements.|Unit.EmbarkedIn (indirect)|
 |UniqueID|The unique identifier of the object. Required value. If not assigned by the ORBAT specification or similar, shall a value be assigned, either randomized or generated from the Marking or EntityIdentifier attribute value.|Unit.UUID|
 |EntityType|RPR_v2 attribyte|Unit.EntityType|
+|IsPartOf|RPR_v2 attribute|Unit.EmbarkedIn|
 
 #### Attribute Table for NETN_Human and NETN_NonHuman
 
@@ -43,7 +44,8 @@ A unique identification attribute has been included to provide better support fo
 |Status|If an instance shall be taken into account by federates.|-|
 |Activity|The activity of the object.|-|
 |UniqueID|The unique identifier of the object. Required value. If not assigned by the ORBAT specification or similar, shall a value be assigned, either randomized or generated from the Marking or EntityIdentifier attribute value.|Unit.UUID|
-|EntityType|RPR_v2 attribyte|Unit.EntityType|
+|EntityType|RPR_v2 attribute|Unit.EntityType|
+|IsPartOf|RPR_v2 attribute|Unit.EmbarkedIn|
 
 #### Attribute Table for NETN_Munition
 
@@ -54,6 +56,7 @@ A unique identification attribute has been included to provide better support fo
 |Status|If an instance shall be taken into account by federates.|-|
 |UniqueID|The unique identifier of the object. Required value. If not assigned by the ORBAT specification or similar, shall a value be assigned, either randomized or generated from the Marking or EntityIdentifier attribute value.|Unit.UUID|
 |EntityType|RPR_v2 attribte|Unit.EntityType|
+|IsPartOf|RPR_v2 attribute|Unit.EmbarkedIn|
 
 #### Attribute Table for CheckPoint
 

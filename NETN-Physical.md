@@ -22,7 +22,7 @@ A unique identification attribute has been included to provide better support fo
 
 <img src="./images/Physical-1.png" />
 
-<img src="./images/CulturalFeature.png" />
+<img src="./images/Physical-CulturalFeature.png" />
 
 |Attribute|Description|
 |---|---|
@@ -34,7 +34,7 @@ A unique identification attribute has been included to provide better support fo
 
 #### Attribute Table for NETN_Human and NETN_NonHuman
 
-<img src="./images/Lifeform.png" />
+<img src="./images/Physical-Lifeform.png" />
 
 |Attribute|Description|
 |---|---|

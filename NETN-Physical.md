@@ -22,6 +22,8 @@ A unique identification attribute has been included to provide better support fo
 
 <img src="./images/Physical-1.png" />
 
+<img src="./images/CulturalFeature.png" />
+
 |Attribute|Description|
 |---|---|
 |Callsign|The name of the object.|
@@ -31,12 +33,14 @@ A unique identification attribute has been included to provide better support fo
 |UniqueID|The unique identifier of the object. Required value. If not assigned by the ORBAT specification or similar, shall a value be assigned, either randomized or generated from the Marking or EntityIdentifier attribute value.|
 
 #### Attribute Table for NETN_Human and NETN_NonHuman
+
+<img src="./images/Lifeform.png" />
+
 |Attribute|Description|
 |---|---|
 |Callsign|The name of the object.|
 |Status|If an instance shall be taken into account by federates.|
 |Activity|The activity of the object.|
-|EmbeddedUnitList|List of unique IDs of on-board elements.|
 |UniqueID|The unique identifier of the object. Required value. If not assigned by the ORBAT specification or similar, shall a value be assigned, either randomized or generated from the Marking or EntityIdentifier attribute value.|
 
 #### Attribute Table for NETN_Munition

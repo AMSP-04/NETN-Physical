@@ -19,6 +19,9 @@ A unique identification attribute has been included to provide better support fo
 ### Scope
 
 #### Attribute Table for NETN_Aircraft, NETN_AmphibiousVehicle, NETN_GroundVehicle, NETN_MultiDomainPlatform, NETN_Spacecraft, NETN_SubmersibleVehicle, NETN_SurfaceVessel, and NETN_CulturalFeature
+
+<img src="./images/Physical-1.png" />
+
 |Attribute|Description|
 |---|---|
 |Callsign|The name of the object.|

@@ -44,12 +44,18 @@ A unique identification attribute has been included to provide better support fo
 |UniqueID|The unique identifier of the object. Required value. If not assigned by the ORBAT specification or similar, shall a value be assigned, either randomized or generated from the Marking or EntityIdentifier attribute value.|
 
 #### Attribute Table for NETN_Munition
+
+<img src="./images/Physical-Munition.png" />
+
 |Attribute|Description|
 |---|---|
 |Status|If an instance shall be taken into account by federates.|
 |UniqueID|The unique identifier of the object. Required value. If not assigned by the ORBAT specification or similar, shall a value be assigned, either randomized or generated from the Marking or EntityIdentifier attribute value.|
 
 #### Attribute Table for CheckPoint
+
+<img src="./images/Physical-CheckPoint.png" />
+
 |Attribute|Description|
 |---|---|
 |Name|Name of the Check Point.|

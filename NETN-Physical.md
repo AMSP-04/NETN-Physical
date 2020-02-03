@@ -24,41 +24,44 @@ A unique identification attribute has been included to provide better support fo
 
 <img src="./images/Physical-CulturalFeature.png" />
 
-|Attribute|Description|
-|---|---|
-|Callsign|The name of the object.|
-|Status|If an instance shall be taken into account by federates.|
-|Activity|The activity of the object.|
-|EmbeddedUnitList|List of unique IDs of on-board elements.|
-|UniqueID|The unique identifier of the object. Required value. If not assigned by the ORBAT specification or similar, shall a value be assigned, either randomized or generated from the Marking or EntityIdentifier attribute value.|
+|Attribute|Description|NETN-ORG Relation|
+|---|---|---|
+|Callsign|The name of the object.|Unit.Name|
+|Status|If an instance shall be taken into account by federates.|-|
+|Activity|The activity of the object.|-|
+|EmbeddedUnitList|List of unique IDs of on-board elements.|Unit.EmbarkedIn (indirect)|
+|UniqueID|The unique identifier of the object. Required value. If not assigned by the ORBAT specification or similar, shall a value be assigned, either randomized or generated from the Marking or EntityIdentifier attribute value.|Unit.UUID|
+|EntityType|RPR_v2 attribyte|Unit.EntityType|
 
 #### Attribute Table for NETN_Human and NETN_NonHuman
 
 <img src="./images/Physical-Lifeform.png" />
 
-|Attribute|Description|
-|---|---|
-|Callsign|The name of the object.|
-|Status|If an instance shall be taken into account by federates.|
-|Activity|The activity of the object.|
-|UniqueID|The unique identifier of the object. Required value. If not assigned by the ORBAT specification or similar, shall a value be assigned, either randomized or generated from the Marking or EntityIdentifier attribute value.|
+|Attribute|Description|NETN-ORG Relation|
+|---|---|---|
+|Callsign|The name of the object.|Unit.Name|
+|Status|If an instance shall be taken into account by federates.|-|
+|Activity|The activity of the object.|-|
+|UniqueID|The unique identifier of the object. Required value. If not assigned by the ORBAT specification or similar, shall a value be assigned, either randomized or generated from the Marking or EntityIdentifier attribute value.|Unit.UUID|
+|EntityType|RPR_v2 attribyte|Unit.EntityType|
 
 #### Attribute Table for NETN_Munition
 
 <img src="./images/Physical-Munition.png" />
 
-|Attribute|Description|
-|---|---|
-|Status|If an instance shall be taken into account by federates.|
-|UniqueID|The unique identifier of the object. Required value. If not assigned by the ORBAT specification or similar, shall a value be assigned, either randomized or generated from the Marking or EntityIdentifier attribute value.|
+|Attribute|Description|NETN-ORG Relation|
+|---|---|---|
+|Status|If an instance shall be taken into account by federates.|-|
+|UniqueID|The unique identifier of the object. Required value. If not assigned by the ORBAT specification or similar, shall a value be assigned, either randomized or generated from the Marking or EntityIdentifier attribute value.|Unit.UUID|
+|EntityType|RPR_v2 attribte|Unit.EntityType|
 
 #### Attribute Table for CheckPoint
 
 <img src="./images/Physical-CheckPoint.png" />
 
-|Attribute|Description|
-|---|---|
-|Name|Name of the Check Point.|
-|DelayTime|The time that an entity shall wait, the total wait time can be greater when it is a queue. This is a nominal value, federates can use this for modifing delay time for different types if entities, e.g add or subtract a value or multiply with a type depending factor.|
-|UniqueID|The unique identifier of the object. Required value. If not assigned by the ORBAT specification or similar, shall a value be assigned, either randomized or generated from the Marking or EntityIdentifier attribute value.|
+|Attribute|Description|NETN-ORG Relation|
+|---|---|---|
+|Name|Name of the Check Point.|-|
+|DelayTime|The time that an entity shall wait, the total wait time can be greater when it is a queue. This is a nominal value, federates can use this for modifing delay time for different types if entities, e.g add or subtract a value or multiply with a type depending factor.|-|
+|UniqueID|The unique identifier of the object. Required value. If not assigned by the ORBAT specification or similar, shall a value be assigned, either randomized or generated from the Marking or EntityIdentifier attribute value.|-|
 

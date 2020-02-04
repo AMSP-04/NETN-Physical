@@ -24,6 +24,8 @@ A unique identification attribute has been included to provide better support fo
 
 <img src="./images/Physical-CulturalFeature.png" />
 
+The relation to NETN-ORG is not a one-to-one mapping, excepted for some cases.
+
 |Attribute|Description|NETN-ORG Relation|
 |---|---|---|
 |Callsign|The name of the object.|Unit.Name|
@@ -31,8 +33,12 @@ A unique identification attribute has been included to provide better support fo
 |Activity|The activity of the object.|-|
 |EmbeddedUnitList|List of unique IDs of on-board elements.|Unit.EmbarkedIn (indirect)|
 |UniqueID|The unique identifier of the object. Required value. If not assigned by the ORBAT specification or similar, shall a value be assigned, either randomized or generated from the Marking or EntityIdentifier attribute value.|Unit.UUID|
+|Marking|RPR_v2 attribute|Unit.Name|
 |EntityType|RPR_v2 attribute|Unit.EntityType|
+|ForceIdentifier|RPR_v2 attribute|Unit.Force|
+|Spatial|RPR_v2 attribute|Unit.Location, Unit.Direction, Unit.Speed|
 |IsPartOf|RPR_v2 attribute|Unit.EmbarkedIn|
+|DamageState|RPR_v2 attribute|Unit.CombatEffectiveness|
 
 #### Attribute Table for NETN_Human and NETN_NonHuman
 
@@ -44,8 +50,12 @@ A unique identification attribute has been included to provide better support fo
 |Status|If an instance shall be taken into account by federates.|-|
 |Activity|The activity of the object.|-|
 |UniqueID|The unique identifier of the object. Required value. If not assigned by the ORBAT specification or similar, shall a value be assigned, either randomized or generated from the Marking or EntityIdentifier attribute value.|Unit.UUID|
+|Marking|RPR_v2 attribute|Unit.Name|
 |EntityType|RPR_v2 attribute|Unit.EntityType|
+|ForceIdentifier|RPR_v2 attribute|Unit.Force|
+|Spatial|RPR_v2 attribute|Unit.Location, Unit.Direction, Unit.Speed|
 |IsPartOf|RPR_v2 attribute|Unit.EmbarkedIn|
+|DamageState|RPR_v2 attribute|Unit.CombatEffectiveness|
 
 #### Attribute Table for NETN_Munition
 
@@ -55,8 +65,12 @@ A unique identification attribute has been included to provide better support fo
 |---|---|---|
 |Status|If an instance shall be taken into account by federates.|-|
 |UniqueID|The unique identifier of the object. Required value. If not assigned by the ORBAT specification or similar, shall a value be assigned, either randomized or generated from the Marking or EntityIdentifier attribute value.|Unit.UUID|
+|Marking|RPR_v2 attribute|Unit.Name|
 |EntityType|RPR_v2 attribte|Unit.EntityType|
+|ForceIdentifier|RPR_v2 attribute|Unit.Force|
+|Spatial|RPR_v2 attribute|Unit.Location, Unit.Direction, Unit.Speed|
 |IsPartOf|RPR_v2 attribute|Unit.EmbarkedIn|
+|DamageState|RPR_v2 attribute|Unit.CombatEffectiveness|
 
 #### Attribute Table for CheckPoint
 

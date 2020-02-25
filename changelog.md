@@ -12,3 +12,4 @@ NETN-MRM FOM Module v1.2.0 was developed by MSG-106 and MSG-134 and released as 
 * v1.2.0 - Added NETN_Munition object class
 * 2019-11-14 - LO - Added object class EnvironmentObject.PointObject.OtherPointObject.CheckPoint
 * 2019-12-10 - LO - Updated semantics for EnvironmentObject.PointObject.OtherPointObject.CheckPoint, described implications on passing entities
+* 2020-02-25 - LO - Added attributes for Route and Destination and removed CheckPoint object class

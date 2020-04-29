@@ -8,7 +8,7 @@ It is recommended that NETN federates support NETN extensions of Physical Entiti
 
 ## Licence
 
-Copyright (C) 2019 NATO/OTAN.
+Copyright (C) 2020 NATO/OTAN.
 This work is licensed under a [Creative Commons Attribution-NoDerivatives 4.0 International License](LICENCE.md). 
 
 The work includes the [NETN-Physical.xml](NETN-Physical.xml) FOM Module and documentation NETN-Physical.md.

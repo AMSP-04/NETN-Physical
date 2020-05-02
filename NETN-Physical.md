@@ -14,71 +14,63 @@ It is recommended that NETN federates support NETN extensions of Physical Entiti
 
 The NETN-Physical FOM Module provides a common standard interface for the representation of Physical Entities in a federated distributed simulation. The module extends the existing RPR-FOM v2.0 standard with subclasses classes and additional attributes to allow additional information to be associated with simulated physical entities.
 
-A unique identification attribute has been included to provide better support for initialization, NETN-TMR and other advanced design patterns requiring unique pre-defined identifiers for simulated entities. NETN federations still allow pure RPR-FOM based federates in the federation but with limited ability to interoperate in some NETN design aspects. 
-
 ### Scope
 
-#### Attribute Table for NETN_Aircraft, NETN_AmphibiousVehicle, NETN_GroundVehicle, NETN_MultiDomainPlatform, NETN_Spacecraft, NETN_SubmersibleVehicle, NETN_SurfaceVessel, and NETN_CulturalFeature
+All RPR-FOM Physical Entity object classes have been extended with additional attributes to support NETN based federation. This includes a unique identifier that provide better support for initialization, NETN-TMR and other advanced design patterns requiring unique pre-defined identifiers for simulated entities. NETN federations still allow pure RPR-FOM based federates in the federation but with limited ability to interoperate in some NETN design aspects. 
+
+## Platforms Entities
 
 <img src="./images/Physical-1.png" />
 
-<img src="./images/Physical-CulturalFeature.png" />
+Figure: NETN Extensions to RPR-FOM Platform object classes
 
-The relation to NETN-ORG is not a one-to-one mapping, excepted for some cases.
+All RPR-FOM Platform object classes are extended with subclasses and the same set of additional attributes.
 
-|Attribute|Description|NETN-ORG Relation|
-|---|---|---|
-|Callsign|The name of the object.|Unit.Name|
-|Status|If an instance shall be taken into account by federates.|-|
-|Activity|The activity of the object.|-|
-|EmbeddedUnitList|List of unique IDs of on-board elements.|Unit.EmbarkedIn (indirect)|
-|UniqueID|The unique identifier of the object. Required value. If not assigned by the ORBAT specification or similar, shall a value be assigned, either randomized or generated from the Marking or EntityIdentifier attribute value.|Unit.UUID|
-|Marking|RPR_v2 attribute|Unit.Name|
-|EntityType|RPR_v2 attribute|Unit.EntityType|
-|ForceIdentifier|RPR_v2 attribute|Unit.Force|
-|Spatial|RPR_v2 attribute|Unit.Location, Unit.Direction, Unit.Speed|
-|IsPartOf|RPR_v2 attribute|Unit.EmbarkedIn|
-|DamageState|RPR_v2 attribute|Unit.CombatEffectiveness|
+|Attribute|Description|
+|---|---|
+|UniqueID|**Required**: The unique identifier of the object. Required value. If not assigned by the ORBAT specification or similar, shall a value be assigned, either randomized or generated from the Marking or EntityIdentifier attribute value.|
+|Status|**Required:** Indicate if this aggregate unit currently is being simulated or not. E.g. units mounted or embarked on transports can be set to inactive. During inactive state the attribute values may not reflect an accurate current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before status is set to Active.|
+|SourceUnit|**Optional:** Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. Default value is 0000000000000000 representing no source unit.|
+|EmbeddedUnitList|**Optional:** A list referencing units and/or platforms embarked on and transported by this unit. If not published, transport of embedded units not supported. Default is an empty list.|
+|Callsign|**Required:** A callsign used to address the unit. Callsigns should be unique in the context in which they are used but not required to be globally unique.|
+|Activity|**Optional:** The current activity of the platform. This may differ from the mission due to casualties, readiness, etc. Default is 0 (Other activity).|
 
-#### Attribute Table for NETN_Human and NETN_NonHuman
+
+
+## Lifeform Entities
 
 <img src="./images/Physical-Lifeform.png" />
 
-|Attribute|Description|NETN-ORG Relation|
-|---|---|---|
-|Callsign|The name of the object.|Unit.Name|
-|Status|If an instance shall be taken into account by federates.|-|
-|Activity|The activity of the object.|-|
-|UniqueID|The unique identifier of the object. Required value. If not assigned by the ORBAT specification or similar, shall a value be assigned, either randomized or generated from the Marking or EntityIdentifier attribute value.|Unit.UUID|
-|Marking|RPR_v2 attribute|Unit.Name|
-|EntityType|RPR_v2 attribute|Unit.EntityType|
-|ForceIdentifier|RPR_v2 attribute|Unit.Force|
-|Spatial|RPR_v2 attribute|Unit.Location, Unit.Direction, Unit.Speed|
-|IsPartOf|RPR_v2 attribute|Unit.EmbarkedIn|
-|DamageState|RPR_v2 attribute|Unit.CombatEffectiveness|
+|Attribute|Description|
+|---|---|
+|UniqueID|**Required**: The unique identifier of the object. Required value. If not assigned by the ORBAT specification or similar, shall a value be assigned, either randomized or generated from the Marking or EntityIdentifier attribute value.|
+|Status|**Required:** Indicate if this aggregate unit currently is being simulated or not. E.g. units mounted or embarked on transports can be set to inactive. During inactive state the attribute values may not reflect an accurate current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before status is set to Active.|
+|SourceUnit|**Optional:** Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. Default value is 0000000000000000 representing no source unit.|
+|Callsign|**Required:** A callsign used to address the unit. Callsigns should be unique in the context in which they are used but not required to be globally unique.|
+|Activity|**Optional:** The current activity of the platform. This may differ from the mission due to casualties, readiness, etc. Default is 0 (Other activity).|
 
-#### Attribute Table for NETN_Munition
+
+## Cultural Features
+
+
+<img src="./images/Physical-CulturalFeature.png" />
+
+|Attribute|Description|
+|---|---|
+|UniqueID|**Required**: The unique identifier of the object. Required value. If not assigned by the ORBAT specification or similar, shall a value be assigned, either randomized or generated from the Marking or EntityIdentifier attribute value.|
+|Status|**Required:** Indicate if this aggregate unit currently is being simulated or not. E.g. units mounted or embarked on transports can be set to inactive. During inactive state the attribute values may not reflect an accurate current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before status is set to Active.|
+|EmbeddedUnitList|**Optional:** A list referencing units and/or platforms embarked on and transported by this unit. If not published, transport of embedded units not supported. Default is an empty list.|
+|Callsign|**Required:** A callsign used to address the unit. Callsigns should be unique in the context in which they are used but not required to be globally unique.|
+|Activity|**Optional:** The current activity of the platform. This may differ from the mission due to casualties, readiness, etc. Default is 0 (Other activity).|
+
+
+## Munition Entities
 
 <img src="./images/Physical-Munition.png" />
 
-|Attribute|Description|NETN-ORG Relation|
-|---|---|---|
-|Status|If an instance shall be taken into account by federates.|-|
-|UniqueID|The unique identifier of the object. Required value. If not assigned by the ORBAT specification or similar, shall a value be assigned, either randomized or generated from the Marking or EntityIdentifier attribute value.|Unit.UUID|
-|Marking|RPR_v2 attribute|Unit.Name|
-|EntityType|RPR_v2 attribte|Unit.EntityType|
-|ForceIdentifier|RPR_v2 attribute|Unit.Force|
-|Spatial|RPR_v2 attribute|Unit.Location, Unit.Direction, Unit.Speed|
-|IsPartOf|RPR_v2 attribute|Unit.EmbarkedIn|
-|DamageState|RPR_v2 attribute|Unit.CombatEffectiveness|
+|Attribute|Description|
+|---|---|
+|UniqueID|**Required**: The unique identifier of the object. Required value. If not assigned by the ORBAT specification or similar, shall a value be assigned, either randomized or generated from the Marking or EntityIdentifier attribute value.|
+|Status|**Required:** Indicate if this aggregate unit currently is being simulated or not. E.g. units mounted or embarked on transports can be set to inactive. During inactive state the attribute values may not reflect an accurate current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before status is set to Active.|
 
-#### Attribute Table for CheckPoint
-
-<img src="./images/Physical-CheckPoint.png" />
-
-|Attribute|Description|NETN-ORG Relation|
-|---|---|---|
-|Name|Name of the Check Point.|-|
-|DelayTime|The time that an entity shall wait, the total wait time can be greater when it is a queue. This is a nominal value, federates can use this for modifing delay time for different types if entities, e.g add or subtract a value or multiply with a type depending factor.|-|
-|UniqueID|The unique identifier of the object. Required value. If not assigned by the ORBAT specification or similar, shall a value be assigned, either randomized or generated from the Marking or EntityIdentifier attribute value.|-|
 

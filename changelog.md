@@ -1,6 +1,10 @@
 ## Changelog NETN-Physical
 
-### Changes for 
+### Changes for v2.0
+
+* Added attribute `SourceUnit` to all NETN-Physical platform object classes.
+* Added attribute `SourceUnit` to all NETN-Physical lifeform object classes.
+
 
 ### Changes for v1.2.0
 NETN-MRM FOM Module v1.2.0 was developed by MSG-106 and MSG-134 and released as part of NETN-FOM v2.0 in AMSP-04 Ed A.

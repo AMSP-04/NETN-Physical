@@ -50,7 +50,7 @@
             <type>Dependency</type>
             <identification>RPR-Physical</identification>
         </reference>
-              <other>
+        <other>
 Copyright © 2020 by NATO/OTAN. All rights reserved.
 This work is licensed under a Creative Commons Attribution-NoDerivatives 4.0 International License.
 
@@ -77,7 +77,7 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
                                     <dataType>UuidArrayOfHLAbyte16</dataType>
                                     <updateType>Static</updateType>
                                     <updateCondition>NA</updateCondition>
-                                    <ownership>NoTransfer</ownership>
+                                    <ownership>DivestAcquire</ownership>
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
@@ -90,7 +90,7 @@ If not assigned by the ORBAT specification or similar, shall a value be assigned
                                     <dataType>HLAunicodeString</dataType>
                                     <updateType>Static</updateType>
                                     <updateCondition>N/A</updateCondition>
-                                    <ownership>NoTransfer</ownership>
+                                    <ownership>DivestAcquire</ownership>
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
@@ -154,6 +154,17 @@ Optional.</semantics>
                                     <semantics>A reference to a registered NETN_GeoObject.Point. 
  
 Optional.</semantics>
+                                </attribute>
+                                <attribute>
+                                    <name>SourceUnit</name>
+                                    <dataType>UuidArrayOfHLAbyte16</dataType>
+                                    <updateType>NA</updateType>
+                                    <updateCondition></updateCondition>
+                                    <ownership>DivestAcquire</ownership>
+                                    <sharing>PublishSubscribe</sharing>
+                                    <transportation>HLAreliable</transportation>
+                                    <order>Receive</order>
+                                    <semantics>Optional: Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. Default value is 0000000000000000 representing no source unit.</semantics>
                                 </attribute>
                             </objectClass>
                         </objectClass>
@@ -246,6 +257,17 @@ Optional.</semantics>
  
 Optional.</semantics>
                                 </attribute>
+                                <attribute>
+                                    <name>SourceUnit</name>
+                                    <dataType>UuidArrayOfHLAbyte16</dataType>
+                                    <updateType>NA</updateType>
+                                    <updateCondition></updateCondition>
+                                    <ownership>DivestAcquire</ownership>
+                                    <sharing>PublishSubscribe</sharing>
+                                    <transportation>HLAreliable</transportation>
+                                    <order>Receive</order>
+                                    <semantics>Optional: Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. Default value is 0000000000000000 representing no source unit.</semantics>
+                                </attribute>
                             </objectClass>
                         </objectClass>
                         <objectClass>
@@ -336,6 +358,17 @@ Optional.</semantics>
                                     <semantics>A reference to a registered NETN_GeoObject.Point. 
  
 Optional.</semantics>
+                                </attribute>
+                                <attribute>
+                                    <name>SourceUnit</name>
+                                    <dataType>UuidArrayOfHLAbyte16</dataType>
+                                    <updateType>NA</updateType>
+                                    <updateCondition></updateCondition>
+                                    <ownership>DivestAcquire</ownership>
+                                    <sharing>PublishSubscribe</sharing>
+                                    <transportation>HLAreliable</transportation>
+                                    <order>Receive</order>
+                                    <semantics>Optional: Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. Default value is 0000000000000000 representing no source unit.</semantics>
                                 </attribute>
                             </objectClass>
                         </objectClass>
@@ -428,6 +461,17 @@ Optional.</semantics>
  
 Optional.</semantics>
                                 </attribute>
+                                <attribute>
+                                    <name>SourceUnit</name>
+                                    <dataType>UuidArrayOfHLAbyte16</dataType>
+                                    <updateType>NA</updateType>
+                                    <updateCondition></updateCondition>
+                                    <ownership>DivestAcquire</ownership>
+                                    <sharing>PublishSubscribe</sharing>
+                                    <transportation>HLAreliable</transportation>
+                                    <order>Receive</order>
+                                    <semantics>Optional: Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. Default value is 0000000000000000 representing no source unit.</semantics>
+                                </attribute>
                             </objectClass>
                         </objectClass>
                         <objectClass>
@@ -518,6 +562,17 @@ Optional.</semantics>
                                     <semantics>A reference to a registered NETN_GeoObject.Point. 
  
 Optional.</semantics>
+                                </attribute>
+                                <attribute>
+                                    <name>SourceUnit</name>
+                                    <dataType>UuidArrayOfHLAbyte16</dataType>
+                                    <updateType>NA</updateType>
+                                    <updateCondition></updateCondition>
+                                    <ownership>DivestAcquire</ownership>
+                                    <sharing>PublishSubscribe</sharing>
+                                    <transportation>HLAreliable</transportation>
+                                    <order>Receive</order>
+                                    <semantics>Optional: Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. Default value is 0000000000000000 representing no source unit.</semantics>
                                 </attribute>
                             </objectClass>
                         </objectClass>
@@ -610,6 +665,17 @@ Optional.</semantics>
  
 Optional.</semantics>
                                 </attribute>
+                                <attribute>
+                                    <name>SourceUnit</name>
+                                    <dataType>UuidArrayOfHLAbyte16</dataType>
+                                    <updateType>NA</updateType>
+                                    <updateCondition></updateCondition>
+                                    <ownership>DivestAcquire</ownership>
+                                    <sharing>PublishSubscribe</sharing>
+                                    <transportation>HLAreliable</transportation>
+                                    <order>Receive</order>
+                                    <semantics>Optional: Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. Default value is 0000000000000000 representing no source unit.</semantics>
+                                </attribute>
                             </objectClass>
                         </objectClass>
                         <objectClass>
@@ -701,6 +767,17 @@ Optional.</semantics>
  
 Optional.</semantics>
                                 </attribute>
+                                <attribute>
+                                    <name>SourceUnit</name>
+                                    <dataType>UuidArrayOfHLAbyte16</dataType>
+                                    <updateType>NA</updateType>
+                                    <updateCondition></updateCondition>
+                                    <ownership>DivestAcquire</ownership>
+                                    <sharing>PublishSubscribe</sharing>
+                                    <transportation>HLAreliable</transportation>
+                                    <order>Receive</order>
+                                    <semantics>Optional: Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. Default value is 0000000000000000 representing no source unit.</semantics>
+                                </attribute>
                             </objectClass>
                         </objectClass>
                     </objectClass>
@@ -784,6 +861,17 @@ Optional.</semantics>
  
 Optional.</semantics>
                                 </attribute>
+                                <attribute>
+                                    <name>SourceUnit</name>
+                                    <dataType>UuidArrayOfHLAbyte16</dataType>
+                                    <updateType>NA</updateType>
+                                    <updateCondition></updateCondition>
+                                    <ownership>DivestAcquire</ownership>
+                                    <sharing>PublishSubscribe</sharing>
+                                    <transportation>HLAreliable</transportation>
+                                    <order>Receive</order>
+                                    <semantics>Optional: Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. Default value is 0000000000000000 representing no source unit.</semantics>
+                                </attribute>
                             </objectClass>
                         </objectClass>
                         <objectClass>
@@ -836,7 +924,7 @@ If not assigned by the ORBAT specification or similar, shall a value be assigned
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>The activity of the object.</semantics>
+                                    <semantics>Optional: The current activity of the platform. This may differ from the mission due to casualties, readiness, etc. Default is 0 (Other activity).</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Route</name>
@@ -863,6 +951,17 @@ Optional.</semantics>
                                     <semantics>A reference to a registered NETN_GeoObject.Point. 
  
 Optional.</semantics>
+                                </attribute>
+                                <attribute>
+                                    <name>SourceUnit</name>
+                                    <dataType>UuidArrayOfHLAbyte16</dataType>
+                                    <updateType>NA</updateType>
+                                    <updateCondition></updateCondition>
+                                    <ownership>DivestAcquire</ownership>
+                                    <sharing>PublishSubscribe</sharing>
+                                    <transportation>HLAreliable</transportation>
+                                    <order>Receive</order>
+                                    <semantics>Optional: Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. Default value is 0000000000000000 representing no source unit.</semantics>
                                 </attribute>
                             </objectClass>
                         </objectClass>
@@ -994,11 +1093,6 @@ Optional.</semantics>
             </objectClass>
         </objectClass>
     </objects>
-    <interactions>
-        <interactionClass>
-            <name>HLAinteractionRoot</name>
-        </interactionClass>
-    </interactions>
     <dataTypes>
         <simpleDataTypes/>
         <enumeratedDataTypes/>

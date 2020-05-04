@@ -2,19 +2,14 @@
 
 ### Changes for v2.0
 
-* Added attribute `SourceUnit` to all NETN-Physical platform object classes.
-* Added attribute `SourceUnit` to all NETN-Physical lifeform object classes.
-
+* Added attribute `SourceUnit` to all NETN-Physical platform and lifeform object classes.
+* Added attribute `Route` to all NETN-Physical platform and lifeform object classes.
+* Added attribute `Destination` to all NETN-Physical platform and lifeform object classes.
+* Renamed attribute `UniqueID` to `UniqueId` for compliance with naming convensions.
 
 ### Changes for v1.2.0
 NETN-MRM FOM Module v1.2.0 was developed by MSG-106 and MSG-134 and released as part of NETN-FOM v2.0 in AMSP-04 Ed A.
 
-* 1.0.0 - Initial, object classes and datatypes from FOM modules in NETN FOM v1
-* v1.1.0 - Added object class NETN_CulturalFeature
-* v1.1.1 - Updated References, Dependency
-* v1.1.2 - Update of semantics, spell corrections
-* v1.2.0 - Added NETN_Munition object class
-* 2019-11-14 - LO - Added object class EnvironmentObject.PointObject.OtherPointObject.CheckPoint
-* 2019-12-10 - LO - Updated semantics for EnvironmentObject.PointObject.OtherPointObject.CheckPoint, described implications on passing entities
-* 2020-02-25 - LO - Added attributes for Route and Destination and removed CheckPoint object class
- 2020-03-20 - LO - Variant structs for Route and Destination
+* Added bject classes and datatypes from FOM modules in NETN FOM v1
+* Added object class `NETN_CulturalFeature`
+* Added  object class `NETN_Munition`

@@ -54,8 +54,8 @@ Figure: NETN Extensions to RPR-FOM Platform object classes
 
 |Attribute|Description|
 |---|---|
-|UniqueId|**Required**: A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.|
-|Status|**Required:** Indicate if this aggregate unit currently is being simulated or not. E.g. units mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting status to Active.|
+|UniqueId|**Required**: A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.|
+|Status|**Required:** Indicate if this aggregate unit currently is being simulated or not. E.g. units mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active.|
 |SourceUnit|**Optional:** Reference to an active NETN_Aggregate instance, the source of a NETN-MRM division. If not published, merging is not supported. The default value is 0000000000000000 representing no source unit.|
 |EmbeddedUnitList|**Optional:** Reference to platforms or lifeforms embarked on this platform. If not published, transport of embedded units not supported.|
 |Callsign|**Required:** A callsign used to address the unit. Callsigns should be unique in the context in which they are used but not required to be globally unique.|
@@ -73,8 +73,8 @@ Figure: NETN Extensions to RPR-FOM Lifeform object classes
 
 |Attribute|Description|
 |---|---|
-|UniqueId|**Required**: A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.|
-|Status|**Required:** Indicate if this aggregate unit currently is being simulated or not. E.g. units mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting status to Active.|
+|UniqueId|**Required**: A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.|
+|Status|**Required:** Indicate if this aggregate unit currently is being simulated or not. E.g. units mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active.|
 |SourceUnit|**Optional:** Reference to an active NETN_Aggregate instance, the source of a NETN-MRM division. If not published, merging is not supported. The default value is 0000000000000000 representing no source unit.|
 |Callsign|**Required:** A callsign used to address the unit. Callsigns should be unique in the context in which they are used but not required to be globally unique.|
 |Activity|**Optional:** The current activity of the platform. The activity may differ from the mission due to casualties, readiness, and other reasons. The default value is 0 (Other activity).|
@@ -92,8 +92,8 @@ Figure: NETN Extension to RPR-FOM CulturalFeature object class
 
 |Attribute|Description|
 |---|---|
-|UniqueId|**Required**: A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.|
-|Status|**Required:** Indicate if this aggregate unit currently is being simulated or not. E.g. units mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting status to Active.|
+|UniqueId|**Required**: A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.|
+|Status|**Required:** Indicate if this aggregate unit currently is being simulated or not. E.g. units mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active.|
 |EmbeddedUnitList|**Optional:** Reference to units, platforms or lifeforms embedded in this CulturalFeature. The default value is an empty list.|
 |Callsign|**Required:** A callsign used to address the unit. Callsigns should be unique in the context in which they are used but not required to be globally unique.|
 |Activity|**Optional:** The current activity of the platform. The activity may differ from the mission due to casualties, readiness, and other reasons. The default value is 0 (Other activity).|
@@ -108,7 +108,7 @@ Figure: NETN Extension to RPR-FOM Munition object class
 
 |Attribute|Description|
 |---|---|
-|UniqueId|**Required**: A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.|
-|Status|**Required:** Indicate if this aggregate unit currently is being simulated or not. E.g. units mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting status to Active.|
+|UniqueId|**Required**: A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.|
+|Status|**Required:** Indicate if this aggregate unit currently is being simulated or not. E.g. units mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active.|
 
 

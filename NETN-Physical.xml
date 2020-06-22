@@ -4,7 +4,7 @@
         <name>NETN-Physical</name>
         <type>FOM</type>
         <version>v2.0</version>
-        <modificationDate>2020-04-28</modificationDate>
+        <modificationDate>2020-06-22</modificationDate>
         <securityClassification>Not Classified</securityClassification>
         <purpose></purpose>
         <applicationDomain>Training</applicationDomain>
@@ -81,7 +81,7 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required: A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
+                                    <semantics>Required: A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Status</name>
@@ -92,7 +92,7 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required: Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting status to Active. 
+                                    <semantics>Required: Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active. 
 An inactive instance may have its instance attributes updated by a federate but reflected updates shall be ignored by receiving federates. All attributes must be updated to represent the current status of the instance before status is set to active.</semantics>
                                 </attribute>
                                 <attribute>
@@ -178,7 +178,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required: A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
+                                    <semantics>Required: A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Status</name>
@@ -189,7 +189,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required: Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting status to Active. 
+                                    <semantics>Required: Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active. 
 An inactive instance may have its instance attributes updated by a federate but reflected updates shall be ignored by receiving federates. All attributes must be updated to represent the current status of the instance before status is set to active.</semantics>
                                 </attribute>
                                 <attribute>
@@ -275,7 +275,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required: A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
+                                    <semantics>Required: A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Status</name>
@@ -286,7 +286,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required: Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting status to Active. 
+                                    <semantics>Required: Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active. 
 An inactive instance may have its instance attributes updated by a federate but reflected updates shall be ignored by receiving federates. All attributes must be updated to represent the current status of the instance before status is set to active.</semantics>
                                 </attribute>
                                 <attribute>
@@ -372,7 +372,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required: A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
+                                    <semantics>Required: A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Status</name>
@@ -383,7 +383,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required: Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting status to Active. 
+                                    <semantics>Required: Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active. 
 An inactive instance may have its instance attributes updated by a federate but reflected updates shall be ignored by receiving federates. All attributes must be updated to represent the current status of the instance before status is set to active.</semantics>
                                 </attribute>
                                 <attribute>
@@ -469,7 +469,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required: A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
+                                    <semantics>Required: A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Status</name>
@@ -480,7 +480,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required: Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting status to Active. 
+                                    <semantics>Required: Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active. 
 An inactive instance may have its instance attributes updated by a federate but reflected updates shall be ignored by receiving federates. All attributes must be updated to represent the current status of the instance before status is set to active.</semantics>
                                 </attribute>
                                 <attribute>
@@ -566,7 +566,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required: A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
+                                    <semantics>Required: A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Status</name>
@@ -577,7 +577,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required: Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting status to Active. 
+                                    <semantics>Required: Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active. 
 An inactive instance may have its instance attributes updated by a federate but reflected updates shall be ignored by receiving federates. All attributes must be updated to represent the current status of the instance before status is set to active.</semantics>
                                 </attribute>
                                 <attribute>
@@ -663,7 +663,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required: A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
+                                    <semantics>Required: A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Status</name>
@@ -674,7 +674,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required: Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting status to Active. 
+                                    <semantics>Required: Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active. 
 An inactive instance may have its instance attributes updated by a federate but reflected updates shall be ignored by receiving federates. All attributes must be updated to represent the current status of the instance before status is set to active.</semantics>
                                 </attribute>
                                 <attribute>
@@ -763,7 +763,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required: A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
+                                    <semantics>Required: A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Status</name>
@@ -774,7 +774,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required: Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting status to Active. 
+                                    <semantics>Required: Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active. 
 An inactive instance may have its instance attributes updated by a federate but reflected updates shall be ignored by receiving federates. All attributes must be updated to represent the current status of the instance before status is set to active.</semantics>
                                 </attribute>
                                 <attribute>
@@ -849,7 +849,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required: A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
+                                    <semantics>Required: A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Status</name>
@@ -860,7 +860,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required: Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting status to Active. 
+                                    <semantics>Required: Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active. 
 An inactive instance may have its instance attributes updated by a federate but reflected updates shall be ignored by receiving federates. All attributes must be updated to represent the current status of the instance before status is set to active.</semantics>
                                 </attribute>
                                 <attribute>
@@ -936,7 +936,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                 <sharing>PublishSubscribe</sharing>
                                 <transportation>HLAbestEffort</transportation>
                                 <order>Receive</order>
-                                <semantics>Required: A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
+                                <semantics>Required: A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
                             </attribute>
                             <attribute>
                                 <name>Status</name>
@@ -947,7 +947,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                 <sharing>PublishSubscribe</sharing>
                                 <transportation>HLAbestEffort</transportation>
                                 <order>Receive</order>
-                                <semantics>Required: Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting status to Active. 
+                                <semantics>Required: Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active. 
 An inactive instance may have its instance attributes updated by a federate but reflected updates shall be ignored by receiving federates. All attributes must be updated to represent the current status of the instance before status is set to active.</semantics>
                             </attribute>
                             <attribute>
@@ -1000,7 +1000,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                 <sharing>PublishSubscribe</sharing>
                                 <transportation>HLAbestEffort</transportation>
                                 <order>Receive</order>
-                                <semantics>Required: A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
+                                <semantics>Required: A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
                             </attribute>
                             <attribute>
                                 <name>Status</name>
@@ -1011,7 +1011,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                 <sharing>PublishSubscribe</sharing>
                                 <transportation>HLAbestEffort</transportation>
                                 <order>Receive</order>
-                                <semantics>Required: Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting status to Active. 
+                                <semantics>Required: Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active. 
 An inactive instance may have its instance attributes updated by a federate but reflected updates shall be ignored by receiving federates. All attributes must be updated to represent the current status of the instance before status is set to active.</semantics>
                             </attribute>
                             <attribute>

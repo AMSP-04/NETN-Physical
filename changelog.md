@@ -10,6 +10,9 @@
 ### Changes for v1.2.0
 NETN-MRM FOM Module v1.2.0 was developed by MSG-106 and MSG-134 and released as part of NETN-FOM v2.0 in AMSP-04 Ed A.
 
-* Added bject classes and datatypes from FOM modules in NETN FOM v1
+* Added object classes and datatypes from FOM modules in NETN FOM v1
 * Added object class `NETN_CulturalFeature`
 * Added  object class `NETN_Munition`
+
+* Added attribute Symbol to all object classes
+* Changed from Reliable to BestEffort on some attributes to get a common transport type

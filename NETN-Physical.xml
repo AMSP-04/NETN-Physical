@@ -4,11 +4,11 @@
         <name>NETN-Physical</name>
         <type>FOM</type>
         <version>v2.0</version>
-        <modificationDate>2020-06-22</modificationDate>
+        <modificationDate>2020-07-01</modificationDate>
         <securityClassification>Not Classified</securityClassification>
         <purpose></purpose>
         <applicationDomain>Training</applicationDomain>
-        <description>Defines object classes for physical entities, inherit from PRR_v2.</description>
+        <description>Defines object classes for physical entities, inherit from RPR_v2.</description>
         <useLimitation></useLimitation>
         <useHistory>Object classes and datatypes derived from deprecated NETN-FOM v 1.0 module AggDeagg.</useHistory>
         <useHistory>v1.2.0 - First official release as part of NETN-FOM v2.0</useHistory>
@@ -110,7 +110,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                     <order>Receive</order>
                                     <semantics>Optional. 
 
-Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. The default value is 0000000000000000 representing no source unit.</semantics>
+Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. The default value is 00000000-0000-0000-0000-000000000000 (UUID with all zeros) representing no source unit.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>EmbeddedUnitList</name>
@@ -121,9 +121,9 @@ Reference to an active NETN_Aggregate instance from which this physical entity w
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional.
+                                    <semantics>Optional. 
 
-Reference to platforms or lifeforms embarked on this platform. If not published, transport of embedded units not supported.</semantics>
+Reference to platforms or lifeforms embarked on this platform. If not published, transport of embedded units not supported. Entities are referenced by UUID. E.g. when soldiers are transported in an NETN Physical entity, then references (UUIDs) to these soldier instances is added to the EmbeddedUnitList for the entity. When a soldier disembarks from the transporter the reference (UUID) to that soldier is removed from the EmbeddedUnitList. The default value is an empty list.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Callsign</name>
@@ -238,7 +238,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                     <order>Receive</order>
                                     <semantics>Optional. 
 
-Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. The default value is 0000000000000000 representing no source unit.</semantics>
+Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. The default value is 00000000-0000-0000-0000-000000000000 (UUID with all zeros) representing no source unit.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>EmbeddedUnitList</name>
@@ -249,7 +249,9 @@ Reference to an active NETN_Aggregate instance from which this physical entity w
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional: Reference to platforms or lifeforms embarked on this platform. If not published, transport of embedded units not supported.</semantics>
+                                    <semantics>Optional. 
+
+Reference to platforms or lifeforms embarked on this platform. If not published, transport of embedded units not supported. Entities are referenced by UUID. E.g. when soldiers are transported in an NETN Physical entity, then references (UUIDs) to these soldier instances is added to the EmbeddedUnitList for the entity. When a soldier disembarks from the transporter the reference (UUID) to that soldier is removed from the EmbeddedUnitList. The default value is an empty list.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Callsign</name>
@@ -366,7 +368,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                     <order>Receive</order>
                                     <semantics>Optional.
 
-Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. The default value is 0000000000000000 representing no source unit.</semantics>
+Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. The default value is 00000000-0000-0000-0000-000000000000 (UUID with all zeros) representing no source unit.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>EmbeddedUnitList</name>
@@ -377,7 +379,9 @@ Reference to an active NETN_Aggregate instance from which this physical entity w
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional: Reference to platforms or lifeforms embarked on this platform. If not published, transport of embedded units not supported.</semantics>
+                                    <semantics>Optional. 
+
+Reference to platforms or lifeforms embarked on this platform. If not published, transport of embedded units not supported. Entities are referenced by UUID. E.g. when soldiers are transported in an NETN Physical entity, then references (UUIDs) to these soldier instances is added to the EmbeddedUnitList for the entity. When a soldier disembarks from the transporter the reference (UUID) to that soldier is removed from the EmbeddedUnitList. The default value is an empty list.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Callsign</name>
@@ -494,7 +498,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                     <order>Receive</order>
                                     <semantics>Optional. 
 
-Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. The default value is 0000000000000000 representing no source unit.</semantics>
+Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. The default value is 00000000-0000-0000-0000-000000000000 (UUID with all zeros) representing no source unit.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>EmbeddedUnitList</name>
@@ -507,7 +511,7 @@ Reference to an active NETN_Aggregate instance from which this physical entity w
                                     <order>Receive</order>
                                     <semantics>Optional. 
 
-Reference to platforms or lifeforms embarked on this platform. If not published, transport of embedded units not supported.</semantics>
+Reference to platforms or lifeforms embarked on this platform. If not published, transport of embedded units not supported. Entities are referenced by UUID. E.g. when soldiers are transported in an NETN Physical entity, then references (UUIDs) to these soldier instances is added to the EmbeddedUnitList for the entity. When a soldier disembarks from the transporter the reference (UUID) to that soldier is removed from the EmbeddedUnitList. The default value is an empty list.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Callsign</name>
@@ -624,7 +628,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                     <order>Receive</order>
                                     <semantics>Optional. 
 
-Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. The default value is 0000000000000000 representing no source unit.</semantics>
+Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. The default value is 00000000-0000-0000-0000-000000000000 (UUID with all zeros) representing no source unit.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>EmbeddedUnitList</name>
@@ -637,7 +641,7 @@ Reference to an active NETN_Aggregate instance from which this physical entity w
                                     <order>Receive</order>
                                     <semantics>Optional. 
 
-Reference to platforms or lifeforms embarked on this platform. If not published, transport of embedded units not supported.</semantics>
+Reference to platforms or lifeforms embarked on this platform. If not published, transport of embedded units not supported. Entities are referenced by UUID. E.g. when soldiers are transported in an NETN Physical entity, then references (UUIDs) to these soldier instances is added to the EmbeddedUnitList for the entity. When a soldier disembarks from the transporter the reference (UUID) to that soldier is removed from the EmbeddedUnitList. The default value is an empty list.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Callsign</name>
@@ -754,7 +758,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                     <order>Receive</order>
                                     <semantics>Optional. 
 
-Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. The default value is 0000000000000000 representing no source unit.</semantics>
+Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. The default value is 00000000-0000-0000-0000-000000000000 (UUID with all zeros) representing no source unit.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>EmbeddedUnitList</name>
@@ -767,7 +771,7 @@ Reference to an active NETN_Aggregate instance from which this physical entity w
                                     <order>Receive</order>
                                     <semantics>Optional. 
 
-Reference to platforms or lifeforms embarked on this platform. If not published, transport of embedded units not supported. Entities are referenced by UUID. E.g. when soldiers are transported in an entity of type NETN_GroundVehicle, then references (UUIDs) to these soldier instances is added to the EmbeddedUnitList for the NETN_GroundVehicle. When a soldier disembarks from the transporter the reference (UUID) to that soldier is removed from the EmbeddedUnitList. The default value is an empty list.</semantics>
+Reference to platforms or lifeforms embarked on this platform. If not published, transport of embedded units not supported. Entities are referenced by UUID. E.g. when soldiers are transported in an NETN Physical entity, then references (UUIDs) to these soldier instances is added to the EmbeddedUnitList for the entity. When a soldier disembarks from the transporter the reference (UUID) to that soldier is removed from the EmbeddedUnitList. The default value is an empty list.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Callsign</name>
@@ -897,7 +901,7 @@ Reference to an active NETN_Aggregate instance from which this physical entity w
                                     <order>Receive</order>
                                     <semantics>Optional. 
 
-Reference to platforms or lifeforms embarked on this platform. If not published, transport of embedded units not supported.</semantics>
+Reference to platforms or lifeforms embarked on this platform. If not published, transport of embedded units not supported. Entities are referenced by UUID. E.g. when soldiers are transported in an NETN Physical entity, then references (UUIDs) to these soldier instances is added to the EmbeddedUnitList for the entity. When a soldier disembarks from the transporter the reference (UUID) to that soldier is removed from the EmbeddedUnitList. The default value is an empty list.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Callsign</name>
@@ -1134,7 +1138,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                     <order>Receive</order>
                                     <semantics>Optional. 
 
-Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. The default value is 0000000000000000 representing no source unit.</semantics>
+Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. The default value is 00000000-0000-0000-0000-000000000000 (UUID with all zeros) representing no source unit.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Callsign</name>
@@ -1252,7 +1256,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                 <order>Receive</order>
                                 <semantics>Optional. 
 
-Reference to units, platforms or lifeforms embarked on this platform. If not published, transport of embedded units not supported.</semantics>
+Reference to platforms or lifeforms embarked on this entity. If not published, embarkment/disembarkment of embedded units not supported. Entities are referenced by UUID. E.g. when soldiers are inside in an NETN_CulturalFeature entity, then references (UUIDs) to these soldier instances is added to the EmbeddedUnitList for the entity. When a soldier leaves he NETN_CulturalFeature the reference (UUID) to that soldier is removed from the EmbeddedUnitList. The default value is an empty list.</semantics>
                             </attribute>
                             <attribute>
                                 <name>Callsign</name>

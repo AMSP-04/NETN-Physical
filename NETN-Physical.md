@@ -11,7 +11,7 @@ For compatibility reasons, NETN federates, that implement NETN extensions of RPR
 
 ### Purpose
 
-The NETN-Physical FOM Module provides a standard interface for the representation of Physical Entities in a federated distributed simulation. The module extends the existing RPR-FOM v2.0 standard with subclasses classes and additional attributes to allow additional information to be associated with simulated physical entities.
+The NETN-Physical FOM Module provides a standard interface for the representation of Physical Entities in a federated distributed simulation. The module extends the existing RPR-FOM v2.0 standard with subclasses and additional attributes to allow additional information to be associated with simulated physical entities.
 
 ### Scope
 
@@ -57,7 +57,7 @@ Figure: NETN Extensions to RPR-FOM Platform object classes
 |UniqueId|**Required**: A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.|
 |Status|**Required:** Indicate if this aggregate unit currently is being simulated or not. E.g. units mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active.|
 |SourceUnit|**Optional:** Reference to an active NETN_Aggregate instance, the source of a NETN-MRM division. If not published, merging is not supported. The default value is 0000000000000000 representing no source unit.|
-|EmbeddedUnitList|**Optional:** Reference to platforms or lifeforms embarked on this platform. If not published, transport of embedded units not supported.|
+|EmbeddedUnitList|**Optional:** Reference to platforms or lifeforms embarked on this platform. If not published, transport of embedded units not supported. Entities are referenced by UUID. E.g. when soldiers are transported in an NETN Physical entity, then references (UUIDs) to these soldier instances is added to the EmbeddedUnitList for the entity. When a soldier disembarks from the transporter the reference (UUID) to that soldier is removed from the EmbeddedUnitList. The default value is an empty list.|
 |Callsign|**Required:** A callsign used to address the unit. Callsigns should be unique in the context in which they are used but not required to be globally unique.|
 |Activity|**Optional:** The current activity of the platform. The activity may differ from the mission due to casualties, readiness, and other reasons. The default value is 0 (Other activity).|
 |Route|**Optional:** The current path of movement.|
@@ -65,7 +65,7 @@ Figure: NETN Extensions to RPR-FOM Platform object classes
 
 ## Lifeform Entities
 
-NETN_Physiacl extends all RPR-FOM Lifeform object classes with subclasses and the same set of additional attributes.
+NETN_Physical extends all RPR-FOM Lifeform object classes with subclasses and the same set of additional attributes.
 
 <img src="./images/Physical-Lifeform.png" />
 
@@ -75,7 +75,7 @@ Figure: NETN Extensions to RPR-FOM Lifeform object classes
 |---|---|
 |UniqueId|**Required**: A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.|
 |Status|**Required:** Indicate if this aggregate unit currently is being simulated or not. E.g. units mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active.|
-|SourceUnit|**Optional:** Reference to an active NETN_Aggregate instance, the source of a NETN-MRM division. If not published, merging is not supported. The default value is 0000000000000000 representing no source unit.|
+|SourceUnit|**Optional:** Reference to an active NETN_Aggregate instance, the source of a NETN-MRM division. If not published, merging is not supported. The default value is 00000000-0000-0000-0000-000000000000 (UUID with all zeros) representing no source unit.|
 |Callsign|**Required:** A callsign used to address the unit. Callsigns should be unique in the context in which they are used but not required to be globally unique.|
 |Activity|**Optional:** The current activity of the platform. The activity may differ from the mission due to casualties, readiness, and other reasons. The default value is 0 (Other activity).|
 |Route|**Optional:** The current path of movement.|

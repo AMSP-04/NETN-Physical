@@ -81,8 +81,8 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required.
-
+                                    <semantics>Required. 
+ 
 A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
                                 </attribute>
                                 <attribute>
@@ -94,8 +94,8 @@ A unique identifier for the object. The Universally Unique Identifier (UUID) is 
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required.
-
+                                    <semantics>Required. 
+ 
 Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active. 
 An inactive instance may have its instance attributes updated by a federate but reflected updates shall be ignored by receiving federates. All attributes must be updated to represent the current status of the instance before status is set to active.</semantics>
                                 </attribute>
@@ -109,7 +109,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Optional. 
-
+ 
 Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. The default value is 00000000-0000-0000-0000-000000000000 (UUID with all zeros) representing no source unit.</semantics>
                                 </attribute>
                                 <attribute>
@@ -122,7 +122,7 @@ Reference to an active NETN_Aggregate instance from which this physical entity w
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Optional. 
-
+ 
 Reference to platforms or lifeforms embarked on this platform. If not published, transport of embedded units not supported. Entities are referenced by UUID. E.g. when soldiers are transported in an NETN Physical entity, then references (UUIDs) to these soldier instances is added to the EmbeddedUnitList for the entity. When a soldier disembarks from the transporter the reference (UUID) to that soldier is removed from the EmbeddedUnitList. The default value is an empty list.</semantics>
                                 </attribute>
                                 <attribute>
@@ -135,7 +135,7 @@ Reference to platforms or lifeforms embarked on this platform. If not published,
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Required. 
-
+ 
 A callsign used to address the platform. Callsigns should be unique in the context in which they are used but not required to be globally unique.</semantics>
                                 </attribute>
                                 <attribute>
@@ -158,8 +158,8 @@ A callsign used to address the platform. Callsigns should be unique in the conte
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional.
-
+                                    <semantics>Optional. 
+ 
 The current path of movement.</semantics>
                                 </attribute>
                                 <attribute>
@@ -172,25 +172,19 @@ The current path of movement.</semantics>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Optional. 
-
+ 
 The current destination of movement.</semantics>
                                 </attribute>
                                 <attribute>
-                                    <name>Symbol</name>
-                                    <dataType>HLAunicodeString</dataType>
+                                    <name>SymbolId</name>
+                                    <dataType>SymbolIdentifier</dataType>
                                     <updateType>Conditional</updateType>
                                     <updateCondition>On Change</updateCondition>
                                     <ownership>DivestAcquire</ownership>
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional.
-
-The symbol code.
-15 characters indicate APP-6A, APP-6B, MIL-STD-2525B or MIL-STD-2525C format.
-20 or 30 digits indicates MIL-STD-2525D format.
-
-The selected format should be is specified in a Federation Agreement.</semantics>
+                                    <semantics>Optional. A symbol identifier represented as a string. The symbol standard used is indicated using an URI notation (uri:xxxxxxxxxx). The following uri should be used for common symbology standards app6b, app6b, app6c, app6c, 2525b, 2525c, 2525d. If not provided the symbol standard used is undefined.</semantics>
                                 </attribute>
                             </objectClass>
                         </objectClass>
@@ -209,8 +203,8 @@ The selected format should be is specified in a Federation Agreement.</semantics
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required.
-
+                                    <semantics>Required. 
+ 
 A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
                                 </attribute>
                                 <attribute>
@@ -222,8 +216,8 @@ A unique identifier for the object. The Universally Unique Identifier (UUID) is 
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required.
-
+                                    <semantics>Required. 
+ 
 Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active. 
 An inactive instance may have its instance attributes updated by a federate but reflected updates shall be ignored by receiving federates. All attributes must be updated to represent the current status of the instance before status is set to active.</semantics>
                                 </attribute>
@@ -237,7 +231,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Optional. 
-
+ 
 Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. The default value is 00000000-0000-0000-0000-000000000000 (UUID with all zeros) representing no source unit.</semantics>
                                 </attribute>
                                 <attribute>
@@ -250,7 +244,7 @@ Reference to an active NETN_Aggregate instance from which this physical entity w
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Optional. 
-
+ 
 Reference to platforms or lifeforms embarked on this platform. If not published, transport of embedded units not supported. Entities are referenced by UUID. E.g. when soldiers are transported in an NETN Physical entity, then references (UUIDs) to these soldier instances is added to the EmbeddedUnitList for the entity. When a soldier disembarks from the transporter the reference (UUID) to that soldier is removed from the EmbeddedUnitList. The default value is an empty list.</semantics>
                                 </attribute>
                                 <attribute>
@@ -263,7 +257,7 @@ Reference to platforms or lifeforms embarked on this platform. If not published,
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Required. 
-
+ 
 A callsign used to address the platform. Callsigns should be unique in the context in which they are used but not required to be globally unique.</semantics>
                                 </attribute>
                                 <attribute>
@@ -276,7 +270,7 @@ A callsign used to address the platform. Callsigns should be unique in the conte
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Optional. 
-
+ 
 The current activity of the platform. The value is based on the Joint Consultation, Command and Control Information Exchange Data Model (JC3IEDM) action-event-category-code. The JC3IEDM is a fully documented standard [NATO STANAG 5525] for an information exchange data model for the sharing of C2 information. The default value is 0 (Other activity).</semantics>
                                 </attribute>
                                 <attribute>
@@ -289,7 +283,7 @@ The current activity of the platform. The value is based on the Joint Consultati
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Optional. 
-
+ 
 The current path of movement.</semantics>
                                 </attribute>
                                 <attribute>
@@ -302,25 +296,19 @@ The current path of movement.</semantics>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Optional. 
-
+ 
 The current destination of movement.</semantics>
                                 </attribute>
                                 <attribute>
-                                    <name>Symbol</name>
-                                    <dataType>HLAunicodeString</dataType>
+                                    <name>SymbolId</name>
+                                    <dataType>SymbolIdentifier</dataType>
                                     <updateType>Conditional</updateType>
                                     <updateCondition>On Change</updateCondition>
                                     <ownership>DivestAcquire</ownership>
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional.
-
-The symbol code.
-15 characters indicate APP-6A, APP-6B, MIL-STD-2525B or MIL-STD-2525C format.
-20 or 30 digits MIL-STD-2525D format.
-
-The selected format should be is specified in a Federation Agreement.</semantics>
+                                    <semantics>Optional. A symbol identifier represented as a string. The symbol standard used is indicated using an URI notation (uri:xxxxxxxxxx). The following uri should be used for common symbology standards app6b, app6b, app6c, app6c, 2525b, 2525c, 2525d. If not provided the symbol standard used is undefined.</semantics>
                                 </attribute>
                             </objectClass>
                         </objectClass>
@@ -340,7 +328,7 @@ The selected format should be is specified in a Federation Agreement.</semantics
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Required. 
-
+ 
 A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
                                 </attribute>
                                 <attribute>
@@ -353,7 +341,7 @@ A unique identifier for the object. The Universally Unique Identifier (UUID) is 
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Required. 
-
+ 
 Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active. 
 An inactive instance may have its instance attributes updated by a federate but reflected updates shall be ignored by receiving federates. All attributes must be updated to represent the current status of the instance before status is set to active.</semantics>
                                 </attribute>
@@ -366,8 +354,8 @@ An inactive instance may have its instance attributes updated by a federate but 
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional.
-
+                                    <semantics>Optional. 
+ 
 Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. The default value is 00000000-0000-0000-0000-000000000000 (UUID with all zeros) representing no source unit.</semantics>
                                 </attribute>
                                 <attribute>
@@ -380,7 +368,7 @@ Reference to an active NETN_Aggregate instance from which this physical entity w
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Optional. 
-
+ 
 Reference to platforms or lifeforms embarked on this platform. If not published, transport of embedded units not supported. Entities are referenced by UUID. E.g. when soldiers are transported in an NETN Physical entity, then references (UUIDs) to these soldier instances is added to the EmbeddedUnitList for the entity. When a soldier disembarks from the transporter the reference (UUID) to that soldier is removed from the EmbeddedUnitList. The default value is an empty list.</semantics>
                                 </attribute>
                                 <attribute>
@@ -393,7 +381,7 @@ Reference to platforms or lifeforms embarked on this platform. If not published,
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Required. 
-
+ 
 A callsign used to address the platform. Callsigns should be unique in the context in which they are used but not required to be globally unique.</semantics>
                                 </attribute>
                                 <attribute>
@@ -406,7 +394,7 @@ A callsign used to address the platform. Callsigns should be unique in the conte
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Optional. 
-
+ 
 The current activity of the platform. The value is based on the Joint Consultation, Command and Control Information Exchange Data Model (JC3IEDM) action-event-category-code. The JC3IEDM is a fully documented standard [NATO STANAG 5525] for an information exchange data model for the sharing of C2 information. The default value is 0 (Other activity).</semantics>
                                 </attribute>
                                 <attribute>
@@ -419,7 +407,7 @@ The current activity of the platform. The value is based on the Joint Consultati
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Optional. 
-
+ 
 The current path of movement.</semantics>
                                 </attribute>
                                 <attribute>
@@ -432,25 +420,19 @@ The current path of movement.</semantics>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Optional. 
-
+ 
 The current destination of movement.</semantics>
                                 </attribute>
                                 <attribute>
-                                    <name>Symbol</name>
-                                    <dataType>HLAunicodeString</dataType>
+                                    <name>SymbolId</name>
+                                    <dataType>SymbolIdentifier</dataType>
                                     <updateType>Conditional</updateType>
                                     <updateCondition>On Change</updateCondition>
                                     <ownership>DivestAcquire</ownership>
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional.
-
-The symbol code.
-15 characters indicate APP-6A, APP-6B, MIL-STD-2525B or MIL-STD-2525C format.
-20 or 30 digits indicates MIL-STD-2525D format.
-
-The selected format should be is specified in a Federation Agreement.</semantics>
+                                    <semantics>Optional. A symbol identifier represented as a string. The symbol standard used is indicated using an URI notation (uri:xxxxxxxxxx). The following uri should be used for common symbology standards app6b, app6b, app6c, app6c, 2525b, 2525c, 2525d. If not provided the symbol standard used is undefined.</semantics>
                                 </attribute>
                             </objectClass>
                         </objectClass>
@@ -470,7 +452,7 @@ The selected format should be is specified in a Federation Agreement.</semantics
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Required. 
-
+ 
 A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
                                 </attribute>
                                 <attribute>
@@ -482,8 +464,8 @@ A unique identifier for the object. The Universally Unique Identifier (UUID) is 
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required.
-
+                                    <semantics>Required. 
+ 
 Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active. 
 An inactive instance may have its instance attributes updated by a federate but reflected updates shall be ignored by receiving federates. All attributes must be updated to represent the current status of the instance before status is set to active.</semantics>
                                 </attribute>
@@ -497,7 +479,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Optional. 
-
+ 
 Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. The default value is 00000000-0000-0000-0000-000000000000 (UUID with all zeros) representing no source unit.</semantics>
                                 </attribute>
                                 <attribute>
@@ -510,7 +492,7 @@ Reference to an active NETN_Aggregate instance from which this physical entity w
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Optional. 
-
+ 
 Reference to platforms or lifeforms embarked on this platform. If not published, transport of embedded units not supported. Entities are referenced by UUID. E.g. when soldiers are transported in an NETN Physical entity, then references (UUIDs) to these soldier instances is added to the EmbeddedUnitList for the entity. When a soldier disembarks from the transporter the reference (UUID) to that soldier is removed from the EmbeddedUnitList. The default value is an empty list.</semantics>
                                 </attribute>
                                 <attribute>
@@ -523,7 +505,7 @@ Reference to platforms or lifeforms embarked on this platform. If not published,
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Required. 
-
+ 
 A callsign used to address the platform. Callsigns should be unique in the context in which they are used but not required to be globally unique.</semantics>
                                 </attribute>
                                 <attribute>
@@ -536,7 +518,7 @@ A callsign used to address the platform. Callsigns should be unique in the conte
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Optional. 
-
+ 
 The current activity of the platform. The value is based on the Joint Consultation, Command and Control Information Exchange Data Model (JC3IEDM) action-event-category-code. The JC3IEDM is a fully documented standard [NATO STANAG 5525] for an information exchange data model for the sharing of C2 information. The default value is 0 (Other activity).</semantics>
                                 </attribute>
                                 <attribute>
@@ -549,7 +531,7 @@ The current activity of the platform. The value is based on the Joint Consultati
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Optional. 
-
+ 
 The current path of movement.</semantics>
                                 </attribute>
                                 <attribute>
@@ -562,25 +544,19 @@ The current path of movement.</semantics>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Optional. 
-
+ 
 The current destination of movement.</semantics>
                                 </attribute>
                                 <attribute>
-                                    <name>Symbol</name>
-                                    <dataType>HLAunicodeString</dataType>
+                                    <name>SymbolId</name>
+                                    <dataType>SymbolIdentifier</dataType>
                                     <updateType>Conditional</updateType>
                                     <updateCondition>On Change</updateCondition>
                                     <ownership>DivestAcquire</ownership>
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional.
-
-The symbol code.
-15 characters indicate APP-6A, APP-6B, MIL-STD-2525B or MIL-STD-2525C format.
-20 or 30 digits indicates MIL-STD-2525D format.
-
-The selected format should be is specified in a Federation Agreement.</semantics>
+                                    <semantics>Optional. A symbol identifier represented as a string. The symbol standard used is indicated using an URI notation (uri:xxxxxxxxxx). The following uri should be used for common symbology standards app6b, app6b, app6c, app6c, 2525b, 2525c, 2525d. If not provided the symbol standard used is undefined.</semantics>
                                 </attribute>
                             </objectClass>
                         </objectClass>
@@ -600,7 +576,7 @@ The selected format should be is specified in a Federation Agreement.</semantics
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Required. 
-
+ 
 A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
                                 </attribute>
                                 <attribute>
@@ -613,7 +589,7 @@ A unique identifier for the object. The Universally Unique Identifier (UUID) is 
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Required. 
-
+ 
 Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active. 
 An inactive instance may have its instance attributes updated by a federate but reflected updates shall be ignored by receiving federates. All attributes must be updated to represent the current status of the instance before status is set to active.</semantics>
                                 </attribute>
@@ -627,7 +603,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Optional. 
-
+ 
 Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. The default value is 00000000-0000-0000-0000-000000000000 (UUID with all zeros) representing no source unit.</semantics>
                                 </attribute>
                                 <attribute>
@@ -640,7 +616,7 @@ Reference to an active NETN_Aggregate instance from which this physical entity w
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Optional. 
-
+ 
 Reference to platforms or lifeforms embarked on this platform. If not published, transport of embedded units not supported. Entities are referenced by UUID. E.g. when soldiers are transported in an NETN Physical entity, then references (UUIDs) to these soldier instances is added to the EmbeddedUnitList for the entity. When a soldier disembarks from the transporter the reference (UUID) to that soldier is removed from the EmbeddedUnitList. The default value is an empty list.</semantics>
                                 </attribute>
                                 <attribute>
@@ -653,7 +629,7 @@ Reference to platforms or lifeforms embarked on this platform. If not published,
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Required. 
-
+ 
 A callsign used to address the platform. Callsigns should be unique in the context in which they are used but not required to be globally unique.</semantics>
                                 </attribute>
                                 <attribute>
@@ -666,7 +642,7 @@ A callsign used to address the platform. Callsigns should be unique in the conte
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Optional. 
-
+ 
 The current activity of the platform. The value is based on the Joint Consultation, Command and Control Information Exchange Data Model (JC3IEDM) action-event-category-code. The JC3IEDM is a fully documented standard [NATO STANAG 5525] for an information exchange data model for the sharing of C2 information. The default value is 0 (Other activity).</semantics>
                                 </attribute>
                                 <attribute>
@@ -679,7 +655,7 @@ The current activity of the platform. The value is based on the Joint Consultati
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Optional. 
-
+ 
 The current path of movement.</semantics>
                                 </attribute>
                                 <attribute>
@@ -692,32 +668,26 @@ The current path of movement.</semantics>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Optional. 
-
+ 
 The current destination of movement.</semantics>
                                 </attribute>
                                 <attribute>
-                                    <name>Symbol</name>
-                                    <dataType>HLAunicodeString</dataType>
+                                    <name>SymbolId</name>
+                                    <dataType>SymbolIdentifier</dataType>
                                     <updateType>Conditional</updateType>
                                     <updateCondition>On Change</updateCondition>
                                     <ownership>DivestAcquire</ownership>
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional.
-
-The symbol code.
-15 characters indicate APP-6A, APP-6B, MIL-STD-2525B or MIL-STD-2525C format.
-20 or 30 digits indicates MIL-STD-2525D format.
-
-The selected format should be is specified in a Federation Agreement.</semantics>
+                                    <semantics>Optional. A symbol identifier represented as a string. The symbol standard used is indicated using an URI notation (uri:xxxxxxxxxx). The following uri should be used for common symbology standards app6b, app6b, app6c, app6c, 2525b, 2525c, 2525d. If not provided the symbol standard used is undefined.</semantics>
                                 </attribute>
                             </objectClass>
                         </objectClass>
                         <objectClass>
                             <name>SubmersibleVessel</name>
                             <objectClass>
-                                <name>NETN_SubmersibleVehicle</name>
+                                <name>NETN_SubmersibleVessel</name>
                                 <sharing>PublishSubscribe</sharing>
                                 <semantics>Extensions for NETN</semantics>
                                 <attribute>
@@ -730,7 +700,7 @@ The selected format should be is specified in a Federation Agreement.</semantics
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Required. 
-
+ 
 A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
                                 </attribute>
                                 <attribute>
@@ -743,7 +713,7 @@ A unique identifier for the object. The Universally Unique Identifier (UUID) is 
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Required. 
-
+ 
 Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active. 
 An inactive instance may have its instance attributes updated by a federate but reflected updates shall be ignored by receiving federates. All attributes must be updated to represent the current status of the instance before status is set to active.</semantics>
                                 </attribute>
@@ -757,7 +727,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Optional. 
-
+ 
 Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. The default value is 00000000-0000-0000-0000-000000000000 (UUID with all zeros) representing no source unit.</semantics>
                                 </attribute>
                                 <attribute>
@@ -770,7 +740,7 @@ Reference to an active NETN_Aggregate instance from which this physical entity w
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Optional. 
-
+ 
 Reference to platforms or lifeforms embarked on this platform. If not published, transport of embedded units not supported. Entities are referenced by UUID. E.g. when soldiers are transported in an NETN Physical entity, then references (UUIDs) to these soldier instances is added to the EmbeddedUnitList for the entity. When a soldier disembarks from the transporter the reference (UUID) to that soldier is removed from the EmbeddedUnitList. The default value is an empty list.</semantics>
                                 </attribute>
                                 <attribute>
@@ -783,7 +753,7 @@ Reference to platforms or lifeforms embarked on this platform. If not published,
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Required. 
-
+ 
 A callsign used to address the platform. Callsigns should be unique in the context in which they are used but not required to be globally unique.</semantics>
                                 </attribute>
                                 <attribute>
@@ -796,7 +766,7 @@ A callsign used to address the platform. Callsigns should be unique in the conte
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Optional. 
-
+ 
 The current activity of the platform. The value is based on the Joint Consultation, Command and Control Information Exchange Data Model (JC3IEDM) action-event-category-code. The JC3IEDM is a fully documented standard [NATO STANAG 5525] for an information exchange data model for the sharing of C2 information. The default value is 0 (Other activity).</semantics>
                                 </attribute>
                                 <attribute>
@@ -809,7 +779,7 @@ The current activity of the platform. The value is based on the Joint Consultati
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Optional. 
-
+ 
 The current path of movement.</semantics>
                                 </attribute>
                                 <attribute>
@@ -822,25 +792,19 @@ The current path of movement.</semantics>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Optional. 
-
+ 
 The current destination of movement.</semantics>
                                 </attribute>
                                 <attribute>
-                                    <name>Symbol</name>
-                                    <dataType>HLAunicodeString</dataType>
+                                    <name>SymbolId</name>
+                                    <dataType>SymbolIdentifier</dataType>
                                     <updateType>Conditional</updateType>
                                     <updateCondition>On Change</updateCondition>
                                     <ownership>DivestAcquire</ownership>
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional.
-
-The symbol code.
-15 characters indicate APP-6A, APP-6B, MIL-STD-2525B or MIL-STD-2525C format.
-20 or 30 digits indicates MIL-STD-2525D format.
-
-The selected format should be is specified in a Federation Agreement.</semantics>
+                                    <semantics>Optional. A symbol identifier represented as a string. The symbol standard used is indicated using an URI notation (uri:xxxxxxxxxx). The following uri should be used for common symbology standards app6b, app6b, app6c, app6c, 2525b, 2525c, 2525d. If not provided the symbol standard used is undefined.</semantics>
                                 </attribute>
                             </objectClass>
                         </objectClass>
@@ -860,7 +824,7 @@ The selected format should be is specified in a Federation Agreement.</semantics
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Required. 
-
+ 
 A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
                                 </attribute>
                                 <attribute>
@@ -873,7 +837,7 @@ A unique identifier for the object. The Universally Unique Identifier (UUID) is 
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Required. 
-
+ 
 Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active. 
 An inactive instance may have its instance attributes updated by a federate but reflected updates shall be ignored by receiving federates. All attributes must be updated to represent the current status of the instance before status is set to active.</semantics>
                                 </attribute>
@@ -887,7 +851,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Optional. 
-
+ 
 Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. The default value is 0000000000000000 representing no source unit.</semantics>
                                 </attribute>
                                 <attribute>
@@ -900,7 +864,7 @@ Reference to an active NETN_Aggregate instance from which this physical entity w
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Optional. 
-
+ 
 Reference to platforms or lifeforms embarked on this platform. If not published, transport of embedded units not supported. Entities are referenced by UUID. E.g. when soldiers are transported in an NETN Physical entity, then references (UUIDs) to these soldier instances is added to the EmbeddedUnitList for the entity. When a soldier disembarks from the transporter the reference (UUID) to that soldier is removed from the EmbeddedUnitList. The default value is an empty list.</semantics>
                                 </attribute>
                                 <attribute>
@@ -913,7 +877,7 @@ Reference to platforms or lifeforms embarked on this platform. If not published,
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Required. 
-
+ 
 A callsign used to address the platform. Callsigns should be unique in the context in which they are used but not required to be globally unique.</semantics>
                                 </attribute>
                                 <attribute>
@@ -926,7 +890,7 @@ A callsign used to address the platform. Callsigns should be unique in the conte
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Optional. 
-
+ 
 The current activity of the platform. The value is based on the Joint Consultation, Command and Control Information Exchange Data Model (JC3IEDM) action-event-category-code. The JC3IEDM is a fully documented standard [NATO STANAG 5525] for an information exchange data model for the sharing of C2 information. The default value is 0 (Other activity).</semantics>
                                 </attribute>
                                 <attribute>
@@ -939,7 +903,7 @@ The current activity of the platform. The value is based on the Joint Consultati
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Optional. 
-
+ 
 The current path of movement.</semantics>
                                 </attribute>
                                 <attribute>
@@ -951,26 +915,20 @@ The current path of movement.</semantics>
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional.
-
+                                    <semantics>Optional. 
+ 
 The current destination of movement.</semantics>
                                 </attribute>
                                 <attribute>
-                                    <name>Symbol</name>
-                                    <dataType>HLAunicodeString</dataType>
+                                    <name>SymbolId</name>
+                                    <dataType>SymbolIdentifier</dataType>
                                     <updateType>Conditional</updateType>
                                     <updateCondition>On Change</updateCondition>
                                     <ownership>DivestAcquire</ownership>
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional.
-
-The symbol code.
-15 characters indicate APP-6A, APP-6B, MIL-STD-2525B or MIL-STD-2525C format.
-20 or 30 digits indicates MIL-STD-2525D format.
-
-The selected format should be is specified in a Federation Agreement.</semantics>
+                                    <semantics>Optional. A symbol identifier represented as a string. The symbol standard used is indicated using an URI notation (uri:xxxxxxxxxx). The following uri should be used for common symbology standards app6b, app6b, app6c, app6c, 2525b, 2525c, 2525d. If not provided the symbol standard used is undefined.</semantics>
                                 </attribute>
                             </objectClass>
                         </objectClass>
@@ -993,7 +951,7 @@ The selected format should be is specified in a Federation Agreement.</semantics
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Required. 
-
+ 
 A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
                                 </attribute>
                                 <attribute>
@@ -1006,7 +964,7 @@ A unique identifier for the object. The Universally Unique Identifier (UUID) is 
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Required. 
-
+ 
 Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active. 
 An inactive instance may have its instance attributes updated by a federate but reflected updates shall be ignored by receiving federates. All attributes must be updated to represent the current status of the instance before status is set to active.</semantics>
                                 </attribute>
@@ -1020,7 +978,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Optional. 
-
+ 
 Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. The default value is 0000000000000000 representing no source unit.</semantics>
                                 </attribute>
                                 <attribute>
@@ -1033,7 +991,7 @@ Reference to an active NETN_Aggregate instance from which this physical entity w
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Required. 
-
+ 
 A callsign used to address the platform. Callsigns should be unique in the context in which they are used but not required to be globally unique.</semantics>
                                 </attribute>
                                 <attribute>
@@ -1046,7 +1004,7 @@ A callsign used to address the platform. Callsigns should be unique in the conte
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Optional. 
-
+ 
 The current activity of the platform. The value is based on the Joint Consultation, Command and Control Information Exchange Data Model (JC3IEDM) action-event-category-code. The JC3IEDM is a fully documented standard [NATO STANAG 5525] for an information exchange data model for the sharing of C2 information. The default value is 0 (Other activity).</semantics>
                                 </attribute>
                                 <attribute>
@@ -1059,7 +1017,7 @@ The current activity of the platform. The value is based on the Joint Consultati
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Optional. 
-
+ 
 The current path of movement.</semantics>
                                 </attribute>
                                 <attribute>
@@ -1072,25 +1030,19 @@ The current path of movement.</semantics>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Optional. 
-
+ 
 The current destination of movement.</semantics>
                                 </attribute>
                                 <attribute>
-                                    <name>Symbol</name>
-                                    <dataType>HLAunicodeString</dataType>
+                                    <name>SymbolId</name>
+                                    <dataType>SymbolIdentifier</dataType>
                                     <updateType>Conditional</updateType>
                                     <updateCondition>On Change</updateCondition>
                                     <ownership>DivestAcquire</ownership>
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional.
-
-The symbol code.
-15 characters indicate APP-6A, APP-6B, MIL-STD-2525B or MIL-STD-2525C format.
-20 or 30 digits indicates MIL-STD-2525D format.
-
-The selected format should be is specified in a Federation Agreement.</semantics>
+                                    <semantics>Optional. A symbol identifier represented as a string. The symbol standard used is indicated using an URI notation (uri:xxxxxxxxxx). The following uri should be used for common symbology standards app6b, app6b, app6c, app6c, 2525b, 2525c, 2525d. If not provided the symbol standard used is undefined.</semantics>
                                 </attribute>
                             </objectClass>
                         </objectClass>
@@ -1110,7 +1062,7 @@ The selected format should be is specified in a Federation Agreement.</semantics
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Required. 
-
+ 
 A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
                                 </attribute>
                                 <attribute>
@@ -1123,7 +1075,7 @@ A unique identifier for the object. The Universally Unique Identifier (UUID) is 
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Required. 
-
+ 
 Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active. 
 An inactive instance may have its instance attributes updated by a federate but reflected updates shall be ignored by receiving federates. All attributes must be updated to represent the current status of the instance before status is set to active.</semantics>
                                 </attribute>
@@ -1137,7 +1089,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Optional. 
-
+ 
 Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. The default value is 00000000-0000-0000-0000-000000000000 (UUID with all zeros) representing no source unit.</semantics>
                                 </attribute>
                                 <attribute>
@@ -1150,7 +1102,7 @@ Reference to an active NETN_Aggregate instance from which this physical entity w
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Required. 
-
+ 
 A callsign used to address the platform. Callsigns should be unique in the context in which they are used but not required to be globally unique.</semantics>
                                 </attribute>
                                 <attribute>
@@ -1163,7 +1115,7 @@ A callsign used to address the platform. Callsigns should be unique in the conte
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Optional. 
-
+ 
 The current activity of the platform. The value is based on the Joint Consultation, Command and Control Information Exchange Data Model (JC3IEDM) action-event-category-code. The JC3IEDM is a fully documented standard [NATO STANAG 5525] for an information exchange data model for the sharing of C2 information. The default value is 0 (Other activity).</semantics>
                                 </attribute>
                                 <attribute>
@@ -1176,7 +1128,7 @@ The current activity of the platform. The value is based on the Joint Consultati
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Optional. 
-
+ 
 The current path of movement.</semantics>
                                 </attribute>
                                 <attribute>
@@ -1189,25 +1141,19 @@ The current path of movement.</semantics>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
                                     <semantics>Optional. 
-
+ 
 The current destination of movement.</semantics>
                                 </attribute>
                                 <attribute>
-                                    <name>Symbol</name>
-                                    <dataType>HLAunicodeString</dataType>
+                                    <name>SymbolI</name>
+                                    <dataType>SymbolIdentifier</dataType>
                                     <updateType>Conditional</updateType>
                                     <updateCondition>On Change</updateCondition>
                                     <ownership>DivestAcquire</ownership>
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional.
-
-The symbol code.
-15 characters indicate APP-6A, APP-6B, MIL-STD-2525B or MIL-STD-2525C format.
-20 or 30 digits indicates MIL-STD-2525D format.
-
-The selected format should be is specified in a Federation Agreement.</semantics>
+                                    <semantics>Optional. A symbol identifier represented as a string. The symbol standard used is indicated using an URI notation (uri:xxxxxxxxxx). The following uri should be used for common symbology standards app6b, app6b, app6c, app6c, 2525b, 2525c, 2525d. If not provided the symbol standard used is undefined.</semantics>
                                 </attribute>
                             </objectClass>
                         </objectClass>
@@ -1228,7 +1174,7 @@ The selected format should be is specified in a Federation Agreement.</semantics
                                 <transportation>HLAbestEffort</transportation>
                                 <order>Receive</order>
                                 <semantics>Required. 
-
+ 
 A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
                             </attribute>
                             <attribute>
@@ -1241,7 +1187,7 @@ A unique identifier for the object. The Universally Unique Identifier (UUID) is 
                                 <transportation>HLAbestEffort</transportation>
                                 <order>Receive</order>
                                 <semantics>Required. 
-
+ 
 Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active. 
 An inactive instance may have its instance attributes updated by a federate but reflected updates shall be ignored by receiving federates. All attributes must be updated to represent the current status of the instance before status is set to active.</semantics>
                             </attribute>
@@ -1255,7 +1201,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                 <transportation>HLAbestEffort</transportation>
                                 <order>Receive</order>
                                 <semantics>Optional. 
-
+ 
 Reference to platforms or lifeforms embarked on this entity. If not published, embarkment/disembarkment of embedded units not supported. Entities are referenced by UUID. E.g. when soldiers are inside in an NETN_CulturalFeature entity, then references (UUIDs) to these soldier instances is added to the EmbeddedUnitList for the entity. When a soldier leaves he NETN_CulturalFeature the reference (UUID) to that soldier is removed from the EmbeddedUnitList. The default value is an empty list.</semantics>
                             </attribute>
                             <attribute>
@@ -1268,7 +1214,7 @@ Reference to platforms or lifeforms embarked on this entity. If not published, e
                                 <transportation>HLAbestEffort</transportation>
                                 <order>Receive</order>
                                 <semantics>Required. 
-
+ 
 A callsign used to address the platform. Callsigns should be unique in the context in which they are used but not required to be globally unique.</semantics>
                             </attribute>
                             <attribute>
@@ -1281,25 +1227,19 @@ A callsign used to address the platform. Callsigns should be unique in the conte
                                 <transportation>HLAbestEffort</transportation>
                                 <order>Receive</order>
                                 <semantics>Optional. 
-
+ 
 The current activity of the platform. The value is based on the Joint Consultation, Command and Control Information Exchange Data Model (JC3IEDM) action-event-category-code. The JC3IEDM is a fully documented standard [NATO STANAG 5525] for an information exchange data model for the sharing of C2 information. The default value is 0 (Other activity).</semantics>
                             </attribute>
                             <attribute>
-                                <name>Symbol</name>
-                                <dataType>HLAunicodeString</dataType>
+                                <name>SymbolId</name>
+                                <dataType>SymbolIdentifier</dataType>
                                 <updateType>Conditional</updateType>
                                 <updateCondition>On Change</updateCondition>
                                 <ownership>DivestAcquire</ownership>
                                 <sharing>PublishSubscribe</sharing>
                                 <transportation>HLAbestEffort</transportation>
                                 <order>Receive</order>
-                                <semantics>Optional.
-
-The symbol code.
-15 characters indicate APP-6A, APP-6B, MIL-STD-2525B or MIL-STD-2525C format.
-20 or 30 digits indicates MIL-STD-2525D format.
-
-The selected format should be is specified in a Federation Agreement.</semantics>
+                                <semantics>Optional. A symbol identifier represented as a string. The symbol standard used is indicated using an URI notation (uri:xxxxxxxxxx). The following uri should be used for common symbology standards app6b, app6b, app6c, app6c, 2525b, 2525c, 2525d. If not provided the symbol standard used is undefined.</semantics>
                             </attribute>
                         </objectClass>
                     </objectClass>
@@ -1319,7 +1259,7 @@ The selected format should be is specified in a Federation Agreement.</semantics
                                 <transportation>HLAbestEffort</transportation>
                                 <order>Receive</order>
                                 <semantics>Required. 
-
+ 
 A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
                             </attribute>
                             <attribute>
@@ -1332,7 +1272,7 @@ A unique identifier for the object. The Universally Unique Identifier (UUID) is 
                                 <transportation>HLAbestEffort</transportation>
                                 <order>Receive</order>
                                 <semantics>Required. 
-
+ 
 Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active. 
 An inactive instance may have its instance attributes updated by a federate but reflected updates shall be ignored by receiving federates. All attributes must be updated to represent the current status of the instance before status is set to active.</semantics>
                             </attribute>
@@ -1346,7 +1286,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                 <transportation>HLAbestEffort</transportation>
                                 <order>Receive</order>
                                 <semantics>Optional. 
-
+ 
 The current path of movement.</semantics>
                             </attribute>
                             <attribute>
@@ -1359,25 +1299,19 @@ The current path of movement.</semantics>
                                 <transportation>HLAbestEffort</transportation>
                                 <order>Receive</order>
                                 <semantics>Optional. 
-
+ 
 The current destination of movement.</semantics>
                             </attribute>
                             <attribute>
-                                <name>Symbol</name>
-                                <dataType>HLAunicodeString</dataType>
+                                <name>SymbolId</name>
+                                <dataType>SymbolIdentifier</dataType>
                                 <updateType>Conditional</updateType>
                                 <updateCondition>On Change</updateCondition>
                                 <ownership>DivestAcquire</ownership>
                                 <sharing>PublishSubscribe</sharing>
                                 <transportation>HLAbestEffort</transportation>
                                 <order>Receive</order>
-                                <semantics>Optional.
-
-The symbol code.
-15 characters indicate APP-6A, APP-6B, MIL-STD-2525B or MIL-STD-2525C format.
-20 or 30 digits indicates MIL-STD-2525D format.
-
-The selected format should be is specified in a Federation Agreement.</semantics>
+                                <semantics>Optional. A symbol identifier represented as a string. The symbol standard used is indicated using an URI notation (uri:xxxxxxxxxx). The following uri should be used for common symbology standards app6b, app6b, app6c, app6c, 2525b, 2525c, 2525d. If not provided the symbol standard used is undefined.</semantics>
                             </attribute>
                         </objectClass>
                     </objectClass>

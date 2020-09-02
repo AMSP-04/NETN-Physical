@@ -32,8 +32,8 @@ Version numbering of this FOM Module and associated documentation is based on th
 
 |Version|Description|
 |---|---|
-|[v1.1.2](https://github.com/AMSP-04/NETN-Physical/tree/v1.1.2) | Version 1.1.2 of the NETN Physical FOM Module updated by MSG-163 AND included in NETN FOM v2.0 as part of AMSP-04 Ed A|
-|v1.2|Version 1.2 of the NETN-Aggregate updated by MSG-163 and included in NETN-FOM v3.0 as part of AMSP-04 Ed B.|
+|[v1.1.2](https://github.com/AMSP-04/NETN-Physical/tree/v1.1.2) | Version 1.1.2 of the NETN Physical FOM Module updated by MSG-134 and included in NETN FOM v2.0|
+|v2.0|Version 2.0 of the NETN-Aggregate updated by MSG-163 and included in NETN-FOM v3.0|
 
 [Changelog](changelog.md)
 

@@ -4,7 +4,7 @@
         <name>NETN-Physical</name>
         <type>FOM</type>
         <version>v2.0</version>
-        <modificationDate>2020-08-07</modificationDate>
+        <modificationDate>2020-09-02</modificationDate>
         <securityClassification>Not Classified</securityClassification>
         <purpose></purpose>
         <applicationDomain>Training</applicationDomain>
@@ -36,11 +36,6 @@
             <pocName>MSG-106 Enhanced CAX Architecture, Desing and Methodology</pocName>
             <pocOrg>NATO Modelling and Simulation Group</pocOrg>
             <pocEmail>msg@cso.nato.int</pocEmail>
-        </poc>
-        <poc>
-            <pocType>Contributor</pocType>
-            <pocName>Lennart Olsson</pocName>
-            <pocOrg>Pitch Technologies, Sweden</pocOrg>
         </poc>
         <reference>
             <type>Dependency</type>
@@ -81,9 +76,7 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required. 
- 
-A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
+                                    <semantics>Required. A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Status</name>
@@ -94,9 +87,7 @@ A unique identifier for the object. The Universally Unique Identifier (UUID) is 
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required. 
- 
-Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active. 
+                                    <semantics>Required. Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active. 
 An inactive instance may have its instance attributes updated by a federate but reflected updates shall be ignored by receiving federates. All attributes must be updated to represent the current status of the instance before status is set to active.</semantics>
                                 </attribute>
                                 <attribute>
@@ -108,9 +99,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. 
- 
-Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. The default value is 00000000-0000-0000-0000-000000000000 (UUID with all zeros) representing no source unit.</semantics>
+                                    <semantics>Optional. Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. The default value is 00000000-0000-0000-0000-000000000000 (UUID with all zeros) representing no source unit.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>EmbeddedUnitList</name>
@@ -121,9 +110,7 @@ Reference to an active NETN_Aggregate instance from which this physical entity w
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. 
- 
-Reference to platforms or lifeforms embarked on this platform. If not published, transport of embedded units not supported. Entities are referenced by UUID. E.g. when soldiers are transported in an NETN Physical entity, then references (UUIDs) to these soldier instances is added to the EmbeddedUnitList for the entity. When a soldier disembarks from the transporter the reference (UUID) to that soldier is removed from the EmbeddedUnitList. The default value is an empty list.</semantics>
+                                    <semantics>Optional. Reference to platforms or lifeforms embarked on this platform. If not published, transport of embedded units is not supported. Entities are referenced by UUID. E.g. when soldiers are transported in a NETN Physical entity, then references (UUIDs) to these soldier instances are added to the EmbeddedUnitList for the entity. When a soldier disembarks from the transporter, the reference (UUID) to that soldier is removed from the EmbeddedUnitList. The default value is an empty list.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Callsign</name>
@@ -134,9 +121,7 @@ Reference to platforms or lifeforms embarked on this platform. If not published,
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required. 
- 
-A callsign used to address the platform. Callsigns should be unique in the context in which they are used but not required to be globally unique.</semantics>
+                                    <semantics>Required. A callsign used to address the platform. Callsigns should be unique in the context in which they are used but not required to be globally unique.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Activity</name>
@@ -147,7 +132,7 @@ A callsign used to address the platform. Callsigns should be unique in the conte
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional: The current activity of the platform. The value is based on the Joint Consultation, Command and Control Information Exchange Data Model (JC3IEDM) action-event-category-code. The JC3IEDM is a fully documented standard [NATO STANAG 5525] for an information exchange data model for the sharing of C2 information. The default value is 0 (Other activity).</semantics>
+                                    <semantics>Optional. The current activity of the platform. The value is based on the Joint Consultation, Command and Control Information Exchange Data Model (JC3IEDM) action-event-category-code. The JC3IEDM is a fully documented standard [NATO STANAG 5525] for an information exchange data model for the sharing of C2 information. The default value is 0 (Other activity).</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Route</name>
@@ -158,9 +143,7 @@ A callsign used to address the platform. Callsigns should be unique in the conte
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. 
- 
-The current path of movement.</semantics>
+                                    <semantics>Optional. The current path of movement.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Destination</name>
@@ -171,9 +154,7 @@ The current path of movement.</semantics>
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. 
- 
-The current destination of movement.</semantics>
+                                    <semantics>Optional. The current destination of movement.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>SymbolId</name>
@@ -184,7 +165,7 @@ The current destination of movement.</semantics>
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. A symbol identifier represented as a string. The symbol standard used is indicated using an URI notation (uri:xxxxxxxxxx). The following uri should be used for common symbology standards app6b, app6b, app6c, app6c, 2525b, 2525c, 2525d. If not provided the symbol standard used is undefined.</semantics>
+                                    <semantics>Optional. A symbol identifier represented as a string.</semantics>
                                 </attribute>
                             </objectClass>
                         </objectClass>
@@ -203,9 +184,7 @@ The current destination of movement.</semantics>
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required. 
- 
-A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
+                                    <semantics>Required. A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Status</name>
@@ -216,9 +195,7 @@ A unique identifier for the object. The Universally Unique Identifier (UUID) is 
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required. 
- 
-Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active. 
+                                    <semantics>Required. Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active. 
 An inactive instance may have its instance attributes updated by a federate but reflected updates shall be ignored by receiving federates. All attributes must be updated to represent the current status of the instance before status is set to active.</semantics>
                                 </attribute>
                                 <attribute>
@@ -230,9 +207,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. 
- 
-Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. The default value is 00000000-0000-0000-0000-000000000000 (UUID with all zeros) representing no source unit.</semantics>
+                                    <semantics>Optional. Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. The default value is 00000000-0000-0000-0000-000000000000 (UUID with all zeros) representing no source unit.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>EmbeddedUnitList</name>
@@ -243,9 +218,7 @@ Reference to an active NETN_Aggregate instance from which this physical entity w
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. 
- 
-Reference to platforms or lifeforms embarked on this platform. If not published, transport of embedded units not supported. Entities are referenced by UUID. E.g. when soldiers are transported in an NETN Physical entity, then references (UUIDs) to these soldier instances is added to the EmbeddedUnitList for the entity. When a soldier disembarks from the transporter the reference (UUID) to that soldier is removed from the EmbeddedUnitList. The default value is an empty list.</semantics>
+                                    <semantics>Optional. Reference to platforms or lifeforms embarked on this platform. If not published, transport of embedded units is not supported. Entities are referenced by UUID. E.g. when soldiers are transported in a NETN Physical entity, then references (UUIDs) to these soldier instances are added to the EmbeddedUnitList for the entity. When a soldier disembarks from the transporter, the reference (UUID) to that soldier is removed from the EmbeddedUnitList. The default value is an empty list.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Callsign</name>
@@ -256,9 +229,7 @@ Reference to platforms or lifeforms embarked on this platform. If not published,
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required. 
- 
-A callsign used to address the platform. Callsigns should be unique in the context in which they are used but not required to be globally unique.</semantics>
+                                    <semantics>Required. A callsign used to address the platform. Callsigns should be unique in the context in which they are used but not required to be globally unique.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Activity</name>
@@ -269,9 +240,7 @@ A callsign used to address the platform. Callsigns should be unique in the conte
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. 
- 
-The current activity of the platform. The value is based on the Joint Consultation, Command and Control Information Exchange Data Model (JC3IEDM) action-event-category-code. The JC3IEDM is a fully documented standard [NATO STANAG 5525] for an information exchange data model for the sharing of C2 information. The default value is 0 (Other activity).</semantics>
+                                    <semantics>Optional. The current activity of the platform. The value is based on the Joint Consultation, Command and Control Information Exchange Data Model (JC3IEDM) action-event-category-code. The JC3IEDM is a fully documented standard [NATO STANAG 5525] for an information exchange data model for the sharing of C2 information. The default value is 0 (Other activity).</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Route</name>
@@ -282,9 +251,7 @@ The current activity of the platform. The value is based on the Joint Consultati
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. 
- 
-The current path of movement.</semantics>
+                                    <semantics>Optional. The current path of movement.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Destination</name>
@@ -295,9 +262,7 @@ The current path of movement.</semantics>
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. 
- 
-The current destination of movement.</semantics>
+                                    <semantics>Optional. The current destination of movement.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>SymbolId</name>
@@ -308,7 +273,7 @@ The current destination of movement.</semantics>
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. A symbol identifier represented as a string. The symbol standard used is indicated using an URI notation (uri:xxxxxxxxxx). The following uri should be used for common symbology standards app6b, app6b, app6c, app6c, 2525b, 2525c, 2525d. If not provided the symbol standard used is undefined.</semantics>
+                                    <semantics>Optional. A symbol identifier represented as a string.</semantics>
                                 </attribute>
                             </objectClass>
                         </objectClass>
@@ -327,9 +292,7 @@ The current destination of movement.</semantics>
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required. 
- 
-A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
+                                    <semantics>Required. A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Status</name>
@@ -340,9 +303,7 @@ A unique identifier for the object. The Universally Unique Identifier (UUID) is 
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required. 
- 
-Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active. 
+                                    <semantics>Required. Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active. 
 An inactive instance may have its instance attributes updated by a federate but reflected updates shall be ignored by receiving federates. All attributes must be updated to represent the current status of the instance before status is set to active.</semantics>
                                 </attribute>
                                 <attribute>
@@ -354,9 +315,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. 
- 
-Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. The default value is 00000000-0000-0000-0000-000000000000 (UUID with all zeros) representing no source unit.</semantics>
+                                    <semantics>Optional. Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. The default value is 00000000-0000-0000-0000-000000000000 (UUID with all zeros) representing no source unit.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>EmbeddedUnitList</name>
@@ -367,9 +326,7 @@ Reference to an active NETN_Aggregate instance from which this physical entity w
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. 
- 
-Reference to platforms or lifeforms embarked on this platform. If not published, transport of embedded units not supported. Entities are referenced by UUID. E.g. when soldiers are transported in an NETN Physical entity, then references (UUIDs) to these soldier instances is added to the EmbeddedUnitList for the entity. When a soldier disembarks from the transporter the reference (UUID) to that soldier is removed from the EmbeddedUnitList. The default value is an empty list.</semantics>
+                                    <semantics>Optional. Reference to platforms or lifeforms embarked on this platform. If not published, transport of embedded units is not supported. Entities are referenced by UUID. E.g. when soldiers are transported in a NETN Physical entity, then references (UUIDs) to these soldier instances are added to the EmbeddedUnitList for the entity. When a soldier disembarks from the transporter, the reference (UUID) to that soldier is removed from the EmbeddedUnitList. The default value is an empty list.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Callsign</name>
@@ -380,9 +337,7 @@ Reference to platforms or lifeforms embarked on this platform. If not published,
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required. 
- 
-A callsign used to address the platform. Callsigns should be unique in the context in which they are used but not required to be globally unique.</semantics>
+                                    <semantics>Required. A callsign used to address the platform. Callsigns should be unique in the context in which they are used but not required to be globally unique.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Activity</name>
@@ -393,9 +348,7 @@ A callsign used to address the platform. Callsigns should be unique in the conte
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. 
- 
-The current activity of the platform. The value is based on the Joint Consultation, Command and Control Information Exchange Data Model (JC3IEDM) action-event-category-code. The JC3IEDM is a fully documented standard [NATO STANAG 5525] for an information exchange data model for the sharing of C2 information. The default value is 0 (Other activity).</semantics>
+                                    <semantics>Optional. The current activity of the platform. The value is based on the Joint Consultation, Command and Control Information Exchange Data Model (JC3IEDM) action-event-category-code. The JC3IEDM is a fully documented standard [NATO STANAG 5525] for an information exchange data model for the sharing of C2 information. The default value is 0 (Other activity).</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Route</name>
@@ -406,9 +359,7 @@ The current activity of the platform. The value is based on the Joint Consultati
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. 
- 
-The current path of movement.</semantics>
+                                    <semantics>Optional. The current path of movement.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Destination</name>
@@ -419,9 +370,7 @@ The current path of movement.</semantics>
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. 
- 
-The current destination of movement.</semantics>
+                                    <semantics>Optional. The current destination of movement.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>SymbolId</name>
@@ -432,7 +381,7 @@ The current destination of movement.</semantics>
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. A symbol identifier represented as a string. The symbol standard used is indicated using an URI notation (uri:xxxxxxxxxx). The following uri should be used for common symbology standards app6b, app6b, app6c, app6c, 2525b, 2525c, 2525d. If not provided the symbol standard used is undefined.</semantics>
+                                    <semantics>Optional. A symbol identifier represented as a string.</semantics>
                                 </attribute>
                             </objectClass>
                         </objectClass>
@@ -451,9 +400,7 @@ The current destination of movement.</semantics>
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required. 
- 
-A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
+                                    <semantics>Required. A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Status</name>
@@ -464,9 +411,7 @@ A unique identifier for the object. The Universally Unique Identifier (UUID) is 
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required. 
- 
-Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active. 
+                                    <semantics>Required. Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active. 
 An inactive instance may have its instance attributes updated by a federate but reflected updates shall be ignored by receiving federates. All attributes must be updated to represent the current status of the instance before status is set to active.</semantics>
                                 </attribute>
                                 <attribute>
@@ -478,9 +423,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. 
- 
-Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. The default value is 00000000-0000-0000-0000-000000000000 (UUID with all zeros) representing no source unit.</semantics>
+                                    <semantics>Optional. Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. The default value is 00000000-0000-0000-0000-000000000000 (UUID with all zeros) representing no source unit.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>EmbeddedUnitList</name>
@@ -491,9 +434,7 @@ Reference to an active NETN_Aggregate instance from which this physical entity w
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. 
- 
-Reference to platforms or lifeforms embarked on this platform. If not published, transport of embedded units not supported. Entities are referenced by UUID. E.g. when soldiers are transported in an NETN Physical entity, then references (UUIDs) to these soldier instances is added to the EmbeddedUnitList for the entity. When a soldier disembarks from the transporter the reference (UUID) to that soldier is removed from the EmbeddedUnitList. The default value is an empty list.</semantics>
+                                    <semantics>Optional. Reference to platforms or lifeforms embarked on this platform. If not published, transport of embedded units is not supported. Entities are referenced by UUID. E.g. when soldiers are transported in a NETN Physical entity, then references (UUIDs) to these soldier instances are added to the EmbeddedUnitList for the entity. When a soldier disembarks from the transporter, the reference (UUID) to that soldier is removed from the EmbeddedUnitList. The default value is an empty list.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Callsign</name>
@@ -504,9 +445,7 @@ Reference to platforms or lifeforms embarked on this platform. If not published,
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required. 
- 
-A callsign used to address the platform. Callsigns should be unique in the context in which they are used but not required to be globally unique.</semantics>
+                                    <semantics>Required. A callsign used to address the platform. Callsigns should be unique in the context in which they are used but not required to be globally unique.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Activity</name>
@@ -517,9 +456,7 @@ A callsign used to address the platform. Callsigns should be unique in the conte
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. 
- 
-The current activity of the platform. The value is based on the Joint Consultation, Command and Control Information Exchange Data Model (JC3IEDM) action-event-category-code. The JC3IEDM is a fully documented standard [NATO STANAG 5525] for an information exchange data model for the sharing of C2 information. The default value is 0 (Other activity).</semantics>
+                                    <semantics>Optional. The current activity of the platform. The value is based on the Joint Consultation, Command and Control Information Exchange Data Model (JC3IEDM) action-event-category-code. The JC3IEDM is a fully documented standard [NATO STANAG 5525] for an information exchange data model for the sharing of C2 information. The default value is 0 (Other activity).</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Route</name>
@@ -530,9 +467,7 @@ The current activity of the platform. The value is based on the Joint Consultati
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. 
- 
-The current path of movement.</semantics>
+                                    <semantics>Optional. The current path of movement.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Destination</name>
@@ -543,9 +478,7 @@ The current path of movement.</semantics>
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. 
- 
-The current destination of movement.</semantics>
+                                    <semantics>Optional. The current destination of movement.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>SymbolId</name>
@@ -556,7 +489,7 @@ The current destination of movement.</semantics>
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. A symbol identifier represented as a string. The symbol standard used is indicated using an URI notation (uri:xxxxxxxxxx). The following uri should be used for common symbology standards app6b, app6b, app6c, app6c, 2525b, 2525c, 2525d. If not provided the symbol standard used is undefined.</semantics>
+                                    <semantics>Optional. A symbol identifier represented as a string.</semantics>
                                 </attribute>
                             </objectClass>
                         </objectClass>
@@ -575,9 +508,7 @@ The current destination of movement.</semantics>
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required. 
- 
-A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
+                                    <semantics>Required. A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Status</name>
@@ -588,9 +519,7 @@ A unique identifier for the object. The Universally Unique Identifier (UUID) is 
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required. 
- 
-Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active. 
+                                    <semantics>Required. Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active. 
 An inactive instance may have its instance attributes updated by a federate but reflected updates shall be ignored by receiving federates. All attributes must be updated to represent the current status of the instance before status is set to active.</semantics>
                                 </attribute>
                                 <attribute>
@@ -602,9 +531,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. 
- 
-Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. The default value is 00000000-0000-0000-0000-000000000000 (UUID with all zeros) representing no source unit.</semantics>
+                                    <semantics>Optional. Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. The default value is 00000000-0000-0000-0000-000000000000 (UUID with all zeros) representing no source unit.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>EmbeddedUnitList</name>
@@ -615,9 +542,7 @@ Reference to an active NETN_Aggregate instance from which this physical entity w
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. 
- 
-Reference to platforms or lifeforms embarked on this platform. If not published, transport of embedded units not supported. Entities are referenced by UUID. E.g. when soldiers are transported in an NETN Physical entity, then references (UUIDs) to these soldier instances is added to the EmbeddedUnitList for the entity. When a soldier disembarks from the transporter the reference (UUID) to that soldier is removed from the EmbeddedUnitList. The default value is an empty list.</semantics>
+                                    <semantics>Optional. Reference to platforms or lifeforms embarked on this platform. If not published, transport of embedded units is not supported. Entities are referenced by UUID. E.g. when soldiers are transported in a NETN Physical entity, then references (UUIDs) to these soldier instances are added to the EmbeddedUnitList for the entity. When a soldier disembarks from the transporter, the reference (UUID) to that soldier is removed from the EmbeddedUnitList. The default value is an empty list.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Callsign</name>
@@ -628,9 +553,7 @@ Reference to platforms or lifeforms embarked on this platform. If not published,
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required. 
- 
-A callsign used to address the platform. Callsigns should be unique in the context in which they are used but not required to be globally unique.</semantics>
+                                    <semantics>Required. A callsign used to address the platform. Callsigns should be unique in the context in which they are used but not required to be globally unique.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Activity</name>
@@ -641,9 +564,7 @@ A callsign used to address the platform. Callsigns should be unique in the conte
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. 
- 
-The current activity of the platform. The value is based on the Joint Consultation, Command and Control Information Exchange Data Model (JC3IEDM) action-event-category-code. The JC3IEDM is a fully documented standard [NATO STANAG 5525] for an information exchange data model for the sharing of C2 information. The default value is 0 (Other activity).</semantics>
+                                    <semantics>Optional. The current activity of the platform. The value is based on the Joint Consultation, Command and Control Information Exchange Data Model (JC3IEDM) action-event-category-code. The JC3IEDM is a fully documented standard [NATO STANAG 5525] for an information exchange data model for the sharing of C2 information. The default value is 0 (Other activity).</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Route</name>
@@ -654,9 +575,7 @@ The current activity of the platform. The value is based on the Joint Consultati
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. 
- 
-The current path of movement.</semantics>
+                                    <semantics>Optional. The current path of movement.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Destination</name>
@@ -667,9 +586,7 @@ The current path of movement.</semantics>
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. 
- 
-The current destination of movement.</semantics>
+                                    <semantics>Optional. The current destination of movement.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>SymbolId</name>
@@ -680,7 +597,7 @@ The current destination of movement.</semantics>
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. A symbol identifier represented as a string. The symbol standard used is indicated using an URI notation (uri:xxxxxxxxxx). The following uri should be used for common symbology standards app6b, app6b, app6c, app6c, 2525b, 2525c, 2525d. If not provided the symbol standard used is undefined.</semantics>
+                                    <semantics>Optional. A symbol identifier represented as a string.</semantics>
                                 </attribute>
                             </objectClass>
                         </objectClass>
@@ -699,9 +616,7 @@ The current destination of movement.</semantics>
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required. 
- 
-A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
+                                    <semantics>Required. A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Status</name>
@@ -712,9 +627,7 @@ A unique identifier for the object. The Universally Unique Identifier (UUID) is 
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required. 
- 
-Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active. 
+                                    <semantics>Required. Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active. 
 An inactive instance may have its instance attributes updated by a federate but reflected updates shall be ignored by receiving federates. All attributes must be updated to represent the current status of the instance before status is set to active.</semantics>
                                 </attribute>
                                 <attribute>
@@ -726,9 +639,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. 
- 
-Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. The default value is 00000000-0000-0000-0000-000000000000 (UUID with all zeros) representing no source unit.</semantics>
+                                    <semantics>Optional. Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. The default value is 00000000-0000-0000-0000-000000000000 (UUID with all zeros) representing no source unit.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>EmbeddedUnitList</name>
@@ -739,9 +650,7 @@ Reference to an active NETN_Aggregate instance from which this physical entity w
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. 
- 
-Reference to platforms or lifeforms embarked on this platform. If not published, transport of embedded units not supported. Entities are referenced by UUID. E.g. when soldiers are transported in an NETN Physical entity, then references (UUIDs) to these soldier instances is added to the EmbeddedUnitList for the entity. When a soldier disembarks from the transporter the reference (UUID) to that soldier is removed from the EmbeddedUnitList. The default value is an empty list.</semantics>
+                                    <semantics>Optional. Reference to platforms or lifeforms embarked on this platform. If not published, transport of embedded units is not supported. Entities are referenced by UUID. E.g. when soldiers are transported in a NETN Physical entity, then references (UUIDs) to these soldier instances are added to the EmbeddedUnitList for the entity. When a soldier disembarks from the transporter, the reference (UUID) to that soldier is removed from the EmbeddedUnitList. The default value is an empty list.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Callsign</name>
@@ -752,9 +661,7 @@ Reference to platforms or lifeforms embarked on this platform. If not published,
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required. 
- 
-A callsign used to address the platform. Callsigns should be unique in the context in which they are used but not required to be globally unique.</semantics>
+                                    <semantics>Required. A callsign used to address the platform. Callsigns should be unique in the context in which they are used but not required to be globally unique.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Activity</name>
@@ -765,9 +672,7 @@ A callsign used to address the platform. Callsigns should be unique in the conte
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. 
- 
-The current activity of the platform. The value is based on the Joint Consultation, Command and Control Information Exchange Data Model (JC3IEDM) action-event-category-code. The JC3IEDM is a fully documented standard [NATO STANAG 5525] for an information exchange data model for the sharing of C2 information. The default value is 0 (Other activity).</semantics>
+                                    <semantics>Optional. The current activity of the platform. The value is based on the Joint Consultation, Command and Control Information Exchange Data Model (JC3IEDM) action-event-category-code. The JC3IEDM is a fully documented standard [NATO STANAG 5525] for an information exchange data model for the sharing of C2 information. The default value is 0 (Other activity).</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Route</name>
@@ -778,9 +683,7 @@ The current activity of the platform. The value is based on the Joint Consultati
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. 
- 
-The current path of movement.</semantics>
+                                    <semantics>Optional. The current path of movement.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Destination</name>
@@ -791,9 +694,7 @@ The current path of movement.</semantics>
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. 
- 
-The current destination of movement.</semantics>
+                                    <semantics>Optional. The current destination of movement.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>SymbolId</name>
@@ -804,7 +705,7 @@ The current destination of movement.</semantics>
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. A symbol identifier represented as a string. The symbol standard used is indicated using an URI notation (uri:xxxxxxxxxx). The following uri should be used for common symbology standards app6b, app6b, app6c, app6c, 2525b, 2525c, 2525d. If not provided the symbol standard used is undefined.</semantics>
+                                    <semantics>Optional. A symbol identifier represented as a string.</semantics>
                                 </attribute>
                             </objectClass>
                         </objectClass>
@@ -823,9 +724,7 @@ The current destination of movement.</semantics>
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required. 
- 
-A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
+                                    <semantics>Required. A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Status</name>
@@ -836,9 +735,7 @@ A unique identifier for the object. The Universally Unique Identifier (UUID) is 
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required. 
- 
-Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active. 
+                                    <semantics>Required. Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active. 
 An inactive instance may have its instance attributes updated by a federate but reflected updates shall be ignored by receiving federates. All attributes must be updated to represent the current status of the instance before status is set to active.</semantics>
                                 </attribute>
                                 <attribute>
@@ -850,9 +747,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. 
- 
-Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. The default value is 0000000000000000 representing no source unit.</semantics>
+                                    <semantics>Optional. Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. The default value is 0000000000000000 representing no source unit.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>EmbeddedUnitList</name>
@@ -863,9 +758,7 @@ Reference to an active NETN_Aggregate instance from which this physical entity w
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. 
- 
-Reference to platforms or lifeforms embarked on this platform. If not published, transport of embedded units not supported. Entities are referenced by UUID. E.g. when soldiers are transported in an NETN Physical entity, then references (UUIDs) to these soldier instances is added to the EmbeddedUnitList for the entity. When a soldier disembarks from the transporter the reference (UUID) to that soldier is removed from the EmbeddedUnitList. The default value is an empty list.</semantics>
+                                    <semantics>Optional. Reference to platforms or lifeforms embarked on this platform. If not published, transport of embedded units is not supported. Entities are referenced by UUID. E.g. when soldiers are transported in a NETN Physical entity, then references (UUIDs) to these soldier instances are added to the EmbeddedUnitList for the entity. When a soldier disembarks from the transporter, the reference (UUID) to that soldier is removed from the EmbeddedUnitList. The default value is an empty list.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Callsign</name>
@@ -876,9 +769,7 @@ Reference to platforms or lifeforms embarked on this platform. If not published,
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required. 
- 
-A callsign used to address the platform. Callsigns should be unique in the context in which they are used but not required to be globally unique.</semantics>
+                                    <semantics>Required. A callsign used to address the platform. Callsigns should be unique in the context in which they are used but not required to be globally unique.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Activity</name>
@@ -889,9 +780,7 @@ A callsign used to address the platform. Callsigns should be unique in the conte
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. 
- 
-The current activity of the platform. The value is based on the Joint Consultation, Command and Control Information Exchange Data Model (JC3IEDM) action-event-category-code. The JC3IEDM is a fully documented standard [NATO STANAG 5525] for an information exchange data model for the sharing of C2 information. The default value is 0 (Other activity).</semantics>
+                                    <semantics>Optional. The current activity of the platform. The value is based on the Joint Consultation, Command and Control Information Exchange Data Model (JC3IEDM) action-event-category-code. The JC3IEDM is a fully documented standard [NATO STANAG 5525] for an information exchange data model for the sharing of C2 information. The default value is 0 (Other activity).</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Route</name>
@@ -902,9 +791,7 @@ The current activity of the platform. The value is based on the Joint Consultati
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. 
- 
-The current path of movement.</semantics>
+                                    <semantics>Optional. The current path of movement.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Destination</name>
@@ -915,9 +802,7 @@ The current path of movement.</semantics>
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. 
- 
-The current destination of movement.</semantics>
+                                    <semantics>Optional. The current destination of movement.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>SymbolId</name>
@@ -928,7 +813,7 @@ The current destination of movement.</semantics>
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. A symbol identifier represented as a string. The symbol standard used is indicated using an URI notation (uri:xxxxxxxxxx). The following uri should be used for common symbology standards app6b, app6b, app6c, app6c, 2525b, 2525c, 2525d. If not provided the symbol standard used is undefined.</semantics>
+                                    <semantics>Optional. A symbol identifier represented as a string.</semantics>
                                 </attribute>
                             </objectClass>
                         </objectClass>
@@ -950,9 +835,7 @@ The current destination of movement.</semantics>
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required. 
- 
-A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
+                                    <semantics>Required. A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Status</name>
@@ -963,9 +846,7 @@ A unique identifier for the object. The Universally Unique Identifier (UUID) is 
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required. 
- 
-Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active. 
+                                    <semantics>Required. Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active. 
 An inactive instance may have its instance attributes updated by a federate but reflected updates shall be ignored by receiving federates. All attributes must be updated to represent the current status of the instance before status is set to active.</semantics>
                                 </attribute>
                                 <attribute>
@@ -977,9 +858,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. 
- 
-Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. The default value is 0000000000000000 representing no source unit.</semantics>
+                                    <semantics>Optional. Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. The default value is 0000000000000000 representing no source unit.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Callsign</name>
@@ -990,9 +869,7 @@ Reference to an active NETN_Aggregate instance from which this physical entity w
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required. 
- 
-A callsign used to address the platform. Callsigns should be unique in the context in which they are used but not required to be globally unique.</semantics>
+                                    <semantics>Required. A callsign used to address the platform. Callsigns should be unique in the context in which they are used but not required to be globally unique.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Activity</name>
@@ -1003,9 +880,7 @@ A callsign used to address the platform. Callsigns should be unique in the conte
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. 
- 
-The current activity of the platform. The value is based on the Joint Consultation, Command and Control Information Exchange Data Model (JC3IEDM) action-event-category-code. The JC3IEDM is a fully documented standard [NATO STANAG 5525] for an information exchange data model for the sharing of C2 information. The default value is 0 (Other activity).</semantics>
+                                    <semantics>Optional. The current activity of the platform. The value is based on the Joint Consultation, Command and Control Information Exchange Data Model (JC3IEDM) action-event-category-code. The JC3IEDM is a fully documented standard [NATO STANAG 5525] for an information exchange data model for the sharing of C2 information. The default value is 0 (Other activity).</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Route</name>
@@ -1016,9 +891,7 @@ The current activity of the platform. The value is based on the Joint Consultati
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. 
- 
-The current path of movement.</semantics>
+                                    <semantics>Optional. The current path of movement.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Destination</name>
@@ -1029,9 +902,7 @@ The current path of movement.</semantics>
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. 
- 
-The current destination of movement.</semantics>
+                                    <semantics>Optional. The current destination of movement.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>SymbolId</name>
@@ -1042,7 +913,7 @@ The current destination of movement.</semantics>
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. A symbol identifier represented as a string. The symbol standard used is indicated using an URI notation (uri:xxxxxxxxxx). The following uri should be used for common symbology standards app6b, app6b, app6c, app6c, 2525b, 2525c, 2525d. If not provided the symbol standard used is undefined.</semantics>
+                                    <semantics>Optional. A symbol identifier represented as a string.</semantics>
                                 </attribute>
                             </objectClass>
                         </objectClass>
@@ -1061,9 +932,7 @@ The current destination of movement.</semantics>
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required. 
- 
-A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
+                                    <semantics>Required. A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Status</name>
@@ -1074,9 +943,7 @@ A unique identifier for the object. The Universally Unique Identifier (UUID) is 
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required. 
- 
-Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active. 
+                                    <semantics>Required. Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active. 
 An inactive instance may have its instance attributes updated by a federate but reflected updates shall be ignored by receiving federates. All attributes must be updated to represent the current status of the instance before status is set to active.</semantics>
                                 </attribute>
                                 <attribute>
@@ -1088,9 +955,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. 
- 
-Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. The default value is 00000000-0000-0000-0000-000000000000 (UUID with all zeros) representing no source unit.</semantics>
+                                    <semantics>Optional. Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. The default value is 00000000-0000-0000-0000-000000000000 (UUID with all zeros) representing no source unit.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Callsign</name>
@@ -1101,9 +966,7 @@ Reference to an active NETN_Aggregate instance from which this physical entity w
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Required. 
- 
-A callsign used to address the platform. Callsigns should be unique in the context in which they are used but not required to be globally unique.</semantics>
+                                    <semantics>Required. A callsign used to address the platform. Callsigns should be unique in the context in which they are used but not required to be globally unique.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Activity</name>
@@ -1114,9 +977,7 @@ A callsign used to address the platform. Callsigns should be unique in the conte
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. 
- 
-The current activity of the platform. The value is based on the Joint Consultation, Command and Control Information Exchange Data Model (JC3IEDM) action-event-category-code. The JC3IEDM is a fully documented standard [NATO STANAG 5525] for an information exchange data model for the sharing of C2 information. The default value is 0 (Other activity).</semantics>
+                                    <semantics>Optional. The current activity of the platform. The value is based on the Joint Consultation, Command and Control Information Exchange Data Model (JC3IEDM) action-event-category-code. The JC3IEDM is a fully documented standard [NATO STANAG 5525] for an information exchange data model for the sharing of C2 information. The default value is 0 (Other activity).</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Route</name>
@@ -1127,9 +988,7 @@ The current activity of the platform. The value is based on the Joint Consultati
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. 
- 
-The current path of movement.</semantics>
+                                    <semantics>Optional. The current path of movement.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>Destination</name>
@@ -1140,9 +999,7 @@ The current path of movement.</semantics>
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. 
- 
-The current destination of movement.</semantics>
+                                    <semantics>Optional. The current destination of movement.</semantics>
                                 </attribute>
                                 <attribute>
                                     <name>SymbolI</name>
@@ -1153,7 +1010,7 @@ The current destination of movement.</semantics>
                                     <sharing>PublishSubscribe</sharing>
                                     <transportation>HLAbestEffort</transportation>
                                     <order>Receive</order>
-                                    <semantics>Optional. A symbol identifier represented as a string. The symbol standard used is indicated using an URI notation (uri:xxxxxxxxxx). The following uri should be used for common symbology standards app6b, app6b, app6c, app6c, 2525b, 2525c, 2525d. If not provided the symbol standard used is undefined.</semantics>
+                                    <semantics>Optional. A symbol identifier represented as a string.</semantics>
                                 </attribute>
                             </objectClass>
                         </objectClass>
@@ -1173,9 +1030,7 @@ The current destination of movement.</semantics>
                                 <sharing>PublishSubscribe</sharing>
                                 <transportation>HLAbestEffort</transportation>
                                 <order>Receive</order>
-                                <semantics>Required. 
- 
-A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
+                                <semantics>Required. A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
                             </attribute>
                             <attribute>
                                 <name>Status</name>
@@ -1186,9 +1041,7 @@ A unique identifier for the object. The Universally Unique Identifier (UUID) is 
                                 <sharing>PublishSubscribe</sharing>
                                 <transportation>HLAbestEffort</transportation>
                                 <order>Receive</order>
-                                <semantics>Required. 
- 
-Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active. 
+                                <semantics>Required. Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active. 
 An inactive instance may have its instance attributes updated by a federate but reflected updates shall be ignored by receiving federates. All attributes must be updated to represent the current status of the instance before status is set to active.</semantics>
                             </attribute>
                             <attribute>
@@ -1200,9 +1053,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                 <sharing>PublishSubscribe</sharing>
                                 <transportation>HLAbestEffort</transportation>
                                 <order>Receive</order>
-                                <semantics>Optional. 
- 
-Reference to platforms or lifeforms embarked on this entity. If not published, embarkment/disembarkment of embedded units not supported. Entities are referenced by UUID. E.g. when soldiers are inside in an NETN_CulturalFeature entity, then references (UUIDs) to these soldier instances is added to the EmbeddedUnitList for the entity. When a soldier leaves he NETN_CulturalFeature the reference (UUID) to that soldier is removed from the EmbeddedUnitList. The default value is an empty list.</semantics>
+                                <semantics>Optional. Reference to platforms or lifeforms embarked on this entity. If not published, embarkment/disembarkment of embedded units not supported. Entities are referenced by UUID. E.g. when soldiers are inside in an NETN_CulturalFeature entity, then references (UUIDs) to these soldier instances are added to the EmbeddedUnitList for the entity. When a soldier leaves he NETN_CulturalFeature the reference (UUID) to that soldier is removed from the EmbeddedUnitList. The default value is an empty list.</semantics>
                             </attribute>
                             <attribute>
                                 <name>Callsign</name>
@@ -1213,9 +1064,7 @@ Reference to platforms or lifeforms embarked on this entity. If not published, e
                                 <sharing>PublishSubscribe</sharing>
                                 <transportation>HLAbestEffort</transportation>
                                 <order>Receive</order>
-                                <semantics>Required. 
- 
-A callsign used to address the platform. Callsigns should be unique in the context in which they are used but not required to be globally unique.</semantics>
+                                <semantics>Required. A callsign used to address the platform. Callsigns should be unique in the context in which they are used but not required to be globally unique.</semantics>
                             </attribute>
                             <attribute>
                                 <name>Activity</name>
@@ -1226,9 +1075,7 @@ A callsign used to address the platform. Callsigns should be unique in the conte
                                 <sharing>PublishSubscribe</sharing>
                                 <transportation>HLAbestEffort</transportation>
                                 <order>Receive</order>
-                                <semantics>Optional. 
- 
-The current activity of the platform. The value is based on the Joint Consultation, Command and Control Information Exchange Data Model (JC3IEDM) action-event-category-code. The JC3IEDM is a fully documented standard [NATO STANAG 5525] for an information exchange data model for the sharing of C2 information. The default value is 0 (Other activity).</semantics>
+                                <semantics>Optional. The current activity of the platform. The value is based on the Joint Consultation, Command and Control Information Exchange Data Model (JC3IEDM) action-event-category-code. The JC3IEDM is a fully documented standard [NATO STANAG 5525] for an information exchange data model for the sharing of C2 information. The default value is 0 (Other activity).</semantics>
                             </attribute>
                             <attribute>
                                 <name>SymbolId</name>
@@ -1239,7 +1086,7 @@ The current activity of the platform. The value is based on the Joint Consultati
                                 <sharing>PublishSubscribe</sharing>
                                 <transportation>HLAbestEffort</transportation>
                                 <order>Receive</order>
-                                <semantics>Optional. A symbol identifier represented as a string. The symbol standard used is indicated using an URI notation (uri:xxxxxxxxxx). The following uri should be used for common symbology standards app6b, app6b, app6c, app6c, 2525b, 2525c, 2525d. If not provided the symbol standard used is undefined.</semantics>
+                                <semantics>Optional. A symbol identifier represented as a string.</semantics>
                             </attribute>
                         </objectClass>
                     </objectClass>
@@ -1258,9 +1105,7 @@ The current activity of the platform. The value is based on the Joint Consultati
                                 <sharing>PublishSubscribe</sharing>
                                 <transportation>HLAbestEffort</transportation>
                                 <order>Receive</order>
-                                <semantics>Required. 
- 
-A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
+                                <semantics>Required. A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.</semantics>
                             </attribute>
                             <attribute>
                                 <name>Status</name>
@@ -1271,9 +1116,7 @@ A unique identifier for the object. The Universally Unique Identifier (UUID) is 
                                 <sharing>PublishSubscribe</sharing>
                                 <transportation>HLAbestEffort</transportation>
                                 <order>Receive</order>
-                                <semantics>Required. 
- 
-Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active. 
+                                <semantics>Required. Indicate if this platform currently is being simulated or not. E.g. platforms mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active. 
 An inactive instance may have its instance attributes updated by a federate but reflected updates shall be ignored by receiving federates. All attributes must be updated to represent the current status of the instance before status is set to active.</semantics>
                             </attribute>
                             <attribute>
@@ -1285,9 +1128,7 @@ An inactive instance may have its instance attributes updated by a federate but 
                                 <sharing>PublishSubscribe</sharing>
                                 <transportation>HLAbestEffort</transportation>
                                 <order>Receive</order>
-                                <semantics>Optional. 
- 
-The current path of movement.</semantics>
+                                <semantics>Optional. The current path of movement.</semantics>
                             </attribute>
                             <attribute>
                                 <name>Destination</name>
@@ -1298,9 +1139,7 @@ The current path of movement.</semantics>
                                 <sharing>PublishSubscribe</sharing>
                                 <transportation>HLAbestEffort</transportation>
                                 <order>Receive</order>
-                                <semantics>Optional. 
- 
-The current destination of movement.</semantics>
+                                <semantics>Optional. The current destination of movement.</semantics>
                             </attribute>
                             <attribute>
                                 <name>SymbolId</name>
@@ -1311,7 +1150,7 @@ The current destination of movement.</semantics>
                                 <sharing>PublishSubscribe</sharing>
                                 <transportation>HLAbestEffort</transportation>
                                 <order>Receive</order>
-                                <semantics>Optional. A symbol identifier represented as a string. The symbol standard used is indicated using an URI notation (uri:xxxxxxxxxx). The following uri should be used for common symbology standards app6b, app6b, app6c, app6c, 2525b, 2525c, 2525d. If not provided the symbol standard used is undefined.</semantics>
+                                <semantics>Optional. A symbol identifier represented as a string.</semantics>
                             </attribute>
                         </objectClass>
                     </objectClass>

@@ -54,15 +54,15 @@ Figure: NETN Extensions to RPR-FOM Platform object classes
 
 |Attribute|Description|
 |---|---|
-|UniqueId|**Required**: A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.|
-|Status|**Required:** Indicate if this aggregate unit currently is being simulated or not. E.g. units mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active.|
-|SourceUnit|**Optional:** Reference to an active NETN_Aggregate instance, the source of a NETN-MRM division. If not published, merging is not supported. The default value is 0000000000000000 representing no source unit.|
-|EmbeddedUnitList|**Optional:** Reference to platforms or lifeforms embarked on this platform. If not published, transport of embedded units not supported. Entities are referenced by UUID. E.g. when soldiers are transported in an NETN Physical entity, then references (UUIDs) to these soldier instances is added to the EmbeddedUnitList for the entity. When a soldier disembarks from the transporter the reference (UUID) to that soldier is removed from the EmbeddedUnitList. The default value is an empty list.|
-|Callsign|**Required:** A callsign used to address the unit. Callsigns should be unique in the context in which they are used but not required to be globally unique.|
-|Activity|**Optional:** The current activity of the platform. The activity may differ from the mission due to casualties, readiness, and other reasons. The default value is 0 (Other activity).|
-|Route|**Optional:** The current path of movement.|
-|Destination|**Optional:** The current destination of movement.|
-|SymbolId|**Optional:** A symbol identifier represented as a string. The symbol standard used is indicated using an URI notation (uri:xxxxxxxxxx). The following uri should be used for common symbology standards app6b, app6b, app6c, app6c, 2525b, 2525c, 2525d. If not provided the symbol standard used is undefined.|
+|UniqueId|**Required.** A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.|
+|Status|**Required.** Indicate if this aggregate unit currently is being simulated or not. E.g. units mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active.|
+|SourceUnit|**Optional.** Reference to an active NETN_Aggregate instance, the source of a NETN-MRM division. If not published, merging is not supported. The default value is 0000000000000000 representing no source unit.|
+|EmbeddedUnitList|**Optional.** Reference to platforms or lifeforms embarked on this platform. If not published, transport of embedded units is not supported. Entities are referenced by UUID. E.g. when soldiers are transported in a NETN Physical entity, then references (UUIDs) to these soldier instances are added to the EmbeddedUnitList for the entity. When a soldier disembarks from the transporter, the reference (UUID) to that soldier is removed from the EmbeddedUnitList. The default value is an empty list.|
+|Callsign|**Required.** A callsign used to address the unit. Callsigns should be unique in the context in which they are used but not required to be globally unique.|
+|Activity|**Optional.** The current activity of the platform. The activity may differ from the mission due to casualties, readiness, and other reasons. The default value is 0 (Other activity).|
+|Route|**Optional.** The current path of movement.|
+|Destination|**Optional.** The current destination of movement.|
+|SymbolId|**Optional.** A symbol identifier represented as a string.|
 
 ## Lifeform Entities
 
@@ -74,14 +74,14 @@ Figure: NETN Extensions to RPR-FOM Lifeform object classes
 
 |Attribute|Description|
 |---|---|
-|UniqueId|**Required**: A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.|
-|Status|**Required:** Indicate if this aggregate unit currently is being simulated or not. E.g. units mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active.|
-|SourceUnit|**Optional:** Reference to an active NETN_Aggregate instance, the source of a NETN-MRM division. If not published, merging is not supported. The default value is 00000000-0000-0000-0000-000000000000 (UUID with all zeros) representing no source unit.|
-|Callsign|**Required:** A callsign used to address the unit. Callsigns should be unique in the context in which they are used but not required to be globally unique.|
-|Activity|**Optional:** The current activity of the platform. The activity may differ from the mission due to casualties, readiness, and other reasons. The default value is 0 (Other activity).|
-|Route|**Optional:** The current path of movement.|
-|Destination|**Optional:** The current destination of movement.|
-|SymbolId|**Optional:** A symbol identifier represented as a string. The symbol standard used is indicated using an URI notation (uri:xxxxxxxxxx). The following uri should be used for common symbology standards app6b, app6b, app6c, app6c, 2525b, 2525c, 2525d. If not provided the symbol standard used is undefined.|
+|UniqueId|**Required.** A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.|
+|Status|**Required.** Indicate if this aggregate unit currently is being simulated or not. E.g. units mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active.|
+|SourceUnit|**Optional.** Reference to an active NETN_Aggregate instance, the source of a NETN-MRM division. If not published, merging is not supported. The default value is 00000000-0000-0000-0000-000000000000 (UUID with all zeros) representing no source unit.|
+|Callsign|**Required.** A callsign used to address the unit. Callsigns should be unique in the context in which they are used but not required to be globally unique.|
+|Activity|**Optional.** The current activity of the platform. The activity may differ from the mission due to casualties, readiness, and other reasons. The default value is 0 (Other activity).|
+|Route|**Optional.** The current path of movement.|
+|Destination|**Optional.** The current destination of movement.|
+|SymbolId|**Optional.** A symbol identifier represented as a string.|
 
 
 ## Cultural Features
@@ -94,12 +94,12 @@ Figure: NETN Extension to RPR-FOM CulturalFeature object class
 
 |Attribute|Description|
 |---|---|
-|UniqueId|**Required**: A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.|
-|Status|**Required:** Indicate if this aggregate unit currently is being simulated or not. E.g. units mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active.|
-|EmbeddedUnitList|**Optional:** Reference to units, platforms or lifeforms embedded in this CulturalFeature. The default value is an empty list.|
-|Callsign|**Required:** A callsign used to address the unit. Callsigns should be unique in the context in which they are used but not required to be globally unique.|
-|Activity|**Optional:** The current activity of the platform. The activity may differ from the mission due to casualties, readiness, and other reasons. The default value is 0 (Other activity).|
-|SymbolId|**Optional:** A symbol identifier represented as a string. The symbol standard used is indicated using an URI notation (uri:xxxxxxxxxx). The following uri should be used for common symbology standards app6b, app6b, app6c, app6c, 2525b, 2525c, 2525d. If not provided the symbol standard used is undefined.|
+|UniqueId|**Required.** A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.|
+|Status|**Required.** Indicate if this aggregate unit currently is being simulated or not. E.g. units mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active.|
+|EmbeddedUnitList|**Optional.** Reference to units, platforms or lifeforms embedded in this CulturalFeature. The default value is an empty list.|
+|Callsign|**Required.** A callsign used to address the unit. Callsigns should be unique in the context in which they are used but not required to be globally unique.|
+|Activity|**Optional.** The current activity of the platform. The activity may differ from the mission due to casualties, readiness, and other reasons. The default value is 0 (Other activity).|
+|SymbolId|**Optional.** A symbol identifier represented as a string.|
 
 ## Munition Entities
 
@@ -111,8 +111,8 @@ Figure: NETN Extension to RPR-FOM Munition object class
 
 |Attribute|Description|
 |---|---|
-|UniqueId|**Required**: A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.|
-|Status|**Required:** Indicate if this aggregate unit currently is being simulated or not. E.g. units mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active.|
-|SymbolId|**Optional:** A symbol identifier represented as a string. The symbol standard used is indicated using an URI notation (uri:xxxxxxxxxx). The following uri should be used for common symbology standards app6b, app6b, app6c, app6c, 2525b, 2525c, 2525d. If not provided the symbol standard used is undefined.|
+|UniqueId|**Required.** A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.|
+|Status|**Required.** Indicate if this aggregate unit currently is being simulated or not. E.g. units mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active.|
+|SymbolId|**Optional.** A symbol identifier represented as a string.|
 
 

@@ -113,6 +113,8 @@ Figure: NETN Extension to RPR-FOM Munition object class
 |---|---|
 |UniqueId|**Required.** A unique identifier for the object. The Universally Unique Identifier (UUID) is either generated or defined as part of scenario initialization, e.g. using NETN-ORG MSDL data for defining specific platforms as equipment assigned to units.|
 |Status|**Required.** Indicate if this aggregate unit currently is being simulated or not. E.g. units mounted or embarked on transports can be set to inactive. During an inactive state, the attribute values may not reflect an accurate, current value. Therefore, any subscribing federate can ignore inactive units. All attributes must be updated to represent the current status of the instance before setting the state to Active.|
+|Route|**Optional.** The current path of movement.|
+|Destination|**Optional.** The current destination of movement.|
 |SymbolId|**Optional.** A symbol identifier represented as a string.|
 
 

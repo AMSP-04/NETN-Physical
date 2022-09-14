@@ -112,6 +112,28 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
                             <order>Receive</order>
                             <semantics>Required. A callsign used to address the platform. Callsigns should be unique in the context in which they are used but not required to be globally unique.</semantics>
                         </attribute>
+                        <attribute>
+                            <name>Route</name>
+                            <dataType>PathVariantStruct</dataType>
+                            <updateType>Conditional</updateType>
+                            <updateCondition>When Changed</updateCondition>
+                            <ownership>DivestAcquire</ownership>
+                            <sharing>PublishSubscribe</sharing>
+                            <transportation>HLAbestEffort</transportation>
+                            <order>Receive</order>
+                            <semantics>Optional. The current path of movement.</semantics>
+                        </attribute>
+                        <attribute>
+                            <name>Destination</name>
+                            <dataType>PathVariantStruct</dataType>
+                            <updateType>Conditional</updateType>
+                            <updateCondition>When Changed</updateCondition>
+                            <ownership>DivestAcquire</ownership>
+                            <sharing>PublishSubscribe</sharing>
+                            <transportation>HLAbestEffort</transportation>
+                            <order>Receive</order>
+                            <semantics>Optional. The current destination of movement.</semantics>
+                        </attribute>
                     </objectClass>
                     <objectClass>
                         <name>Platform</name>
@@ -150,6 +172,66 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
                             <order>Receive</order>
                             <semantics>Required. A callsign used to address the platform. Callsigns should be unique in the context in which they are used but not required to be globally unique.</semantics>
                         </attribute>
+                        <attribute>
+                            <name>Route</name>
+                            <dataType>PathVariantStruct</dataType>
+                            <updateType>Conditional</updateType>
+                            <updateCondition>When Changed</updateCondition>
+                            <ownership>DivestAcquire</ownership>
+                            <sharing>PublishSubscribe</sharing>
+                            <transportation>HLAreliable</transportation>
+                            <order>Receive</order>
+                            <semantics>Optional. The current path of movement.</semantics>
+                        </attribute>
+                        <attribute>
+                            <name>Destination</name>
+                            <dataType>PathVariantStruct</dataType>
+                            <updateType>Conditional</updateType>
+                            <updateCondition>When Changed</updateCondition>
+                            <ownership>DivestAcquire</ownership>
+                            <sharing>PublishSubscribe</sharing>
+                            <transportation>HLAbestEffort</transportation>
+                            <order>Receive</order>
+                            <semantics>Optional. The current destination of movement.</semantics>
+                        </attribute>
+                    </objectClass>
+                    <objectClass>
+                        <name>Munition</name>
+                        <sharing>PublishSubscribe</sharing>
+                        <semantics>A complete device charged with explosives, propellants, pyrotechnics, initiating composition, or nuclear, biological or chemical material for use in military operations, including demolitions.</semantics>
+                        <attribute notes="COPY-RPRnotePhysical3">
+                            <name>LauncherFlashPresent</name>
+                            <dataType>RPRboolean</dataType>
+                            <updateType>Conditional</updateType>
+                            <updateCondition>On change</updateCondition>
+                            <ownership>DivestAcquire</ownership>
+                            <sharing>PublishSubscribe</sharing>
+                            <transportation>HLAbestEffort</transportation>
+                            <order>Receive</order>
+                            <semantics>Whether the flash of the munition being launched is present or not.</semantics>
+                        </attribute>
+                        <attribute>
+                            <name>Route</name>
+                            <dataType>PathVariantStruct</dataType>
+                            <updateType>Conditional</updateType>
+                            <updateCondition>When Changed</updateCondition>
+                            <ownership>DivestAcquire</ownership>
+                            <sharing>PublishSubscribe</sharing>
+                            <transportation>HLAbestEffort</transportation>
+                            <order>Receive</order>
+                            <semantics>Optional. The current path of movement.</semantics>
+                        </attribute>
+                        <attribute>
+                            <name>Destination</name>
+                            <dataType>PathVariantStruct</dataType>
+                            <updateType>Conditional</updateType>
+                            <updateCondition>When Changed</updateCondition>
+                            <ownership>DivestAcquire</ownership>
+                            <sharing>PublishSubscribe</sharing>
+                            <transportation>HLAbestEffort</transportation>
+                            <order>Receive</order>
+                            <semantics>Optional. The current destination of movement.</semantics>
+                        </attribute>
                     </objectClass>
                 </objectClass>
             </objectClass>
@@ -162,5 +244,10 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
         <fixedRecordDataTypes/>
         <variantRecordDataTypes/>
     </dataTypes>
-    <notes/>
+    <notes>
+        <note>
+            <label>COPY-RPRnotePhysical3</label>
+            <semantics>Default value: False</semantics>
+        </note>
+    </notes>
 </objectModel>

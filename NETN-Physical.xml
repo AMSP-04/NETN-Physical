@@ -61,30 +61,33 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
                     <name>PhysicalEntity</name>
                     <objectClass>
                         <name>CulturalFeature</name>
-                        <sharing>PublishSubscribe</sharing>
-                        <semantics>Engineering and natural effects such as craters, bridges, vehicle tracks, etc.</semantics>
-                        <attribute>
-                            <name>EmbeddedUnitList</name>
-                            <dataType>ArrayOfUuid</dataType>
-                            <updateType>Conditional</updateType>
-                            <updateCondition>On change</updateCondition>
-                            <ownership>DivestAcquire</ownership>
+                        <objectClass>
+                            <name>NETN_CulturalFeature</name>
                             <sharing>PublishSubscribe</sharing>
-                            <transportation>HLAbestEffort</transportation>
-                            <order>Receive</order>
-                            <semantics>Optional. Reference to platforms or lifeforms embarked on this entity. If not published, embarkment/disembarkment of embedded units not supported. Entities are referenced by UUID. E.g. when soldiers are inside in an NETN_CulturalFeature entity, then references (UUIDs) to these soldier instances are added to the EmbeddedUnitList for the entity. When a soldier leaves he NETN_CulturalFeature the reference (UUID) to that soldier is removed from the EmbeddedUnitList. The default value is an empty list.</semantics>
-                        </attribute>
-                        <attribute>
-                            <name>Callsign</name>
-                            <dataType>HLAunicodeString</dataType>
-                            <updateType>Static</updateType>
-                            <updateCondition>N/A</updateCondition>
-                            <ownership>DivestAcquire</ownership>
-                            <sharing>PublishSubscribe</sharing>
-                            <transportation>HLAbestEffort</transportation>
-                            <order>Receive</order>
-                            <semantics>Required. A callsign used to address the platform. Callsigns should be unique in the context in which they are used but not required to be globally unique.</semantics>
-                        </attribute>
+                            <semantics>Extension for NETN.</semantics>
+                            <attribute>
+                                <name>EmbeddedUnitList</name>
+                                <dataType>ArrayOfUuid</dataType>
+                                <updateType>Conditional</updateType>
+                                <updateCondition>On change</updateCondition>
+                                <ownership>DivestAcquire</ownership>
+                                <sharing>PublishSubscribe</sharing>
+                                <transportation>HLAbestEffort</transportation>
+                                <order>Receive</order>
+                                <semantics>Optional. Reference to platforms or lifeforms embarked on this entity. If not published, embarkment/disembarkment of embedded units not supported. Entities are referenced by UUID. E.g. when soldiers are inside in an NETN_CulturalFeature entity, then references (UUIDs) to these soldier instances are added to the EmbeddedUnitList for the entity. When a soldier leaves he NETN_CulturalFeature the reference (UUID) to that soldier is removed from the EmbeddedUnitList. The default value is an empty list.</semantics>
+                            </attribute>
+                            <attribute>
+                                <name>Callsign</name>
+                                <dataType>HLAunicodeString</dataType>
+                                <updateType>Static</updateType>
+                                <updateCondition>N/A</updateCondition>
+                                <ownership>DivestAcquire</ownership>
+                                <sharing>PublishSubscribe</sharing>
+                                <transportation>HLAbestEffort</transportation>
+                                <order>Receive</order>
+                                <semantics>Required. A callsign used to address the platform. Callsigns should be unique in the context in which they are used but not required to be globally unique.</semantics>
+                            </attribute>
+                        </objectClass>
                     </objectClass>
                     <objectClass>
                         <name>Lifeform</name>
@@ -134,6 +137,22 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
                             <order>Receive</order>
                             <semantics>Optional. The current destination of movement.</semantics>
                         </attribute>
+                        <objectClass>
+                            <name>Human</name>
+                            <objectClass>
+                                <name>NETN_Human</name>
+                                <sharing>PublishSubscribe</sharing>
+                                <semantics>Extension for NETN.</semantics>
+                            </objectClass>
+                        </objectClass>
+                        <objectClass>
+                            <name>NonHuman</name>
+                            <objectClass>
+                                <name>NETN_NonHuman</name>
+                                <sharing>PublishSubscribe</sharing>
+                                <semantics>Extension for NETN.</semantics>
+                            </objectClass>
+                        </objectClass>
                     </objectClass>
                     <objectClass>
                         <name>Platform</name>
@@ -194,44 +213,103 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
                             <order>Receive</order>
                             <semantics>Optional. The current destination of movement.</semantics>
                         </attribute>
+                        <objectClass>
+                            <name>Aircraft</name>
+                            <objectClass>
+                                <name>NETN_Aircraft</name>
+                                <sharing>PublishSubscribe</sharing>
+                                <semantics>Extension for NETN.</semantics>
+                            </objectClass>
+                        </objectClass>
+                        <objectClass>
+                            <name>AmphibiousVehicle</name>
+                            <objectClass>
+                                <name>NETN_AmphibiousVehicle</name>
+                                <sharing>PublishSubscribe</sharing>
+                                <semantics>Extension for NETN.</semantics>
+                            </objectClass>
+                        </objectClass>
+                        <objectClass>
+                            <name>GroundVehicle</name>
+                            <objectClass>
+                                <name>NETN_GroundVehicle</name>
+                                <sharing>PublishSubscribe</sharing>
+                                <semantics>Extension for NETN.</semantics>
+                            </objectClass>
+                        </objectClass>
+                        <objectClass>
+                            <name>MultiDomainPlatform</name>
+                            <objectClass>
+                                <name>NETN_MultiDomainPlatform</name>
+                                <sharing>PublishSubscribe</sharing>
+                                <semantics>Extension for NETN.</semantics>
+                            </objectClass>
+                        </objectClass>
+                        <objectClass>
+                            <name>Spacecraft</name>
+                            <objectClass>
+                                <name>NETN_Spacecraft</name>
+                                <sharing>PublishSubscribe</sharing>
+                                <semantics>Extension for NETN.</semantics>
+                            </objectClass>
+                        </objectClass>
+                        <objectClass>
+                            <name>SubmersibleVessel</name>
+                            <objectClass>
+                                <name>NETN_SubmersibleVessel</name>
+                                <sharing>PublishSubscribe</sharing>
+                                <semantics>Extension for NETN.</semantics>
+                            </objectClass>
+                        </objectClass>
+                        <objectClass>
+                            <name>SurfaceVessel</name>
+                            <objectClass>
+                                <name>NETN_SurfaceVessel</name>
+                                <sharing>PublishSubscribe</sharing>
+                                <semantics>Extension for NETN.</semantics>
+                            </objectClass>
+                        </objectClass>
                     </objectClass>
                     <objectClass>
                         <name>Munition</name>
-                        <sharing>PublishSubscribe</sharing>
-                        <semantics>A complete device charged with explosives, propellants, pyrotechnics, initiating composition, or nuclear, biological or chemical material for use in military operations, including demolitions.</semantics>
-                        <attribute notes="COPY-RPRnotePhysical3">
-                            <name>LauncherFlashPresent</name>
-                            <dataType>RPRboolean</dataType>
-                            <updateType>Conditional</updateType>
-                            <updateCondition>On change</updateCondition>
-                            <ownership>DivestAcquire</ownership>
+                        <objectClass>
+                            <name>NETN_Munition</name>
                             <sharing>PublishSubscribe</sharing>
-                            <transportation>HLAbestEffort</transportation>
-                            <order>Receive</order>
-                            <semantics>Whether the flash of the munition being launched is present or not.</semantics>
-                        </attribute>
-                        <attribute>
-                            <name>Route</name>
-                            <dataType>PathVariantStruct</dataType>
-                            <updateType>Conditional</updateType>
-                            <updateCondition>When Changed</updateCondition>
-                            <ownership>DivestAcquire</ownership>
-                            <sharing>PublishSubscribe</sharing>
-                            <transportation>HLAbestEffort</transportation>
-                            <order>Receive</order>
-                            <semantics>Optional. The current path of movement.</semantics>
-                        </attribute>
-                        <attribute>
-                            <name>Destination</name>
-                            <dataType>PathVariantStruct</dataType>
-                            <updateType>Conditional</updateType>
-                            <updateCondition>When Changed</updateCondition>
-                            <ownership>DivestAcquire</ownership>
-                            <sharing>PublishSubscribe</sharing>
-                            <transportation>HLAbestEffort</transportation>
-                            <order>Receive</order>
-                            <semantics>Optional. The current destination of movement.</semantics>
-                        </attribute>
+                            <semantics>Extension for NETN.</semantics>
+                            <attribute notes="COPY-RPRnotePhysical3">
+                                <name>LauncherFlashPresent</name>
+                                <dataType>RPRboolean</dataType>
+                                <updateType>Conditional</updateType>
+                                <updateCondition>On change</updateCondition>
+                                <ownership>DivestAcquire</ownership>
+                                <sharing>PublishSubscribe</sharing>
+                                <transportation>HLAbestEffort</transportation>
+                                <order>Receive</order>
+                                <semantics>Whether the flash of the munition being launched is present or not.</semantics>
+                            </attribute>
+                            <attribute>
+                                <name>Route</name>
+                                <dataType>PathVariantStruct</dataType>
+                                <updateType>Conditional</updateType>
+                                <updateCondition>When Changed</updateCondition>
+                                <ownership>DivestAcquire</ownership>
+                                <sharing>PublishSubscribe</sharing>
+                                <transportation>HLAbestEffort</transportation>
+                                <order>Receive</order>
+                                <semantics>Optional. The current path of movement.</semantics>
+                            </attribute>
+                            <attribute>
+                                <name>Destination</name>
+                                <dataType>PathVariantStruct</dataType>
+                                <updateType>Conditional</updateType>
+                                <updateCondition>When Changed</updateCondition>
+                                <ownership>DivestAcquire</ownership>
+                                <sharing>PublishSubscribe</sharing>
+                                <transportation>HLAbestEffort</transportation>
+                                <order>Receive</order>
+                                <semantics>Optional. The current destination of movement.</semantics>
+                            </attribute>
+                        </objectClass>
                     </objectClass>
                 </objectClass>
             </objectClass>

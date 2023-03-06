@@ -276,17 +276,6 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
                             <name>NETN_Munition</name>
                             <sharing>PublishSubscribe</sharing>
                             <semantics>Extension for NETN.</semantics>
-                            <attribute notes="COPY-RPRnotePhysical3">
-                                <name>LauncherFlashPresent</name>
-                                <dataType>RPRboolean</dataType>
-                                <updateType>Conditional</updateType>
-                                <updateCondition>On change</updateCondition>
-                                <ownership>DivestAcquire</ownership>
-                                <sharing>PublishSubscribe</sharing>
-                                <transportation>HLAbestEffort</transportation>
-                                <order>Receive</order>
-                                <semantics>Whether the flash of the munition being launched is present or not.</semantics>
-                            </attribute>
                             <attribute>
                                 <name>Route</name>
                                 <dataType>PathVariantStruct</dataType>
@@ -322,10 +311,5 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
         <fixedRecordDataTypes/>
         <variantRecordDataTypes/>
     </dataTypes>
-    <notes>
-        <note>
-            <label>COPY-RPRnotePhysical3</label>
-            <semantics>Default value: False</semantics>
-        </note>
-    </notes>
+    <notes/>
 </objectModel>

@@ -92,7 +92,7 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
                     <objectClass>
                         <name>Lifeform</name>
                         <sharing>Subscribe</sharing>
-                        <semantics>Extensions for NETN</semantics>
+                        <semantics>A living military platform (human or not).</semantics>
                         <attribute>
                             <name>SourceUnit</name>
                             <dataType>UUID</dataType>
@@ -157,7 +157,7 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
                     <objectClass>
                         <name>Platform</name>
                         <sharing>Subscribe</sharing>
-                        <semantics>Extensions for NETN</semantics>
+                        <semantics>A physical object under the control of armed forces upon which sensor, communication, or weapon systems may be mounted.</semantics>
                         <attribute>
                             <name>SourceUnit</name>
                             <dataType>UUID</dataType>

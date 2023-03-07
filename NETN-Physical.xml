@@ -272,32 +272,35 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
                     </objectClass>
                     <objectClass>
                         <name>Munition</name>
+                        <sharing>PublishSubscribe</sharing>
+                         <semantics>A complete device charged with explosives, propellants, pyrotechnics, initiating composition, or nuclear, biological or chemical material for use in military operations, including demolitions.</semantics>
+                
+                        <attribute>
+                            <name>Destination</name>
+                            <dataType>PathVariantStruct</dataType>
+                            <updateType>Conditional</updateType>
+                            <updateCondition>When Changed</updateCondition>
+                            <ownership>DivestAcquire</ownership>
+                            <sharing>PublishSubscribe</sharing>
+                            <transportation>HLAbestEffort</transportation>
+                            <order>Receive</order>
+                            <semantics>Optional. The current destination of movement.</semantics>
+                        </attribute>
+                        <attribute>
+                            <name>Route</name>
+                            <dataType>PathVariantStruct</dataType>
+                            <updateType>Conditional</updateType>
+                            <updateCondition>When Changed</updateCondition>
+                            <ownership>DivestAcquire</ownership>
+                            <sharing>PublishSubscribe</sharing>
+                            <transportation>HLAbestEffort</transportation>
+                            <order>Receive</order>
+                            <semantics>Optional. The current path of movement.</semantics>
+                        </attribute>
                         <objectClass>
                             <name>NETN_Munition</name>
                             <sharing>PublishSubscribe</sharing>
                             <semantics>Extension for NETN.</semantics>
-                            <attribute>
-                                <name>Route</name>
-                                <dataType>PathVariantStruct</dataType>
-                                <updateType>Conditional</updateType>
-                                <updateCondition>When Changed</updateCondition>
-                                <ownership>DivestAcquire</ownership>
-                                <sharing>PublishSubscribe</sharing>
-                                <transportation>HLAbestEffort</transportation>
-                                <order>Receive</order>
-                                <semantics>Optional. The current path of movement.</semantics>
-                            </attribute>
-                            <attribute>
-                                <name>Destination</name>
-                                <dataType>PathVariantStruct</dataType>
-                                <updateType>Conditional</updateType>
-                                <updateCondition>When Changed</updateCondition>
-                                <ownership>DivestAcquire</ownership>
-                                <sharing>PublishSubscribe</sharing>
-                                <transportation>HLAbestEffort</transportation>
-                                <order>Receive</order>
-                                <semantics>Optional. The current destination of movement.</semantics>
-                            </attribute>
                         </objectClass>
                     </objectClass>
                 </objectClass>

@@ -3,7 +3,7 @@
 ### Changes for v3.0
 * Moved attributes from `NETN_Human` and `NETN_NonHuman` to `Lifeform`
 * Moved attributes from `NETN_Munition` to `Munition`
-* Moved attributes from all `NETN_platforms` to `Platform`
+* Moved attributes from all NETN platforms subclasses to `Platform`
 
 
 ### Changes for v2.0

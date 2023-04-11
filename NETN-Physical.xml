@@ -3,16 +3,16 @@
     <modelIdentification>
         <name>NETN-Physical</name>
         <type>FOM</type>
-        <version>v2.0</version>
-        <modificationDate>2021-03-26</modificationDate>
+        <version>v2.1</version>
+        <modificationDate>2023-04-08</modificationDate>
         <securityClassification>Not Classified</securityClassification>
         <purpose></purpose>
         <applicationDomain>Training</applicationDomain>
         <description>Defines object classes for physical entities, inherit from RPR_v2.</description>
         <useLimitation></useLimitation>
-        <useHistory>Object classes and datatypes derived from deprecated NETN-FOM v 1.0 module AggDeagg.</useHistory>
-        <useHistory>v1.2.0 - First official release as part of NETN-FOM v2.0</useHistory>
-        <useHistory>v2.0.0 - Updated by MSG-163 for NETN-FOM v3.0</useHistory>
+        <useHistory>v1.2 - First version developed by MSG-134 for NETN-FOM v2.0. Object classes and datatypes derived from deprecated NETN-FOM v 1.0 module AggDeagg.</useHistory>
+        <useHistory>v2.0 - Updated version developed by MSG-163 for NETN-FOM v3.0</useHistory>
+        <useHistory>v2.1 - Updated version developed by MSG-191 for NATO-FOM v4.0</useHistory>
         <poc>
             <pocType>Release authority</pocType>
             <pocName>NATO Modelling and Simulation Group</pocName>
@@ -21,7 +21,7 @@
         </poc>
         <poc>
             <pocType>Primary author</pocType>
-            <pocName>MSG-163 Evolution of NATO Standards for Federated Simulation</pocName>
+            <pocName>MSG-106 Enhanced CAX Architecture, Desing and Methodology</pocName>
             <pocOrg>NATO Modelling and Simulation Group</pocOrg>
             <pocEmail>msg@cso.nato.int</pocEmail>
         </poc>
@@ -33,17 +33,19 @@
         </poc>
         <poc>
             <pocType>Primary author</pocType>
-            <pocName>MSG-106 Enhanced CAX Architecture, Desing and Methodology</pocName>
+            <pocName>MSG-163 Evolution of NATO Standards for Federated Simulation</pocName>
+            <pocOrg>NATO Modelling and Simulation Group</pocOrg>
+            <pocEmail>msg@cso.nato.int</pocEmail>
+        </poc>
+        <poc>
+            <pocType>Primary author</pocType>
+            <pocName>MSG-191 NATO Standards for Federated Simulation and Services for Integration, Verification and Certification</pocName>
             <pocOrg>NATO Modelling and Simulation Group</pocOrg>
             <pocEmail>msg@cso.nato.int</pocEmail>
         </poc>
         <reference>
             <type>Dependency</type>
             <identification>NETN-BASE</identification>
-        </reference>
-        <reference>
-            <type>Dependency</type>
-            <identification>RPR-Physical_v2.0</identification>
         </reference>
         <other>
 Copyright © 2020 by NATO/OTAN. All rights reserved.
@@ -57,262 +59,552 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
             <name>HLAobjectRoot</name>
             <objectClass>
                 <name>BaseEntity</name>
+                <sharing>Subscribe</sharing>
+                <semantics>A base class of aggregate and discrete scenario domain participants. The BaseEntity class is characterized by being located at a particular location in space and independently movable, if capable of movement at all. It specifically excludes elements normally considered to be a component of another element. The BaseEntity class is intended to be a container for common attributes for entities of this type. Since it lacks sufficient class specific attributes that are required for simulation purposes, federates cannot publish objects of this class. Certain simulation management federates, e.g. viewers, may subscribe to this class. Simulation federates will normally subscribe to one of the subclasses, to gain the extra information required to properly simulate the entity.</semantics>
+                <attribute>
+                    <name>SymbolId</name>
+                    <dataType>SymbolIdentifier</dataType>
+                    <updateType>Conditional</updateType>
+                    <updateCondition>On Change</updateCondition>
+                    <ownership>DivestAcquire</ownership>
+                    <sharing>PublishSubscribe</sharing>
+                    <transportation>HLAreliable</transportation>
+                    <order>Receive</order>
+                    <semantics>Optional. A symbol identifier is represented as a string formatted according to identified symbology standards. The default value should be derived from the `BaseEntity` attribute `EntityType` and `PhysicalEntity` or `AggregateEntity` attribute `ForceIdentifier`.</semantics>
+                </attribute>
+                <attribute>
+                    <name>SymbolAmplification</name>
+                    <dataType>SymbolAmplificationVariant</dataType>
+                    <updateType>Conditional</updateType>
+                    <updateCondition>On change</updateCondition>
+                    <ownership>DivestAcquire</ownership>
+                    <sharing>PublishSubscribe</sharing>
+                    <transportation>HLAreliable</transportation>
+                    <order>Receive</order>
+                    <semantics>Optional: Additional symbol amplification data.</semantics>
+                </attribute>
+                <attribute>
+                    <name>Callsign</name>
+                    <dataType>HLAunicodeString</dataType>
+                    <updateType>Static</updateType>
+                    <updateCondition>NA</updateCondition>
+                    <ownership>DivestAcquire</ownership>
+                    <sharing>PublishSubscribe</sharing>
+                    <transportation>HLAreliable</transportation>
+                    <order>Receive</order>
+                    <semantics>Optional: A designator of max 21 charachters. It should be unique in the context in which it is used but is not required to be globally unique. The callsign is primarily used as the unique designator symbol-modifier. The default is using the RPR-FOM `PhysicalEntity` attribute `Marking` or the `AggregateEntity` attribute `AggregateMarking`.</semantics>
+                </attribute>
+                <attribute>
+                    <name>HostEntity</name>
+                    <dataType>UUID</dataType>
+                    <updateType>Conditional</updateType>
+                    <updateCondition>On change</updateCondition>
+                    <ownership>DivestAcquire</ownership>
+                    <sharing>PublishSubscribe</sharing>
+                    <transportation>HLAreliable</transportation>
+                    <order>Receive</order>
+                    <semantics>Optional. Reference to the simulation entity this platform is mounted on or embedded in. The default is no host entity which is equivalent to a all zeros UUID.</semantics>
+                </attribute>
+                <attribute>
+                    <name>HostedEntities</name>
+                    <dataType>ArrayOfUuid</dataType>
+                    <updateType>Conditional</updateType>
+                    <updateCondition>On change</updateCondition>
+                    <ownership>DivestAcquire</ownership>
+                    <sharing>PublishSubscribe</sharing>
+                    <transportation>HLAreliable</transportation>
+                    <order>Receive</order>
+                    <semantics>Optional. Reference to simulation entities mounted on or embedded in a `CulturalFeature`, `Platform`, or `AggregateEntity` simulation entity.</semantics>
+                </attribute>
                 <objectClass>
-                    <name>PhysicalEntity</name>
-                    <objectClass>
-                        <name>CulturalFeature</name>
-                        <objectClass>
-                            <name>NETN_CulturalFeature</name>
-                            <sharing>PublishSubscribe</sharing>
-                            <semantics>Extension for NETN.</semantics>
-                            <attribute>
-                                <name>EmbeddedUnitList</name>
-                                <dataType>ArrayOfUuid</dataType>
-                                <updateType>Conditional</updateType>
-                                <updateCondition>On change</updateCondition>
-                                <ownership>DivestAcquire</ownership>
-                                <sharing>PublishSubscribe</sharing>
-                                <transportation>HLAbestEffort</transportation>
-                                <order>Receive</order>
-                                <semantics>Optional. Reference to platforms or lifeforms embarked on this entity. If not published, embarkment/disembarkment of embedded units not supported. Entities are referenced by UUID. E.g. when soldiers are inside in an NETN_CulturalFeature entity, then references (UUIDs) to these soldier instances are added to the EmbeddedUnitList for the entity. When a soldier leaves he NETN_CulturalFeature the reference (UUID) to that soldier is removed from the EmbeddedUnitList. The default value is an empty list.</semantics>
-                            </attribute>
-                            <attribute>
-                                <name>Callsign</name>
-                                <dataType>HLAunicodeString</dataType>
-                                <updateType>Static</updateType>
-                                <updateCondition>N/A</updateCondition>
-                                <ownership>DivestAcquire</ownership>
-                                <sharing>PublishSubscribe</sharing>
-                                <transportation>HLAbestEffort</transportation>
-                                <order>Receive</order>
-                                <semantics>Required. A callsign used to address the platform. Callsigns should be unique in the context in which they are used but not required to be globally unique.</semantics>
-                            </attribute>
-                        </objectClass>
-                    </objectClass>
-                    <objectClass>
-                        <name>Lifeform</name>
-                        <sharing>Subscribe</sharing>
-                        <semantics>A living military platform (human or not).</semantics>
-                        <attribute>
-                            <name>SourceUnit</name>
-                            <dataType>UUID</dataType>
-                            <updateType>NA</updateType>
-                            <updateCondition>On change</updateCondition>
-                            <ownership>DivestAcquire</ownership>
-                            <sharing>PublishSubscribe</sharing>
-                            <transportation>HLAbestEffort</transportation>
-                            <order>Receive</order>
-                            <semantics>Optional. Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. The default value is 0000000000000000 representing no source unit.</semantics>
-                        </attribute>
-                        <attribute>
-                            <name>Callsign</name>
-                            <dataType>HLAunicodeString</dataType>
-                            <updateType>Static</updateType>
-                            <updateCondition>N/A</updateCondition>
-                            <ownership>DivestAcquire</ownership>
-                            <sharing>PublishSubscribe</sharing>
-                            <transportation>HLAbestEffort</transportation>
-                            <order>Receive</order>
-                            <semantics>Required. A callsign used to address the platform. Callsigns should be unique in the context in which they are used but not required to be globally unique.</semantics>
-                        </attribute>
-                        <attribute>
-                            <name>Route</name>
-                            <dataType>PathVariantStruct</dataType>
-                            <updateType>Conditional</updateType>
-                            <updateCondition>When Changed</updateCondition>
-                            <ownership>DivestAcquire</ownership>
-                            <sharing>PublishSubscribe</sharing>
-                            <transportation>HLAbestEffort</transportation>
-                            <order>Receive</order>
-                            <semantics>Optional. The current path of movement.</semantics>
-                        </attribute>
-                        <attribute>
-                            <name>Destination</name>
-                            <dataType>PathVariantStruct</dataType>
-                            <updateType>Conditional</updateType>
-                            <updateCondition>When Changed</updateCondition>
-                            <ownership>DivestAcquire</ownership>
-                            <sharing>PublishSubscribe</sharing>
-                            <transportation>HLAbestEffort</transportation>
-                            <order>Receive</order>
-                            <semantics>Optional. The current destination of movement.</semantics>
-                        </attribute>
-                        <objectClass>
-                            <name>Human</name>
-                            <objectClass>
-                                <name>NETN_Human</name>
-                                <sharing>PublishSubscribe</sharing>
-                                <semantics>Extension for NETN.</semantics>
-                            </objectClass>
-                        </objectClass>
-                        <objectClass>
-                            <name>NonHuman</name>
-                            <objectClass>
-                                <name>NETN_NonHuman</name>
-                                <sharing>PublishSubscribe</sharing>
-                                <semantics>Extension for NETN.</semantics>
-                            </objectClass>
-                        </objectClass>
-                    </objectClass>
-                    <objectClass>
-                        <name>Platform</name>
-                        <sharing>Subscribe</sharing>
-                        <semantics>A physical object under the control of armed forces upon which sensor, communication, or weapon systems may be mounted.</semantics>
-                        <attribute>
-                            <name>SourceUnit</name>
-                            <dataType>UUID</dataType>
-                            <updateType>NA</updateType>
-                            <updateCondition>On change</updateCondition>
-                            <ownership>DivestAcquire</ownership>
-                            <sharing>PublishSubscribe</sharing>
-                            <transportation>HLAbestEffort</transportation>
-                            <order>Receive</order>
-                            <semantics>Optional. Reference to an active NETN_Aggregate instance from which this physical entity was divided. If not published, merging is not supported. The default value is 00000000-0000-0000-0000-000000000000 (UUID with all zeros) representing no source unit.</semantics>
-                        </attribute>
-                        <attribute>
-                            <name>EmbeddedUnitList</name>
-                            <dataType>ArrayOfUuid</dataType>
-                            <updateType>Conditional</updateType>
-                            <updateCondition>On change</updateCondition>
-                            <ownership>DivestAcquire</ownership>
-                            <sharing>PublishSubscribe</sharing>
-                            <transportation>HLAbestEffort</transportation>
-                            <order>Receive</order>
-                            <semantics>Optional. Reference to platforms or lifeforms embarked on this platform. If not published, transport of embedded units is not supported. Entities are referenced by UUID. E.g. when soldiers are transported in a NETN Physical entity, then references (UUIDs) to these soldier instances are added to the EmbeddedUnitList for the entity. When a soldier disembarks from the transporter, the reference (UUID) to that soldier is removed from the EmbeddedUnitList. The default value is an empty list.</semantics>
-                        </attribute>
-                        <attribute>
-                            <name>Callsign</name>
-                            <dataType>HLAunicodeString</dataType>
-                            <updateType>Static</updateType>
-                            <updateCondition>N/A</updateCondition>
-                            <ownership>DivestAcquire</ownership>
-                            <sharing>PublishSubscribe</sharing>
-                            <transportation>HLAbestEffort</transportation>
-                            <order>Receive</order>
-                            <semantics>Required. A callsign used to address the platform. Callsigns should be unique in the context in which they are used but not required to be globally unique.</semantics>
-                        </attribute>
-                        <attribute>
-                            <name>Route</name>
-                            <dataType>PathVariantStruct</dataType>
-                            <updateType>Conditional</updateType>
-                            <updateCondition>When Changed</updateCondition>
-                            <ownership>DivestAcquire</ownership>
-                            <sharing>PublishSubscribe</sharing>
-                            <transportation>HLAreliable</transportation>
-                            <order>Receive</order>
-                            <semantics>Optional. The current path of movement.</semantics>
-                        </attribute>
-                        <attribute>
-                            <name>Destination</name>
-                            <dataType>PathVariantStruct</dataType>
-                            <updateType>Conditional</updateType>
-                            <updateCondition>When Changed</updateCondition>
-                            <ownership>DivestAcquire</ownership>
-                            <sharing>PublishSubscribe</sharing>
-                            <transportation>HLAbestEffort</transportation>
-                            <order>Receive</order>
-                            <semantics>Optional. The current destination of movement.</semantics>
-                        </attribute>
-                        <objectClass>
-                            <name>Aircraft</name>
-                            <objectClass>
-                                <name>NETN_Aircraft</name>
-                                <sharing>PublishSubscribe</sharing>
-                                <semantics>Extension for NETN.</semantics>
-                            </objectClass>
-                        </objectClass>
-                        <objectClass>
-                            <name>AmphibiousVehicle</name>
-                            <objectClass>
-                                <name>NETN_AmphibiousVehicle</name>
-                                <sharing>PublishSubscribe</sharing>
-                                <semantics>Extension for NETN.</semantics>
-                            </objectClass>
-                        </objectClass>
-                        <objectClass>
-                            <name>GroundVehicle</name>
-                            <objectClass>
-                                <name>NETN_GroundVehicle</name>
-                                <sharing>PublishSubscribe</sharing>
-                                <semantics>Extension for NETN.</semantics>
-                            </objectClass>
-                        </objectClass>
-                        <objectClass>
-                            <name>MultiDomainPlatform</name>
-                            <objectClass>
-                                <name>NETN_MultiDomainPlatform</name>
-                                <sharing>PublishSubscribe</sharing>
-                                <semantics>Extension for NETN.</semantics>
-                            </objectClass>
-                        </objectClass>
-                        <objectClass>
-                            <name>Spacecraft</name>
-                            <objectClass>
-                                <name>NETN_Spacecraft</name>
-                                <sharing>PublishSubscribe</sharing>
-                                <semantics>Extension for NETN.</semantics>
-                            </objectClass>
-                        </objectClass>
-                        <objectClass>
-                            <name>SubmersibleVessel</name>
-                            <objectClass>
-                                <name>NETN_SubmersibleVessel</name>
-                                <sharing>PublishSubscribe</sharing>
-                                <semantics>Extension for NETN.</semantics>
-                            </objectClass>
-                        </objectClass>
-                        <objectClass>
-                            <name>SurfaceVessel</name>
-                            <objectClass>
-                                <name>NETN_SurfaceVessel</name>
-                                <sharing>PublishSubscribe</sharing>
-                                <semantics>Extension for NETN.</semantics>
-                            </objectClass>
-                        </objectClass>
-                    </objectClass>
-                    <objectClass>
-                        <name>Munition</name>
+                    <name>AggregateEntity</name>
+                    <sharing>PublishSubscribe</sharing>
+                    <semantics>A group of one or more separate objects that operate together as part of an organization. These objects may be discrete, may be other aggregate objects, or may be a mixture of both.</semantics>
+                    <attribute>
+                        <name>MountProgress</name>
+                        <dataType>PercentFloat32</dataType>
+                        <updateType>Conditional</updateType>
+                        <updateCondition>On change</updateCondition>
+                        <ownership>DivestAcquire</ownership>
                         <sharing>PublishSubscribe</sharing>
-                         <semantics>A complete device charged with explosives, propellants, pyrotechnics, initiating composition, or nuclear, biological or chemical material for use in military operations, including demolitions.</semantics>
-                
-                        <attribute>
-                            <name>Destination</name>
-                            <dataType>PathVariantStruct</dataType>
-                            <updateType>Conditional</updateType>
-                            <updateCondition>When Changed</updateCondition>
-                            <ownership>DivestAcquire</ownership>
-                            <sharing>PublishSubscribe</sharing>
-                            <transportation>HLAbestEffort</transportation>
-                            <order>Receive</order>
-                            <semantics>Optional. The current destination of movement.</semantics>
-                        </attribute>
-                        <attribute>
-                            <name>Route</name>
-                            <dataType>PathVariantStruct</dataType>
-                            <updateType>Conditional</updateType>
-                            <updateCondition>When Changed</updateCondition>
-                            <ownership>DivestAcquire</ownership>
-                            <sharing>PublishSubscribe</sharing>
-                            <transportation>HLAbestEffort</transportation>
-                            <order>Receive</order>
-                            <semantics>Optional. The current path of movement.</semantics>
-                        </attribute>
-                        <objectClass>
-                            <name>NETN_Munition</name>
-                            <sharing>PublishSubscribe</sharing>
-                            <semantics>Extension for NETN.</semantics>
-                        </objectClass>
-                    </objectClass>
+                        <transportation>HLAbestEffort</transportation>
+                        <order>Receive</order>
+                        <semantics>Optional. Mounting progress.</semantics>
+                    </attribute>
+                    <attribute>
+                        <name>EntityList</name>
+                        <dataType>ArrayOfEntityStruct</dataType>
+                        <updateType>Conditional</updateType>
+                        <updateCondition>On change</updateCondition>
+                        <ownership>DivestAcquire</ownership>
+                        <sharing>PublishSubscribe</sharing>
+                        <transportation>HLAbestEffort</transportation>
+                        <order>Receive</order>
+                        <semantics>Optional. This attribute provides data on all equipment, and lifeforms associated with this AggregateEntity, e.g. platforms, weapons, sensors and personnel.</semantics>
+                    </attribute>
+                    <attribute>
+                        <name>SuppliesStatus</name>
+                        <dataType>SupplyStructArray</dataType>
+                        <updateType>Conditional</updateType>
+                        <updateCondition>On change</updateCondition>
+                        <ownership>DivestAcquire</ownership>
+                        <sharing>PublishSubscribe</sharing>
+                        <transportation>HLAbestEffort</transportation>
+                        <order>Receive</order>
+                        <semantics>Optional. The type and quantities of supplies available (on hand) to the entity. If not provided, the amount of available supplies is undefined.</semantics>
+                    </attribute>
+                    <attribute>
+                        <name>EquipmentStatus</name>
+                        <dataType>ArrayOfResourceStatus</dataType>
+                        <updateType>Conditional</updateType>
+                        <updateCondition>On change</updateCondition>
+                        <ownership>DivestAcquire</ownership>
+                        <sharing>PublishSubscribe</sharing>
+                        <transportation>HLAbestEffort</transportation>
+                        <order>Receive</order>
+                        <semantics>Optional. This summarizes the health status of the equipment comprising the aggregate. If not provided, the status of equipment is undefined.</semantics>
+                    </attribute>
+                    <attribute>
+                        <name>PersonnelStatus</name>
+                        <dataType>ArrayOfResourceStatus</dataType>
+                        <updateType>Conditional</updateType>
+                        <updateCondition>On change</updateCondition>
+                        <ownership>DivestAcquire</ownership>
+                        <sharing>PublishSubscribe</sharing>
+                        <transportation>HLAbestEffort</transportation>
+                        <order>Receive</order>
+                        <semantics>Optional. This summarizes the health status of personnel comprising the aggregate. If not provided, the status of personnel is undefined.</semantics>
+                    </attribute>
+                    <attribute>
+                        <name>VisualSignature</name>
+                        <dataType>VisualSignatureStruct</dataType>
+                        <updateType>Conditional</updateType>
+                        <updateCondition>On change</updateCondition>
+                        <ownership>DivestAcquire</ownership>
+                        <sharing>PublishSubscribe</sharing>
+                        <transportation>HLAbestEffort</transportation>
+                        <order>Receive</order>
+                        <semantics>Optional: Describes the susceptibility to electro-optical detection.</semantics>
+                    </attribute>
+                    <attribute>
+                        <name>HUMINTSignature</name>
+                        <dataType>HUMINTSignatureStruct</dataType>
+                        <updateType>Conditional</updateType>
+                        <updateCondition>On change</updateCondition>
+                        <ownership>DivestAcquire</ownership>
+                        <sharing>PublishSubscribe</sharing>
+                        <transportation>HLAbestEffort</transportation>
+                        <order>Receive</order>
+                        <semantics>Optional: Describes the susceptibility to human intelligence (HUMINT), i.e. information collected and provided by human sources.</semantics>
+                    </attribute>
+                    <attribute>
+                        <name>ElectronicSignature</name>
+                        <dataType>ElectronicSignatureStruct</dataType>
+                        <updateType>Conditional</updateType>
+                        <updateCondition>On change</updateCondition>
+                        <ownership>DivestAcquire</ownership>
+                        <sharing>PublishSubscribe</sharing>
+                        <transportation>HLAbestEffort</transportation>
+                        <order>Receive</order>
+                        <semantics>Optional: Describes the susceptibility to electronic detection both as a summary value and by identifying aggregate sensors together with their operational status.</semantics>
+                    </attribute>
+                    <attribute>
+                        <name>CombatValue</name>
+                        <dataType>PercentFloat32</dataType>
+                        <updateType>Conditional</updateType>
+                        <updateCondition>On change</updateCondition>
+                        <ownership>DivestAcquire</ownership>
+                        <sharing>PublishSubscribe</sharing>
+                        <transportation>HLAbestEffort</transportation>
+                        <order>Receive</order>
+                        <semantics>Optional. A summary value (in percent) of the effectiveness based on the level of training, leadership, morale, personnel and equipment operational status, etc. The default value is 100%.</semantics>
+                    </attribute>
+                    <attribute>
+                        <name>CoverStatus</name>
+                        <dataType>PercentFloat32</dataType>
+                        <updateType>Conditional</updateType>
+                        <updateCondition>On change</updateCondition>
+                        <ownership>DivestAcquire</ownership>
+                        <sharing>PublishSubscribe</sharing>
+                        <transportation>HLAbestEffort</transportation>
+                        <order>Receive</order>
+                        <semantics>Optional. Describes the entity's protection from the effects of weapons fire. Default is 0% - Fully affected by weapon fire.</semantics>
+                    </attribute>
+                    <attribute>
+                        <name>CaptureStatus</name>
+                        <dataType>CaptureStatusEnum8</dataType>
+                        <updateType>Conditional</updateType>
+                        <updateCondition>On change</updateCondition>
+                        <ownership>DivestAcquire</ownership>
+                        <sharing>PublishSubscribe</sharing>
+                        <transportation>HLAbestEffort</transportation>
+                        <order>Receive</order>
+                        <semantics>Optional: The status of with respect to its control or influence over its own activities.</semantics>
+                    </attribute>
+                    <attribute>
+                        <name>WeaponsControlOrder</name>
+                        <dataType>WeaponControlOrderEnum8</dataType>
+                        <updateType>Conditional</updateType>
+                        <updateCondition>On change</updateCondition>
+                        <ownership>DivestAcquire</ownership>
+                        <sharing>PublishSubscribe</sharing>
+                        <transportation>HLAbestEffort</transportation>
+                        <order>Receive</order>
+                        <semantics>Optional. Describes current Weapon Control Order Free, Tight, or Hold. Default is 0 - Other.</semantics>
+                    </attribute>
+                    <attribute>
+                        <name>HigherHeadquarters</name>
+                        <dataType>UUID</dataType>
+                        <updateType>Conditional</updateType>
+                        <updateCondition>On change</updateCondition>
+                        <ownership>DivestAcquire</ownership>
+                        <sharing>PublishSubscribe</sharing>
+                        <transportation>HLAbestEffort</transportation>
+                        <order>Receive</order>
+                        <semantics>Optional. A reference to an entity representing the superior or headquarters from which orders can be given and to which reports are sent. The referenced entity is a NETN-ORG `Unit` object. The default value is all zeros (no higher headquarters).</semantics>
+                    </attribute>
+                    <attribute>
+                        <name>Echelon</name>
+                        <dataType>EchelonEnum32</dataType>
+                        <updateType>Static</updateType>
+                        <updateCondition>N/A</updateCondition>
+                        <ownership>DivestAcquire</ownership>
+                        <sharing>PublishSubscribe</sharing>
+                        <transportation>HLAbestEffort</transportation>
+                        <order>Receive</order>
+                        <semantics>Optional. The size of the AggregateEntity (level of command).</semantics>
+                    </attribute>
                 </objectClass>
             </objectClass>
         </objectClass>
     </objects>
     <dataTypes>
-        <simpleDataTypes/>
-        <enumeratedDataTypes/>
-        <arrayDataTypes/>
-        <fixedRecordDataTypes/>
-        <variantRecordDataTypes/>
+        <simpleDataTypes>
+            <simpleData>
+                <name>RangeFloat32</name>
+                <representation>HLAfloat32BE</representation>
+                <units>meters</units>
+                <resolution>NA</resolution>
+                <accuracy>perfect</accuracy>
+                <semantics>Range of sensor</semantics>
+            </simpleData>
+        </simpleDataTypes>
+        <enumeratedDataTypes>
+            <enumeratedData>
+                <name>WeaponControlOrderEnum8</name>
+                <representation>HLAoctet</representation>
+                <semantics>The enumerations for weapon control</semantics>
+                <enumerator>
+                    <name>WeaponsFree</name>
+                    <value>1</value>
+                </enumerator>
+                <enumerator>
+                    <name>WeaponsHold</name>
+                    <value>3</value>
+                </enumerator>
+                <enumerator>
+                    <name>Other</name>
+                    <value>0</value>
+                </enumerator>
+                <enumerator>
+                    <name>WeaponsTight</name>
+                    <value>2</value>
+                </enumerator>
+            </enumeratedData>
+            <enumeratedData>
+                <name>CaptureStatusEnum8</name>
+                <representation>HLAoctet</representation>
+                <semantics>The status of a simulated entity with respect to their control or influence over their own activities. Default: 1 - Not Captured.</semantics>
+                <enumerator>
+                    <name>Not-Captured</name>
+                    <value>1</value>
+                </enumerator>
+                <enumerator>
+                    <name>Captured</name>
+                    <value>2</value>
+                </enumerator>
+                <enumerator>
+                    <name>AttemptingSurrender</name>
+                    <value>3</value>
+                </enumerator>
+                <enumerator>
+                    <name>Other</name>
+                    <value>0</value>
+                </enumerator>
+            </enumeratedData>
+            <enumeratedData>
+                <name>EntityCategoryEnum32</name>
+                <representation>RPRunsignedInteger32BE</representation>
+                <semantics>Category of entity</semantics>
+                <enumerator>
+                    <name>Invalid</name>
+                    <value>0</value>
+                </enumerator>
+                <enumerator>
+                    <name>EquipmentEntity</name>
+                    <value>1</value>
+                </enumerator>
+                <enumerator>
+                    <name>PersonnelEntity</name>
+                    <value>2</value>
+                </enumerator>
+                <enumerator>
+                    <name>EmitterEntity</name>
+                    <value>3</value>
+                </enumerator>
+                <enumerator>
+                    <name>RadioEntity</name>
+                    <value>4</value>
+                </enumerator>
+            </enumeratedData>
+            <enumeratedData>
+                <name>ConcealmentEnum32</name>
+                <representation>RPRunsignedInteger32BE</representation>
+                <semantics>The reason for the objects concealment</semantics>
+                <enumerator>
+                    <name>Invalid</name>
+                    <value>0</value>
+                </enumerator>
+                <enumerator>
+                    <name>InOpen</name>
+                    <value>1</value>
+                </enumerator>
+                <enumerator>
+                    <name>MountedInternally</name>
+                    <value>2</value>
+                </enumerator>
+                <enumerator>
+                    <name>MountedExternally</name>
+                    <value>3</value>
+                </enumerator>
+                <enumerator>
+                    <name>UnderNet</name>
+                    <value>4</value>
+                </enumerator>
+                <enumerator>
+                    <name>UnderGround</name>
+                    <value>5</value>
+                </enumerator>
+                <enumerator>
+                    <name>InsideStructure</name>
+                    <value>6</value>
+                </enumerator>
+                <enumerator>
+                    <name>FightingPositionCovered</name>
+                    <value>7</value>
+                </enumerator>
+                <enumerator>
+                    <name>FightingPositionUncovered</name>
+                    <value>8</value>
+                </enumerator>
+            </enumeratedData>
+            <enumeratedData>
+                <name>SensorStateEnum32</name>
+                <representation>RPRunsignedInteger32BE</representation>
+                <semantics>The emission states of aggregate sensors</semantics>
+                <enumerator>
+                    <name>OnButNotEmitting</name>
+                    <value>2</value>
+                </enumerator>
+                <enumerator>
+                    <name>Off</name>
+                    <value>1</value>
+                </enumerator>
+                <enumerator>
+                    <name>Other</name>
+                    <value>0</value>
+                </enumerator>
+                <enumerator>
+                    <name>OnAndEmitting</name>
+                    <value>3</value>
+                </enumerator>
+            </enumeratedData>
+        </enumeratedDataTypes>
+        <arrayDataTypes>
+            <arrayData>
+                <name>ArrayOfResourceStatus</name>
+                <dataType>ResourceStatusNumberStruct</dataType>
+                <cardinality>[1..2147483647]</cardinality>
+                <encoding>HLAvariableArray</encoding>
+                <semantics>The array of health states for a named resource.</semantics>
+            </arrayData>
+            <arrayData>
+                <name>ArrayOfEntityStruct</name>
+                <dataType>EntityStruct</dataType>
+                <cardinality>[1..2147483647]</cardinality>
+                <encoding>HLAvariableArray</encoding>
+                <semantics>Data for one or more entities that comprise an entity list.</semantics>
+            </arrayData>
+            <arrayData>
+                <name>ArrayOfSensorStruct</name>
+                <dataType>SensorStruct</dataType>
+                <cardinality>[1..2147483647]</cardinality>
+                <encoding>HLAvariableArray</encoding>
+                <semantics>Array with definitio0ns of sensors, 1+ cardinality</semantics>
+            </arrayData>
+        </arrayDataTypes>
+        <fixedRecordDataTypes>
+            <fixedRecordData>
+                <name>VisualSignatureStruct</name>
+                <encoding>HLAfixedRecord</encoding>
+                <semantics>Specifies the visual structure</semantics>
+                <field>
+                    <name>DVOSignaturePercent</name>
+                    <dataType>PercentFloat32</dataType>
+                    <semantics>A summary percentage of entity susceptibility to detection by direct view optics, i.e. the human eye, binoculars, or telescopes. An entity with zero percent signature would be concealed from DVO detection.</semantics>
+                </field>
+                <field>
+                    <name>I2SignaturePercent</name>
+                    <dataType>PercentFloat32</dataType>
+                    <semantics>A summary percentage of entity susceptibility to detection by Image Intensifying sensors. An entity with zero percent signature would be invisible to image intensifiers (I2).</semantics>
+                </field>
+                <field>
+                    <name>ThermalSignaturePercent</name>
+                    <dataType>PercentFloat32</dataType>
+                    <semantics>A summary percentage of entity susceptibility to detection by thermal sensors. An entity  with zero percent signature would be invisible to thermal sensors.</semantics>
+                </field>
+            </fixedRecordData>
+            <fixedRecordData>
+                <name>HUMINTSignatureStruct</name>
+                <encoding>HLAfixedRecord</encoding>
+                <semantics>Describes the entity susceptibility to human intelligence (HUMINT), i.e. information collected and provided by human sources.</semantics>
+                <field>
+                    <name>HUMINTSignaturePercent</name>
+                    <dataType>PercentFloat32</dataType>
+                    <semantics>A summary percentage of an aggregates susceptibility to detection by human intelligence collectors. Zero percent signature means an aggregate is impervious to HUMINT.</semantics>
+                </field>
+            </fixedRecordData>
+            <fixedRecordData>
+                <name>ElectronicSignatureStruct</name>
+                <encoding>HLAfixedRecord</encoding>
+                <semantics>A summary percentage of an aggregates susceptibility to detection of its electronic emissions. Zero percent means that the aggregate has no electronic emissions.</semantics>
+                <field>
+                    <name>ElectronicSignaturePercent</name>
+                    <dataType>PercentFloat32</dataType>
+                    <semantics>A summary percentage of an aggregates susceptibility to detection of its electronic emissions. Zero percent means that the aggregate has no electronic emissions.</semantics>
+                </field>
+                <field>
+                    <name>SensorArray</name>
+                    <dataType>ArrayOfSensorStruct</dataType>
+                    <semantics>A list of sensors owned by the aggregate together with their respective operational status and range</semantics>
+                </field>
+            </fixedRecordData>
+            <fixedRecordData>
+                <name>ResourceStatusNumberStruct</name>
+                <encoding>HLAfixedRecord</encoding>
+                <semantics>The name of a resource and the number of instances of that resource by health status.</semantics>
+                <field>
+                    <name>NumberHealthyOrIntact</name>
+                    <dataType>QuantityFloat64</dataType>
+                    <semantics>The number of healthy or intact resources</semantics>
+                </field>
+                <field>
+                    <name>NumberSlightlyDamaged</name>
+                    <dataType>QuantityFloat64</dataType>
+                    <semantics>The number of slightly damaged resources</semantics>
+                </field>
+                <field>
+                    <name>NumberModeratelyDamaged</name>
+                    <dataType>QuantityFloat64</dataType>
+                    <semantics>The number of moderately damaged resources</semantics>
+                </field>
+                <field>
+                    <name>NumberSignificantlyDamaged</name>
+                    <dataType>QuantityFloat64</dataType>
+                    <semantics>The number of significantly damaged resources</semantics>
+                </field>
+                <field>
+                    <name>NumberDestroyed</name>
+                    <dataType>QuantityFloat64</dataType>
+                    <semantics>The number of destroyed or consumed resources</semantics>
+                </field>
+                <field>
+                    <name>ResourceName</name>
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>The name of the resource</semantics>
+                </field>
+                <field>
+                    <name>ResourceType</name>
+                    <dataType>EntityTypeStruct</dataType>
+                    <semantics>The type of the resource (as described in the Bit Encoded Values for Use with Protocols for Distributed Interactive Simulation Applications)</semantics>
+                </field>
+            </fixedRecordData>
+            <fixedRecordData>
+                <name>EntityStruct</name>
+                <encoding>HLAfixedRecord</encoding>
+                <semantics>An entity represented to the federation as part of the aggregate object which owns it.</semantics>
+                <field>
+                    <name>Callsign</name>
+                    <dataType>HLAunicodeString</dataType>
+                    <semantics>The callsign of the entity if available.</semantics>
+                </field>
+                <field>
+                    <name>EntityCategory</name>
+                    <dataType>EntityCategoryEnum32</dataType>
+                    <semantics>Indicates whether the entity is equipment, person, emitter, etc.</semantics>
+                </field>
+                <field>
+                    <name>EntityStatus</name>
+                    <dataType>DamageStatusEnhancedEnum32</dataType>
+                    <semantics>The damage state of the entity.</semantics>
+                </field>
+                <field>
+                    <name>IsDistinctObject</name>
+                    <dataType>RPRboolean</dataType>
+                    <semantics>A BaseEntity object has been created to represent this entity (true) or not (false). Default is false.</semantics>
+                </field>
+                <field>
+                    <name>IsUnavailable</name>
+                    <dataType>RPRboolean</dataType>
+                    <semantics>This entity is in use by another object (true) or not (false). Default is false.</semantics>
+                </field>
+                <field>
+                    <name>Facing</name>
+                    <dataType>DirectionDegreesFloat32</dataType>
+                    <semantics>Direction is measured in degrees clockwise from orientation of the entity. Default is 0.</semantics>
+                </field>
+                <field>
+                    <name>Concealment</name>
+                    <dataType>ConcealmentEnum32</dataType>
+                    <semantics>Indicates whether the entity is concealed and, if so, how</semantics>
+                </field>
+                <field>
+                    <name>OffsetLocation</name>
+                    <dataType>RelativePositionStruct</dataType>
+                    <semantics>The entity location given as an offset from the location of the aggregate entity in meters.</semantics>
+                </field>
+                <field>
+                    <name>Allocation</name>
+                    <dataType>UUID</dataType>
+                    <semantics>Reference to an entity by UUID to which this entity is allocated as a resource. The referenced entity may or may not be represented in the federation.</semantics>
+                </field>
+            </fixedRecordData>
+            <fixedRecordData>
+                <name>SensorStruct</name>
+                <encoding>HLAfixedRecord</encoding>
+                <semantics>Defines a sensor,operational status, damage status, coverage and ID</semantics>
+                <field>
+                    <name>SensorStateEnum</name>
+                    <dataType>SensorStateEnum32</dataType>
+                    <semantics>The operational status of the sensor</semantics>
+                </field>
+                <field>
+                    <name>SensorDamageState</name>
+                    <dataType>DamageStatusEnum32</dataType>
+                    <semantics>The damage status of the sensor</semantics>
+                </field>
+                <field>
+                    <name>SensorCoverage</name>
+                    <dataType>RangeFloat32</dataType>
+                    <semantics>The maximum range of the sensor</semantics>
+                </field>
+                <field>
+                    <name>SensorID</name>
+                    <dataType>UUID</dataType>
+                    <semantics>A sensor owned by the aggregate</semantics>
+                </field>
+            </fixedRecordData>
+        </fixedRecordDataTypes>
     </dataTypes>
     <notes/>
 </objectModel>

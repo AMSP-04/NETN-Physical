@@ -308,72 +308,6 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
                 </enumerator>
             </enumeratedData>
             <enumeratedData>
-                <name>EntityCategoryEnum32</name>
-                <representation>RPRunsignedInteger32BE</representation>
-                <semantics>Category of entity</semantics>
-                <enumerator>
-                    <name>Invalid</name>
-                    <value>0</value>
-                </enumerator>
-                <enumerator>
-                    <name>EquipmentEntity</name>
-                    <value>1</value>
-                </enumerator>
-                <enumerator>
-                    <name>PersonnelEntity</name>
-                    <value>2</value>
-                </enumerator>
-                <enumerator>
-                    <name>EmitterEntity</name>
-                    <value>3</value>
-                </enumerator>
-                <enumerator>
-                    <name>RadioEntity</name>
-                    <value>4</value>
-                </enumerator>
-            </enumeratedData>
-            <enumeratedData>
-                <name>ConcealmentEnum32</name>
-                <representation>RPRunsignedInteger32BE</representation>
-                <semantics>The type of concealment.</semantics>
-                <enumerator>
-                    <name>Invalid</name>
-                    <value>0</value>
-                </enumerator>
-                <enumerator>
-                    <name>InOpen</name>
-                    <value>1</value>
-                </enumerator>
-                <enumerator>
-                    <name>MountedInternally</name>
-                    <value>2</value>
-                </enumerator>
-                <enumerator>
-                    <name>MountedExternally</name>
-                    <value>3</value>
-                </enumerator>
-                <enumerator>
-                    <name>UnderNet</name>
-                    <value>4</value>
-                </enumerator>
-                <enumerator>
-                    <name>UnderGround</name>
-                    <value>5</value>
-                </enumerator>
-                <enumerator>
-                    <name>InsideStructure</name>
-                    <value>6</value>
-                </enumerator>
-                <enumerator>
-                    <name>FightingPositionCovered</name>
-                    <value>7</value>
-                </enumerator>
-                <enumerator>
-                    <name>FightingPositionUncovered</name>
-                    <value>8</value>
-                </enumerator>
-            </enumeratedData>
-            <enumeratedData>
                 <name>SensorStateEnum32</name>
                 <representation>RPRunsignedInteger32BE</representation>
                 <semantics>The emission states of aggregate sensors</semantics>
@@ -402,13 +336,6 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
                 <cardinality>[1..2147483647]</cardinality>
                 <encoding>HLAvariableArray</encoding>
                 <semantics>The array of health states for a named resource.</semantics>
-            </arrayData>
-            <arrayData>
-                <name>ArrayOfEntityStruct</name>
-                <dataType>EntityStruct</dataType>
-                <cardinality>[1..2147483647]</cardinality>
-                <encoding>HLAvariableArray</encoding>
-                <semantics>Data for one or more entities that comprise an entity list.</semantics>
             </arrayData>
             <arrayData>
                 <name>ArrayOfSensorStruct</name>
@@ -502,56 +429,6 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
                     <name>ResourceType</name>
                     <dataType>EntityTypeStruct</dataType>
                     <semantics>The type of the resource (as described in the Bit Encoded Values for Use with Protocols for Distributed Interactive Simulation Applications)</semantics>
-                </field>
-            </fixedRecordData>
-            <fixedRecordData>
-                <name>EntityStruct</name>
-                <encoding>HLAfixedRecord</encoding>
-                <semantics>An entity represented to the federation as part of the aggregate object which owns it.</semantics>
-                <field>
-                    <name>Callsign</name>
-                    <dataType>HLAunicodeString</dataType>
-                    <semantics>The callsign of the entity if available.</semantics>
-                </field>
-                <field>
-                    <name>EntityCategory</name>
-                    <dataType>EntityCategoryEnum32</dataType>
-                    <semantics>Indicates whether the entity is equipment, person, emitter, etc.</semantics>
-                </field>
-                <field>
-                    <name>EntityStatus</name>
-                    <dataType>DamageStatusEnhancedEnum32</dataType>
-                    <semantics>The damage state of the entity.</semantics>
-                </field>
-                <field>
-                    <name>IsDistinctObject</name>
-                    <dataType>RPRboolean</dataType>
-                    <semantics>A BaseEntity object has been created to represent this entity (true) or not (false). Default is false.</semantics>
-                </field>
-                <field>
-                    <name>IsUnavailable</name>
-                    <dataType>RPRboolean</dataType>
-                    <semantics>This entity is in use by another object (true) or not (false). Default is false.</semantics>
-                </field>
-                <field>
-                    <name>Facing</name>
-                    <dataType>DirectionDegreesFloat32</dataType>
-                    <semantics>Direction is measured in degrees clockwise from orientation of the entity. Default is 0.</semantics>
-                </field>
-                <field>
-                    <name>Concealment</name>
-                    <dataType>ConcealmentEnum32</dataType>
-                    <semantics>Indicates whether the entity is concealed and, if so, how</semantics>
-                </field>
-                <field>
-                    <name>OffsetLocation</name>
-                    <dataType>RelativePositionStruct</dataType>
-                    <semantics>The entity location given as an offset from the location of the aggregate entity in meters.</semantics>
-                </field>
-                <field>
-                    <name>Allocation</name>
-                    <dataType>UUID</dataType>
-                    <semantics>Reference to an entity by UUID to which this entity is allocated as a resource. The referenced entity may or may not be represented in the federation.</semantics>
                 </field>
             </fixedRecordData>
             <fixedRecordData>
@@ -723,8 +600,6 @@ NETN-MRM FOM Module v1.2.0 was developed by MSG-106 and MSG-134 and released as 
 * Added datatype `RangeFloat32`
 * Added datatype `WeaponControlOrderEnum8`
 * Added datatype `CaptureStatusEnum8`
-* Added datatype `EntityCategoryEnum32`
-* Added datatype `ConcealmentEnum32`
 * Added datatype `SensorStateEnum32`
 * Added datatype `ArrayOfResourceStatus`
 * Added datatype `ArrayOfSensorStruct`

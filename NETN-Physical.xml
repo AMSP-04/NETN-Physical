@@ -135,7 +135,7 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
                         <updateCondition>On change</updateCondition>
                         <ownership>DivestAcquire</ownership>
                         <sharing>PublishSubscribe</sharing>
-                        <transportation>HLAbestEffort</transportation>
+                        <transportation>HLAreliable</transportation>
                         <order>Receive</order>
                         <semantics>Optional. The type and total quantities of supply holdings modelled by this entity.</semantics>
                     </attribute>
@@ -146,7 +146,7 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
                         <updateCondition>On change</updateCondition>
                         <ownership>DivestAcquire</ownership>
                         <sharing>PublishSubscribe</sharing>
-                        <transportation>HLAbestEffort</transportation>
+                        <transportation>HLAreliable</transportation>
                         <order>Receive</order>
                         <semantics>Optional. The total amount and status of equipment holdings represented by this entity.</semantics>
                     </attribute>
@@ -157,7 +157,7 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
                         <updateCondition>On change</updateCondition>
                         <ownership>DivestAcquire</ownership>
                         <sharing>PublishSubscribe</sharing>
-                        <transportation>HLAbestEffort</transportation>
+                        <transportation>HLAreliable</transportation>
                         <order>Receive</order>
                         <semantics>Optional. The total amount and status of all personnel holdings modelled by this entity.</semantics>
                     </attribute>
@@ -168,7 +168,7 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
                         <updateCondition>On change</updateCondition>
                         <ownership>DivestAcquire</ownership>
                         <sharing>PublishSubscribe</sharing>
-                        <transportation>HLAbestEffort</transportation>
+                        <transportation>HLAreliable</transportation>
                         <order>Receive</order>
                         <semantics>Optional: Describes the susceptibility to electro-optical detection.</semantics>
                     </attribute>
@@ -179,7 +179,7 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
                         <updateCondition>On change</updateCondition>
                         <ownership>DivestAcquire</ownership>
                         <sharing>PublishSubscribe</sharing>
-                        <transportation>HLAbestEffort</transportation>
+                        <transportation>HLAreliable</transportation>
                         <order>Receive</order>
                         <semantics>Optional: Describes the susceptibility to human intelligence (HUMINT), i.e. information collected and provided by human sources.</semantics>
                     </attribute>
@@ -190,7 +190,7 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
                         <updateCondition>On change</updateCondition>
                         <ownership>DivestAcquire</ownership>
                         <sharing>PublishSubscribe</sharing>
-                        <transportation>HLAbestEffort</transportation>
+                        <transportation>HLAreliable</transportation>
                         <order>Receive</order>
                         <semantics>Optional: Describes the susceptibility to electronic detection both as a summary value and by identifying aggregate sensors together with their operational status.</semantics>
                     </attribute>
@@ -201,7 +201,7 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
                         <updateCondition>On change</updateCondition>
                         <ownership>DivestAcquire</ownership>
                         <sharing>PublishSubscribe</sharing>
-                        <transportation>HLAbestEffort</transportation>
+                        <transportation>HLAreliable</transportation>
                         <order>Receive</order>
                         <semantics>Optional. A summary value of the effectiveness (the level of training, leadership, morale, personnel and equipment operational status). The default value is 100%.</semantics>
                     </attribute>
@@ -212,7 +212,7 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
                         <updateCondition>On change</updateCondition>
                         <ownership>DivestAcquire</ownership>
                         <sharing>PublishSubscribe</sharing>
-                        <transportation>HLAbestEffort</transportation>
+                        <transportation>HLAreliable</transportation>
                         <order>Receive</order>
                         <semantics>Optional. The cover status describes the entity's protection from the effects of weapons fire. The default is 0% - fully affected by weapon fire.</semantics>
                     </attribute>
@@ -223,7 +223,7 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
                         <updateCondition>On change</updateCondition>
                         <ownership>DivestAcquire</ownership>
                         <sharing>PublishSubscribe</sharing>
-                        <transportation>HLAbestEffort</transportation>
+                        <transportation>HLAreliable</transportation>
                         <order>Receive</order>
                         <semantics>Optional: The status of an entity's level of control or influence over its activities. The default is Not-Captured.</semantics>
                     </attribute>
@@ -234,7 +234,7 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
                         <updateCondition>N/A</updateCondition>
                         <ownership>DivestAcquire</ownership>
                         <sharing>PublishSubscribe</sharing>
-                        <transportation>HLAbestEffort</transportation>
+                        <transportation>HLAreliable</transportation>
                         <order>Receive</order>
                         <semantics>Optional. Use the echelon symbol-modifier to specify the size of the AggregateEntity (level of command).</semantics>
                     </attribute>
@@ -245,7 +245,7 @@ Above license gives you the right to use and redistribute the NETN FOM Module (X
                         <updateCondition>On change</updateCondition>
                         <ownership>DivestAcquire</ownership>
                         <sharing>PublishSubscribe</sharing>
-                        <transportation>HLAbestEffort</transportation>
+                        <transportation>HLAreliable</transportation>
                         <order>Receive</order>
                         <semantics>Optional. Describes current Weapon Control Order as Free, Tight, or Hold. The default is 0 - Other.</semantics>
                     </attribute>
